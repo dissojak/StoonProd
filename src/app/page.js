@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <Fragment>
       <div className="hero_area">
-        <div className="topBare">
+        <div className=" bg-[#112C30] h-16 w-auto -mb-4 xs:hidden ">
           <div className="text-white p-4">instagram</div>
         </div>
         <Navbar />
