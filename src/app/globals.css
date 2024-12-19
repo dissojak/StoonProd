@@ -326,3 +326,15 @@ left:40%
 .slider_section .details .btn-box a:hover .arrowContainer .arrow:before {
   right: 0;
 }
+
+
+/*
+ * topBare
+*/
+
+.topBare{
+  background-color: #112C30;
+  height: 10vh;
+  width: auto;
+  margin-bottom: -2vh;
+}
