@@ -19,7 +19,7 @@ const PhotographySection = () => {
             alt="Photography"
             width={600}
             height={400}
-            className="w-2/3 h-[150%] -mb-28 ml-20"
+            className="w-2/3 h-[150%] -mb-28 lg:ml-20"
           />
         </div>
       </div>

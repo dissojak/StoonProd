@@ -10,7 +10,7 @@ const ContentCreationSection = () => {
             alt="Content Creation"
             width={600}
             height={400}
-            className="w-2/3 h-auto ml-20 rounded-3xl"
+            className="w-2/3 h-auto lg:ml-20 rounded-3xl"
           />
         </div>
         <div className="md:w-1/2 md:pl-10 mt-8 md:mt-0">

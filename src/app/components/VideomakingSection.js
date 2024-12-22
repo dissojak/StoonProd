@@ -10,7 +10,7 @@ const VideomakingSection = () => {
             alt="Video Production"
             width={600}
             height={400}
-            className="w-2/3 h-auto ml-20 rounded-3xl"
+            className="w-2/3 h-auto lg:ml-20 rounded-3xl"
           />
         </div>
 
