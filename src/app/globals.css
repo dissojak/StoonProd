@@ -20,7 +20,7 @@ background
 
 .hero_area {
   position: relative;
-  min-height: 90vh;
+  min-height: 100vh;
   display: flex;
   /* margin-top: -80px; */
   -webkit-box-orient: vertical;
