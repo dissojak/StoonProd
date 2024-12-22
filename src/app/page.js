@@ -1,6 +1,11 @@
 import { Fragment } from "react";
 import Navbar from "./components/Navbar";
 import SliderSection from "./components/SliderSection";
+import HeroSection from "./components/HeroSection";
+import VideomakingSection from "./components/VideomakingSection";
+import PhotographySection from "./components/PhotographySection";
+import ContentCreationSection from "./components/ContentCreationSection";
+import WebDevelopmentSection from "./components/WebDevelopmentSection";
 
 export default function Home() {
   return (
@@ -10,7 +15,7 @@ export default function Home() {
         lg:rounded-br-[350px] rounded-tl-none rounded-tr-none rounded-bl-none 
         xs:rounded-br-[175px]
         dark:bg-[#112C30]"
-        >
+      >
         {/* lg:min-h-[88vh] xs:min-h-[83vh]
         rounded-br-[350px] rounded-tl-none rounded-tr-none rounded-bl-none 
         xs:rounded-br-[200px] xs:rounded-tl-none xs:rounded-tr-none xs:rounded-bl-none" */}
@@ -31,6 +36,13 @@ export default function Home() {
         </ul>
         <Navbar />
         <SliderSection />
+      </div>
+      <div>
+        <HeroSection />
+        <VideomakingSection />
+        <PhotographySection />
+        <ContentCreationSection />
+        <WebDevelopmentSection />
       </div>
     </Fragment>
   );

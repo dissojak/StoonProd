@@ -5,7 +5,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
-  darkMode: 'class',
+  darkMode: "class",
   theme: {
     extend: {
       backgroundImage: {
@@ -15,30 +15,20 @@ module.exports = {
       },
       colors: {
         myYellow: "#ffc44d",
+        myYellowHover: "#ffb833", // Hover state for myYellow
         myGreen: "#40bfbb",
-        myGreenDarken: "#318a87",
+        myGreenHover: "#38a29f", // Hover state for myGreen
+        myGreenDark: "#318a87",
+        myGreenDarkenHover: "#297370", // Hover state for myGreenDarken
         myRed: "#f65893",
+        myRedHover: "#e64e87", // Hover state for myRed
         myBleu: "#4b9be2",
+        myBleuHover: "#3b88d1", // Hover state for myBleu
         myOrange: "#FFB244",
-        onyx: "hsl(240, 1%, 17%)",
-        jet: "hsl(0, 0%, 22%)",
-        eerieBlack1: "hsl(240, 2%, 13%)",
-        eerieBlack2: "hsl(240, 2%, 12%)",
-        smokyBlack: "hsl(0, 0%, 7%)",
-        vegasGold: "hsl(209, 36%, 55%)",
-        bittersweetShimmer: "hsl(0, 43%, 51%)",
+        myOrangeHover: "#ffa330", // Hover state for myOrange
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
-      },
-      boxShadow: {
-        "custom-1": "-4px 8px 24px hsla(0, 0%, 0%, 0.25)",
-        "custom-2": "0 16px 30px hsla(0, 0%, 0%, 0.25)",
-        "custom-3": "0 16px 40px hsla(0, 0%, 0%, 0.25)",
-      },
-      transitionTimingFunction: {
-        "custom-1": "0.25s ease",
-        "custom-2": "0.5s ease-in-out",
       },
     },
     screens: {

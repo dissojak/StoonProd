@@ -1,5 +1,4 @@
 import Link from "next/link";
-import DarkModeSwitcher from "../UI/DarkModeSwitcher";
 import Image from "next/image";
 
 const SliderSection = () => {
@@ -7,54 +6,52 @@ const SliderSection = () => {
     <section>
       <div
         className="container 
-      mx-auto flex flex-col 
-      md:flex-row items-center justify-between 
-      lg:py-16 xs:py-0
-      "
+        mx-auto flex flex-col 
+        md:flex-row items-center justify-between 
+        lg:py-16 xs:py-8 px-4" // Added px-4 to ensure padding on both sides
       >
+        {/* Image Section */}
         <div className="lg:w-1/2 xs:w-full">
           <Image
             src="/assets/images/filmingGreen.svg"
             alt="website template image"
-            className="lg:w-full mx-auto xs:mt-4 xs:w-10/12"
-            width={800} // specify the width (you can adjust this value)
-            height={500} // specify the height (you can adjust this value)
+            className="w-full max-w-md mx-auto xs:mt-4" // Set max-w-md to limit size on larger screens and ensure full width on small screens
+            width={800}
+            height={500}
+            sizes="(max-width: 640px) 80vw, (max-width: 1024px) 50vw, 40vw"
           />
         </div>
-        <div className="detail-box md:w-1/2 text-white text-right ">
-          <div className="details space-y-6">
+
+        {/* Text Section */}
+        <div className="lg:mr-20 md:w-1/2 text-white text-right xs:mt-6 md:mt-0">
+          <div className="space-y-6">
             <h1 className="font-bold lg:text-5xl mb-4 text-myYellow xs:text-3xl">
               FILM <br /> PRODUCTION
             </h1>
-            <p>
-              Bringing your vision to life through creative video production,{" "}
+            <p className="xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed">
+              Bringing your vision to life through creative video production,
               <br />
-              stunning photography, and cutting-edge content creation. <br />
+              stunning photography, and cutting-edge content creation.
+              <br />
               We craft stories that resonate and websites that inspire.
             </p>
-            <div className="relative flex justify-center xs:mt-16">
-              <div className="bg-myGreenDarken p-1 rounded-full lg:w-1/3 lg:pr-[3.5rem] xs:pr-[4.5rem] xs:w-2/3">
-                <Link
-                  href="https://www.instagram.com/adem_ben_amor/"
-                  className="inline-flex bg-myYellow text-black rounded-full 
-                  hover:inline-flex
-                  lg:px-6 py-4
-                  transition-transform
-                  lg:hover:translate-x-[3.25rem] hover:bg-myYellow
-                  hover:text-white hover:font-medium
-                  xs:px-4
-                  xs:hover:translate-x-[4.25rem]"
-                >
-                  Contact Us
-                  <div className="arrow-container">
-                    <div className="arrow-wrapper">
-                      <div className="arrow"></div>
-                    </div>
+            {/* Button Section */}
+            <div className="relative flex justify-start lg:ml-16 xs:mt-16">
+              <Link
+                href="https://www.instagram.com/adem_ben_amor/"
+                className="inline-flex items-center bg-myYellow text-black rounded-3xl 
+                lg:px-6 py-4 xs:px-4
+               hover:bg-myYellowHover
+               hover:text-white hover:font-medium"
+              >
+                Contact Us
+                <div className="arrow-container ml-2">
+                  <div className="arrow-wrapper">
+                    <div className="arrow"></div>
                   </div>
-                </Link>
-              </div>
+                </div>
+              </Link>
             </div>
-            {/* <DarkModeSwitcher /> */}
           </div>
         </div>
       </div>
