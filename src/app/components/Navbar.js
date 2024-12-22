@@ -3,11 +3,12 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState, useEffect, Fragment } from "react";
+import DarkModeSwitcher from "../UI/DarkModeSwitcher";
+import Image from "next/image";
 
 const Navbar = () => {
   const pathname = usePathname(); // Get the current path
   const [activeLink, setActiveLink] = useState("");
-  const [isDarkMode, setIsDarkMode] = useState(false); // State for dark mode
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State for mobile menu toggle
 
   useEffect(() => {
@@ -16,47 +17,39 @@ const Navbar = () => {
 
   const isActive = (link) => pathname === link; // Check if the current route exactly matches the link
 
-  const toggleDarkMode = () => {
-    setIsDarkMode(!isDarkMode); // Toggle dark mode
-  };
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen); // Toggle mobile menu
     console.log("Toggle Menu");
   };
 
-  useEffect(() => {
-    if (isDarkMode) {
-      document.documentElement.classList.add("dark"); // Apply dark mode to the document
-    } else {
-      document.documentElement.classList.remove("dark"); // Remove dark mode
-    }
-  }, [isDarkMode]);
-
   return (
     <Fragment>
       <nav className="flex items-center justify-between px-4 py-2 xs:px-6 xs:py-4 lg:px-24 lg:py-7.5 text-white">
         <Link href="/" className="flex-shrink-0">
-          <img
-            src="./assets/images/logostoonprod_rec_white.png"
+          <Image
+            src="/assets/images/logostoonprod_rec_white.png"
             alt="Logo"
             className="relative lg:h-16 lg:mt-auto xs:h-12"
+            layout="intrinsic"
+            width={60}
+            height={100}
           />
         </Link>
+        <div className="lg:hidden xs:block">
+          <div className="flex space-x-4">
+            <Link
+              href="/resume"
+              className="relative bg-myYellow text-black lg:px-6 xs:px-3 py-2 rounded-full hover:bg-yellow-300 dark:bg-yellow-500 dark:text-white"
+            >
+              Resume
+            </Link>
 
-        <div className="flex space-x-4">
-          <Link
-            href="/resume"
-            className="relative bg-myYellow text-black lg:px-6 xs:px-3 py-2 rounded-full hover:bg-yellow-300 dark:bg-yellow-500 dark:text-white"
-          >
-            Resume
-          </Link>
-          <button
-            onClick={toggleDarkMode}
-            className="relative bg-myRed text-white lg:px-6 xs:px-3 py-2 rounded-full hover:bg-red-300 dark:bg-red-700 dark:text-gray-200"
-          >
-            {isDarkMode ? "Light Mode" : "Dark Mode"}
-          </button>
+            {/* 
+            <span className="absolute bottom-1/4">
+              <DarkModeSwitcher />
+            </span>
+             */}
+          </div>
         </div>
         {/* Hamburger Menu Icon (Only visible on xs screens) */}
         <button
@@ -113,9 +106,21 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-
-
+        <div className="xs:hidden lg:block">
+          <div className="flex space-x-4">
+            <Link
+              href="/resume"
+              className="relative bg-myYellow text-black lg:px-6 xs:px-3 py-2 rounded-full hover:bg-yellow-300 dark:bg-yellow-500 dark:text-white"
+            >
+              Resume
+            </Link>
+            {/* Replace the button with DarkModeSwitcher */}
+          </div>
+        </div>
       </nav>
+      <span className="absolute lg:top-[20vh] xs:top-[15vh] right-0">
+        <DarkModeSwitcher />
+      </span>
     </Fragment>
   );
 };

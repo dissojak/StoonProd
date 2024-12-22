@@ -7,8 +7,8 @@ export default function Home() {
     <Fragment>
       <div
         className="hero_area 
-        rounded-br-[350px] rounded-tl-none rounded-tr-none rounded-bl-none 
-        xs:rounded-br-[175px] xs:rounded-tl-none xs:rounded-tr-none xs:rounded-bl-none
+        lg:rounded-br-[350px] rounded-tl-none rounded-tr-none rounded-bl-none 
+        xs:rounded-br-[175px]
         dark:bg-[#112C30]"
         >
         {/* lg:min-h-[88vh] xs:min-h-[83vh]
