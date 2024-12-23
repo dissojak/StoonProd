@@ -7,7 +7,7 @@ const Footer = () => {
   return (
     <footer className="footer bg-myGreen dark:bg-[#112C30] text-white">
       <section className="footer-top">
-        <div className="lg:relative lg:mb-20 xs:mb-10">
+        <div className="lg:relative lg:mb-24 xs:mb-10">
           <Image
             src="/assets/images/logostoonprod_rec_white.png"
             alt="Logo"

@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="bg-white text-black py-20 dark:bg-black dark:text-white">
+    <section className="bg-white text-black py-20 dark:bg-gray-950 dark:text-white">
       <div className="container mx-auto text-center">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
           Welcome to Stoon Production

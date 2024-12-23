@@ -1,7 +1,7 @@
 .footer {
     position: relative;
     left: 0;
-    top: 10vh;
+    /* top: 10vh; */
     width: 100%;
     padding-top: 60px;
   }
