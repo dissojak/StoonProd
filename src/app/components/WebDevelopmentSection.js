@@ -19,7 +19,7 @@ const WebDevelopmentSection = () => {
             alt="Web Development"
             width={600}
             height={400}
-            className="w-full max-w-xs mx-auto rounded-3x"
+            className="w-full max-w-xs mx-auto rounded-3xl"
           />
         </div>
       </div>
