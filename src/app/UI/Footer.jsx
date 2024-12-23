@@ -52,7 +52,7 @@ const Footer = () => {
               Follow me on social media to get the latest awesome reels and
               posts.
             </p>
-            <div className="footer-socials">
+            <div className="footer-socials xs:mb-20">
               <a href="https://instagram.com" target="_blank">
                 <FaInstagram />
               </a>
