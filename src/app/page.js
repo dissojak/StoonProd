@@ -6,6 +6,7 @@ import VideomakingSection from "./components/VideomakingSection";
 import PhotographySection from "./components/PhotographySection";
 import ContentCreationSection from "./components/ContentCreationSection";
 import WebDevelopmentSection from "./components/WebDevelopmentSection";
+import Footer from "./UI/Footer";
 
 export default function Home() {
   return (
@@ -43,6 +44,7 @@ export default function Home() {
         <PhotographySection />
         <ContentCreationSection />
         <WebDevelopmentSection />
+        <Footer />
       </div>
     </Fragment>
   );
