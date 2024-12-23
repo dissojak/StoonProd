@@ -19,7 +19,6 @@ const Navbar = () => {
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen); // Toggle mobile menu
-    console.log("Toggle Menu");
   };
 
   return (
@@ -35,29 +34,11 @@ const Navbar = () => {
             height={100}
           />
         </Link>
-        <div className="lg:hidden xs:block">
-          <div className="flex space-x-4">
-            <Link
-              href="/resume"
-              className="relative bg-myYellow text-black lg:px-6 xs:px-3 py-2 rounded-full hover:bg-yellow-300 dark:bg-yellow-500 dark:text-white"
-            >
-              Resume
-            </Link>
 
-            {/* 
-            <span className="absolute bottom-1/4">
-              <DarkModeSwitcher />
-            </span>
-             */}
-          </div>
-        </div>
         {/* Hamburger Menu Icon (Only visible on xs screens) */}
         <button
-          onClick={() => {
-            toggleMenu(); // Call the toggleMenu function
-            console.log("Toggle Menu"); // Log a message to the console
-          }}
-          className="lg:hidden text-white focus:outline-none relative "
+          onClick={toggleMenu} // Call the toggleMenu function
+          className="lg:hidden text-white focus:outline-none relative"
         >
           <svg
             className="h-8 w-8"
@@ -75,24 +56,12 @@ const Navbar = () => {
           </svg>
         </button>
 
-        {/* Full menu for lg screens, collapsible for xs screens */}
+        {/* Full menu for lg screens */}
         <ul
-          className={`lg:flex space-x-4 xs:${
-            isMenuOpen ? "block" : "hidden"
-          } xs:space-y-2 lg:space-y-0`}
+          className="lg:flex space-x-4 xs:hidden lg:space-y-0"
         >
-          {[
-            "Home",
-            "About",
-            "Service and Tariffs",
-            "Clients",
-            "Blog",
-            "Contact",
-          ].map((item, idx) => (
-            <li
-              key={idx}
-              className="list-none inline-block lg:px-5 lg:py-2.5 xs:px-2 xs:py-2"
-            >
+          {["Home", "About", "Service and Tariffs", "Clients", "Blog", "Contact"].map((item, idx) => (
+            <li key={idx} className="list-none inline-block lg:px-5 lg:py-2.5 xs:px-2 xs:py-2">
               <Link
                 href={`/${item.toLowerCase().replace(/\s+/g, "")}`}
                 className={`relative py-1.5 hover:text-myRed after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[3px] after:bg-myRed after:transition-all after:duration-300 hover:after:w-full ${
@@ -106,19 +75,35 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
-        <div className="xs:hidden lg:block">
-          <div className="flex space-x-4">
-            <Link
-              href="/resume"
-              className="relative bg-myYellow text-black lg:px-6 xs:px-3 py-2 rounded-full hover:bg-yellow-300 dark:bg-yellow-500 dark:text-white"
+
+        {/* Sidebar for small screens (Right side) */}
+        <div
+          className={`lg:hidden fixed top-0 right-0 w-64 h-full bg-gray-800 text-white transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"} transition-transform z-50`}
+        >
+          <div className="flex justify-end p-4">
+            {/* Close Button (X) */}
+            <button
+              onClick={toggleMenu} // Close the menu when clicked
+              className="text-white text-3xl"
             >
-              Resume
-            </Link>
-            {/* Replace the button with DarkModeSwitcher */}
+              &times; {/* X symbol */}
+            </button>
+          </div>
+          <div className="flex flex-col space-y-4 p-4">
+            {["Home", "About", "Service and Tariffs", "Clients", "Blog", "Contact"].map((item, idx) => (
+              <Link
+                key={idx}
+                href={`/${item.toLowerCase().replace(/\s+/g, "")}`}
+                className={`py-2 px-4 block hover:bg-myRed ${isActive(`/${item.toLowerCase()}`) ? "bg-myRed" : ""}`}
+              >
+                {item}
+              </Link>
+            ))}
           </div>
         </div>
       </nav>
-      <span className="absolute lg:top-[20vh] xs:top-[15vh] right-0">
+
+      <span className="absolute lg:top-[20vh] xs:top-[15vh] right-0 z-60">
         <DarkModeSwitcher />
       </span>
     </Fragment>
