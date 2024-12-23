@@ -28,13 +28,14 @@ const SliderSection = () => {
             <h1 className="font-bold lg:text-5xl mb-4 text-myYellow xs:text-3xl">
               FILM <br /> PRODUCTION
             </h1>
-            <p className="xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed">
+            <p className="xs:text-base sm:text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed xs:text-center sm:text-center md:text-left lg:text-left xl:text-left">
               Bringing your vision to life through creative video production,
               <br />
               stunning photography, and cutting-edge content creation.
               <br />
               We craft stories that resonate and websites that inspire.
             </p>
+
             {/* Button Section */}
             <div className="relative flex justify-start lg:ml-16 xs:mt-16">
               <Link
