@@ -29,6 +29,10 @@
     }
 } */
 
+html {
+  scroll-behavior: smooth;
+}
+
 
 
 /* //

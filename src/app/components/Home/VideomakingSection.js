@@ -2,7 +2,9 @@ import Image from "next/image";
 
 const VideomakingSection = () => {
   return (
-    <section className="bg-white text-black dark:bg-gray-900 dark:text-white py-20">
+    <section 
+    id="video-production"
+    className="bg-white text-black dark:bg-gray-900 dark:text-white py-20">
       <div className="container mx-auto flex flex-col md:flex-row items-center">
         <div className="md:w-1/2">
           <Image

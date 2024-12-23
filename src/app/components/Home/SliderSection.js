@@ -15,7 +15,7 @@ const SliderSection = () => {
           <Image
             src="/assets/images/filmingGreen.svg"
             alt="website template image"
-            className="w-full max-w-md mx-auto xs:mt-4" // Set max-w-md to limit size on larger screens and ensure full width on small screens
+            className="w-full max-w-md mx-auto xs:mt-4 brightness-100 dark:brightness-75 transition duration-1000 filter" // Set max-w-md to limit size on larger screens and ensure full width on small screens
             width={800}
             height={500}
             sizes="(max-width: 640px) 80vw, (max-width: 1024px) 50vw, 40vw"

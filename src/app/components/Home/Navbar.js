@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState, useEffect, useRef, Fragment } from "react";
-import DarkModeSwitcher from "../UI/DarkModeSwitcher";
+import DarkModeSwitcher from "../../UI/DarkModeSwitcher";
 import Image from "next/image";
 
 const Navbar = () => {
@@ -75,11 +75,19 @@ const Navbar = () => {
         </button>
 
         {/* Full menu for lg screens */}
-        <ul
-          className="lg:flex space-x-4 xs:hidden lg:space-y-0"
-        >
-          {["Home", "About", "Service and Tariffs", "Clients", "Blog", "Contact"].map((item, idx) => (
-            <li key={idx} className="list-none inline-block lg:px-5 lg:py-2.5 xs:px-2 xs:py-2">
+        <ul className="lg:flex space-x-4 xs:hidden lg:space-y-0">
+          {[
+            "Home",
+            "About",
+            "Service and Tariffs",
+            "Clients",
+            "Blog",
+            "Contact",
+          ].map((item, idx) => (
+            <li
+              key={idx}
+              className="list-none inline-block lg:px-5 lg:py-2.5 xs:px-2 xs:py-2"
+            >
               <Link
                 href={`/${item.toLowerCase().replace(/\s+/g, "")}`}
                 className={`relative py-1.5 hover:text-myRed after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[3px] after:bg-myRed after:transition-all after:duration-300 hover:after:w-full ${
@@ -95,31 +103,44 @@ const Navbar = () => {
         </ul>
 
         {/* Sidebar for small screens (Right side) */}
-        <div
-          ref={sidebarRef} // Ref for sidebar
-          className={`lg:hidden fixed top-0 right-0 w-48 h-full bg-gray-800 text-white transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"} transition-transform z-50`}
-        >
-          <div className="flex justify-end p-4">
-            {/* Close Button (X) */}
-            <button
-              onClick={toggleMenu} // Close the menu when clicked
-              className="text-white text-3xl"
-            >
-              &times; {/* X symbol */}
-            </button>
-          </div>
-          <div className="flex flex-col space-y-4 p-4">
-            {["Home", "About", "Service and Tariffs", "Clients", "Blog", "Contact"].map((item, idx) => (
-              <Link
-                key={idx}
-                href={`/${item.toLowerCase().replace(/\s+/g, "")}`}
-                className={`py-2 px-4 block hover:bg-myRed ${isActive(`/${item.toLowerCase()}`) ? "bg-myRed" : ""}`}
+        {isMenuOpen && (
+          <div
+            ref={sidebarRef} // Ref for sidebar
+            className={`lg:hidden fixed top-6 right-0 w-48 h-fit bg-gray-800 text-white transform ${
+              isMenuOpen ? "translate-x-0" : "translate-x-full"
+            } transition-transform z-50`}
+          >
+            <div className="flex justify-end px-6 pt-4">
+              {/* Close Button (X) */}
+              <button
+                onClick={toggleMenu} // Close the menu when clicked
+                className="text-white text-5xl"
               >
-                {item}
-              </Link>
-            ))}
+                &times; {/* X symbol */}
+              </button>
+            </div>
+            <div className="flex flex-col space-y-4 p-4">
+              {[
+                "Home",
+                "About",
+                "Service and Tariffs",
+                "Clients",
+                "Blog",
+                "Contact",
+              ].map((item, idx) => (
+                <Link
+                  key={idx}
+                  href={`/${item.toLowerCase().replace(/\s+/g, "")}`}
+                  className={`py-2 px-4 block hover:bg-myRed ${
+                    isActive(`/${item.toLowerCase()}`) ? "bg-myRed" : ""
+                  }`}
+                >
+                  {item}
+                </Link>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
 
         {/* Resume Button (Visible only on large screens) */}
         <div className="xs:hidden lg:block">

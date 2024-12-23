@@ -4,7 +4,7 @@ const HeroSection = () => {
   return (
     <section className="bg-white text-black py-20 dark:bg-gray-950 dark:text-white">
       <div className="container mx-auto text-center">
-        <h1 className="text-4xl md:text-6xl font-bold mb-6">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 transition-colors duration-300 transform dark:hover:text-teal-400 hover:text-teal-300">
           Welcome to Stoon Production
         </h1>
         <p className="md:text-lg lg:text-xl leading-relaxed">
