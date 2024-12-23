@@ -2,7 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { useState, useEffect, Fragment } from "react";
+import { useState, useEffect, useRef, Fragment } from "react";
 import DarkModeSwitcher from "../UI/DarkModeSwitcher";
 import Image from "next/image";
 
@@ -10,6 +10,7 @@ const Navbar = () => {
   const pathname = usePathname(); // Get the current path
   const [activeLink, setActiveLink] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State for mobile menu toggle
+  const sidebarRef = useRef(null); // Ref for sidebar
 
   useEffect(() => {
     setActiveLink(pathname);
@@ -20,6 +21,23 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen); // Toggle mobile menu
   };
+
+  const handleClickOutside = (event) => {
+    if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+      setIsMenuOpen(false); // Close the sidebar if clicked outside
+    }
+  };
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.addEventListener("mousedown", handleClickOutside); // Add event listener when the menu is open
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside); // Remove event listener when the menu is closed
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside); // Cleanup the event listener
+    };
+  }, [isMenuOpen]);
 
   return (
     <Fragment>
@@ -78,7 +96,8 @@ const Navbar = () => {
 
         {/* Sidebar for small screens (Right side) */}
         <div
-          className={`lg:hidden fixed top-0 right-0 w-64 h-full bg-gray-800 text-white transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"} transition-transform z-50`}
+          ref={sidebarRef} // Ref for sidebar
+          className={`lg:hidden fixed top-0 right-0 w-48 h-full bg-gray-800 text-white transform ${isMenuOpen ? "translate-x-0" : "translate-x-full"} transition-transform z-50`}
         >
           <div className="flex justify-end p-4">
             {/* Close Button (X) */}
@@ -101,8 +120,21 @@ const Navbar = () => {
             ))}
           </div>
         </div>
+
+        {/* Resume Button (Visible only on large screens) */}
+        <div className="xs:hidden lg:block">
+          <div className="flex space-x-4">
+            <Link
+              href="/resume"
+              className="relative bg-myYellow text-black lg:px-6 xs:px-3 py-2 rounded-full hover:bg-yellow-300 dark:bg-yellow-500 dark:text-white"
+            >
+              Resume
+            </Link>
+          </div>
+        </div>
       </nav>
 
+      {/* Space for the Dark Mode Switcher */}
       <span className="absolute lg:top-[20vh] xs:top-[15vh] right-0 z-60">
         <DarkModeSwitcher />
       </span>
