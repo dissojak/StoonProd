@@ -59,11 +59,13 @@ const AboutPage = () => {
             <div className="mt-8 md:mt-0 md:w-1/2">
               <div className="flex items-center justify-center">
                 <div className="max-w-md">
-                  <img
+                  <Image
                     className="object-cover object-center w-full rounded-md shadow"
                     style={{ height: "500px" }}
                     src="https://images.unsplash.com/photo-1618346136472-090de27fe8b4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=673&q=80"
                     alt="Creative Team"
+                    width={673} // Add appropriate width based on the image's original size or desired size
+                    height={500} // Add appropriate height based on the image's aspect ratio or desired size
                   />
                 </div>
               </div>
@@ -79,7 +81,7 @@ const AboutPage = () => {
             <div className="md:w-1/2">
               <div className="flex items-center justify-center">
                 <div className="max-w-md">
-                  <img
+                  <Image
                     className="object-cover object-center w-full rounded-md shadow"
                     style={{ height: "500px" }}
                     src="https://images.unsplash.com/photo-1616874535244-73aea5daadb9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
