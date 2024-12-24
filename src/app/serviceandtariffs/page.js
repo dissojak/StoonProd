@@ -126,13 +126,24 @@ function ServiceAndTariffs() {
             className="absolute inset-0 -z-20 h-full w-full object-cover object-right md:object-center filter blur-sm"
           />
         </div> */}
-        <Image
-          src="/assets/images/merchWidth.jpg"
-          alt=""
-          className="absolute inset-0 -z-20 h-full w-full object-cover object-center bg-blue-500 bg-opacity-40 filter blur-sm"
-          width={1920}
-          height={1080}
-        />
+        <div className="block dark:hidden transition-all duration-1000">
+          <Image
+            src="/assets/images/merchWidth.jpg"
+            alt=""
+            className="absolute inset-0 -z-20 h-full w-full object-cover object-center bg-blue-500 bg-opacity-40 filter blur-sm"
+            width={1920}
+            height={1080}
+          />
+        </div>
+        <div className="hidden dark:block transition-all duration-1000">
+          <Image
+            src="/assets/images/merchWidthDarkMode.png"
+            alt=""
+            className="absolute inset-0 -z-20 h-full w-full object-cover object-center bg-blue-500 bg-opacity-40 filter blur-sm"
+            width={1920}
+            height={1080}
+          />
+        </div>
 
         <div className="mx-auto max-w-7xl px-6 lg:px-8 xs:mt-10">
           <div className="mx-auto max-w-2xl lg:mx-0">
@@ -195,9 +206,22 @@ function ServiceAndTariffs() {
         </div>
       </div>
 
-      <Service serviceData={eventCoverageService} />
-      <Service serviceData={videoProductionService} />
-      <Service serviceData={webDevelopmentService} />
+      <Service sectionNumber={0} serviceData={eventCoverageService} />
+      <hr />
+      <Service sectionNumber={1} serviceData={videoProductionService} />
+      <hr />
+      <Service sectionNumber={0} serviceData={webDevelopmentService} />
+
+      <footer className="border-t dark:bg-gray-900">
+        <div className="container flex items-center justify-between px-6 py-8 mx-auto">
+          <p className="text-gray-500 dark:text-teal-600">
+            © 2020-2025 All Rights Reserved.
+          </p>
+          <p className="font-medium text-gray-700 dark:text-teal-600">
+            Terms of Service
+          </p>
+        </div>
+      </footer>
     </>
   );
 }
