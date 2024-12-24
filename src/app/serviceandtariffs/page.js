@@ -129,7 +129,7 @@ function ServiceAndTariffs() {
         <Image
           src="/assets/images/merchWidth.jpg"
           alt=""
-          className="absolute inset-0 -z-20 h-full w-full object-cover object-right md:object-center bg-blue-500 bg-opacity-40 filter blur-sm"
+          className="absolute inset-0 -z-20 h-full w-full object-cover object-center bg-blue-500 bg-opacity-40 filter blur-sm"
           width={1920}
           height={1080}
         />
