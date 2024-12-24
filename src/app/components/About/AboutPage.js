@@ -1,50 +1,58 @@
+"use client";
 import React from "react";
 import Navbar from "../Home/Navbar";
+import TeamMember from "@/app/UI/TeamMember";
+import TeamMembers from "@/app/UI/TeamMembers";
+import Image from "next/image";
 
 const AboutPage = () => {
   return (
     <div>
-      <header className="bg-gray-800">
-      <Navbar/>
+      <header className="bg-slate-300 dark:bg-gray-800 transition-colors duration-1000">
+        <Navbar />
         <section
           className="flex items-center justify-center"
           style={{ height: "500px" }}
         >
           <div className="text-center">
-            <p className="text-xl font-medium tracking-wider text-gray-300">
-              Lorem ipsum dolor
+            <p className="text-xl font-medium tracking-wider text-gray-700 dark:text-gray-300 transition-colors duration-1000">
+              Creative Vision, Captured Perfectly
             </p>
-            <h2 className="mt-6 text-3xl font-bold text-white md:text-5xl">
-              Lorem ipsum dolor sit amet, <br /> consectetur adipiscing elit
+            <h2 className="mt-6 text-3xl font-bold text-gray-900 dark:text-white md:text-5xl transition-colors duration-1000">
+              Bringing Your Ideas to Life with <br /> Stunning Visuals and Web
+              Solutions
             </h2>
 
             <div className="flex justify-center mt-8">
               <a
-                className="px-8 py-2 text-lg font-medium text-white transition-colors duration-300 transform bg-indigo-600 rounded hover:bg-indigo-500"
+                className="px-8 py-2 text-lg font-medium text-white transition-colors duration-300 transform bg-teal-500 rounded hover:bg-teal-400"
                 href="#"
               >
-                Get In Touch
+                Let&apos;s Create Something Amazing
               </a>
             </div>
           </div>
         </section>
       </header>
 
-      <section className="bg-white">
+      <section className="bg-white dark:bg-gray-900 transition-colors duration-1000">
         <div className="max-w-5xl px-6 py-16 mx-auto">
           <div className="items-center md:flex md:space-x-6">
             <div className="md:w-1/2">
-              <h3 className="text-2xl font-semibold text-gray-800">
-                Lorem ipsum dolor sit <br /> amet, consectetur
+              <h3 className="text-2xl font-semibold text-gray-800 dark:text-teal-400">
+                Capturing Moments, Creating Experiences
               </h3>
-              <p className="max-w-md mt-4 text-gray-600">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum.
+              <p className="max-w-md mt-4 text-gray-600 dark:text-gray-300">
+                From breathtaking photography and videography to innovative web
+                design, we bring your vision to life with creativity and
+                precision. Our experienced team specializes in crafting content
+                that resonates with your audience.
               </p>
-              <a href="#" className="block mt-8 text-indigo-700 underline">
-                Experienced team
+              <a
+                href="#team"
+                className="block mt-8 text-teal-500 dark:text-teal-400 underline"
+              >
+                Meet Our Team
               </a>
             </div>
 
@@ -55,7 +63,7 @@ const AboutPage = () => {
                     className="object-cover object-center w-full rounded-md shadow"
                     style={{ height: "500px" }}
                     src="https://images.unsplash.com/photo-1618346136472-090de27fe8b4?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=673&q=80"
-                    alt="example"
+                    alt="Creative Team"
                   />
                 </div>
               </div>
@@ -65,7 +73,7 @@ const AboutPage = () => {
       </section>
 
       {/* Repeat the above section code with different content for additional sections */}
-      <section className="bg-white">
+      <section className="bg-slate-100 dark:bg-gray-800 transition-colors duration-1000">
         <div className="max-w-5xl px-6 py-16 mx-auto">
           <div className="items-center md:flex md:space-x-6">
             <div className="md:w-1/2">
@@ -75,44 +83,49 @@ const AboutPage = () => {
                     className="object-cover object-center w-full rounded-md shadow"
                     style={{ height: "500px" }}
                     src="https://images.unsplash.com/photo-1616874535244-73aea5daadb9?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                    alt="Photography and Videography"
                   />
                 </div>
               </div>
             </div>
 
             <div className="mt-8 md:mt-0 md:w-1/2">
-              <h3 className="text-2xl font-semibold text-gray-800">
-                Lorem ipsum dolor sit <br /> amet, consectetur
+              <h3 className="text-2xl font-semibold text-gray-800 dark:text-white transition-colors duration-1000">
+                Crafting Visual Stories for Every Moment
               </h3>
-              <p className="max-w-md mt-4 text-gray-600">
-                Duis aute irure dolor in reprehenderit in voluptate velit esse
-                cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                cupidatat non proident, sunt in culpa qui officia deserunt
-                mollit anim id est laborum.
+              <p className="max-w-md mt-4 text-gray-600 dark:text-gray-300 transition-colors duration-1000">
+                At Stoon Production, we capture stunning moments through
+                photography and videography. Whether it&apos;s a personal event
+                or a professional project, we bring creativity and precision to
+                every frame. Our work ensures your story is told in the most
+                impactful way.
               </p>
-              <a href="#" className="block mt-8 text-indigo-700 underline">
-                Experienced team
+              <a
+                href="#team"
+                className="block mt-8 text-teal-500 dark:text-teal-400 underline transition-colors duration-1000"
+              >
+                Meet Our Experienced Team
               </a>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white dark:bg-gray-900 transition-colors duration-1000">
         <div className="max-w-5xl px-6 py-16 mx-auto">
-          <h2 className="text-3xl font-semibold text-gray-800">
-            Lorem ipsum dolor sit amet, <br /> consectetur adipiscing
+          <h2 className="text-3xl font-semibold text-gray-800 dark:text-teal-400 transition-colors duration-1000">
+            Bringing Your Ideas to Life through Visuals and Technology
           </h2>
-          <p className="max-w-lg mt-4 text-gray-600">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
+          <p className="max-w-lg mt-4 text-gray-600 dark:text-gray-300 transition-colors duration-1000">
+            At Stoon Production, we specialize in creating stunning visuals
+            through photography, videography, and web development. Our goal is
+            to combine creativity with technology to bring your vision to life,
+            whether it's for a personal project or a professional endeavor.
           </p>
           <div className="grid gap-8 mt-10 md:mt-20 md:grid-cols-2">
             <div className="flex space-x-4">
               <svg
-                className="w-6 h-6 text-gray-500"
+                className="w-6 h-6 text-gray-500 dark:text-gray-300 transition-colors duration-1000"
                 viewBox="0 0 50 50"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -125,19 +138,23 @@ const AboutPage = () => {
               </svg>
 
               <div>
-                <h4 className="text-xl font-medium text-gray-800">
-                  Design concept
+                <h4 className="text-xl font-medium text-gray-800 dark:text-white transition-colors duration-1000">
+                  Commercial Video & Photography for Promotions
                 </h4>
-                <p className="max-w-lg mt-4 text-gray-600">
-                  Vitae nulla nunc euismod vel nunc euismod velpretium tellus
-                  accumsan nulla nunc euismod ve semper.
+                <p className="max-w-lg mt-4 text-gray-600 dark:text-gray-300 transition-colors duration-1000">
+                  We provide professional video and photography services
+                  tailored to your promotional needs. From product launches to
+                  event coverage, our team captures high-impact visuals that
+                  drive engagement and elevate your brand. Whether for marketing
+                  campaigns or corporate events, we create content that boosts
+                  your visibility and connects with your audience.
                 </p>
               </div>
             </div>
 
             <div className="flex space-x-4">
               <svg
-                className="w-6 h-6 text-gray-500"
+                className="w-6 h-6 text-gray-500 dark:text-gray-300 transition-colors duration-1000"
                 viewBox="0 0 50 50"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -150,14 +167,14 @@ const AboutPage = () => {
               </svg>
 
               <div>
-                <h4 className="text-xl font-medium text-gray-800">
-                  Developing websites
+                <h4 className="text-xl font-medium text-gray-800 dark:text-white transition-colors duration-1000">
+                  Web Development & Digital Solutions
                 </h4>
-                <p className="max-w-lg mt-4 text-gray-600">
-                  Vitae nulla euismod velpretium tellus accumsan nulla nunc
-                  euismod ve semper. Vitae nulla euismod velpretium tellus
-                  accumsan nulla nunc euismod ve semper. Vitae nulla euismod
-                  velpretium tellus accumsan nulla nunc euismod ve semper.
+                <p className="max-w-lg mt-4 text-gray-600 dark:text-gray-300 transition-colors duration-1000">
+                  Our expertise extends to developing fully responsive and
+                  user-friendly websites that drive engagement and conversion.
+                  From custom web applications to e-commerce solutions, we
+                  deliver results.
                 </p>
               </div>
             </div>
@@ -165,21 +182,21 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-slate-100 dark:bg-gray-900 transition-colors duration-1000">
         <div className="max-w-5xl px-6 py-16 mx-auto">
-          <div className="px-8 py-12 bg-gray-800 rounded-md md:px-20 md:flex md:items-center md:justify-between">
+          <div className="px-8 py-12 bg-gray-800 dark:bg-gray-700 rounded-md md:px-20 md:flex md:items-center md:justify-between">
             <div>
-              <h3 className="text-2xl font-semibold text-white">
-                Lorem ipsum dolor sit amet
+              <h3 className="text-2xl font-semibold text-white dark:text-gray-100">
+                Ad Video Production
               </h3>
-              <p className="max-w-md mt-4 text-gray-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac
-                volutpat, viverra magna risus aliquam massa.
+              <p className="max-w-md mt-4 text-gray-400 dark:text-gray-300">
+                We specialize in creating impactful ad videos to promote your
+                brand, products, and services.
               </p>
             </div>
 
             <a
-              className="block px-8 py-2 mt-6 text-lg font-medium text-center text-white transition-colors duration-300 transform bg-indigo-600 rounded md:mt-0 hover:bg-indigo-500"
+              className="block px-8 py-2 mt-6 text-lg font-medium text-center text-white transition-colors duration-300 transform bg-teal-500 rounded md:mt-0 hover:bg-teal-400 dark:bg-teal-600 dark:hover:bg-teal-500"
               href="#"
             >
               Get In Touch
@@ -188,159 +205,136 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white dark:bg-gray-800 transition-colors duration-1000">
         <div className="max-w-5xl px-6 py-16 mx-auto">
           <div className="md:flex md:justify-between">
-            <h2 className="text-3xl font-semibold text-gray-800">
-              Lorem ipsum dolor sit amet, consectetur <br /> adipiscing elit,
-              sed do eiusmod
+            <h2 className="text-3xl font-semibold text-gray-800 dark:text-gray-100">
+              Elevating Your Brand with Video, Web Design,{" "}
+              <br className="sm:hidden md:block" />
+              and Content Creation
             </h2>
             <a
               href="#"
-              className="block mt-6 text-indigo-700 underline md:mt-0"
+              className="block mt-6 text-teal-500 underline md:mt-0 dark:text-teal-400"
             >
-              Experienced team
+              Our Expertise
             </a>
           </div>
 
           <div className="grid gap-8 mt-10 md:grid-cols-2 lg:grid-cols-3">
-            <div className="px-6 py-8 overflow-hidden bg-white rounded-md shadow-md">
-              <h2 className="text-xl font-medium text-gray-800">Audio</h2>
-              <p className="max-w-md mt-4 text-gray-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac
-                volutpat, viverra magna risus aliquam massa.
+            {/* Video Creation and Photography */}
+            <div className="px-6 py-8 overflow-hidden bg-white rounded-md shadow-md dark:bg-gray-600">
+              <h2 className="text-xl font-medium text-gray-800 dark:text-gray-50">
+                Video Creation & Photography
+              </h2>
+              <p className="max-w-md mt-4 text-gray-600 dark:text-gray-200">
+                From stunning promotional videos to high-quality photography, we
+                capture your brand&apos;s essence in visuals that engage and
+                convert.
               </p>
             </div>
 
-            <div className="px-6 py-8 overflow-hidden bg-white rounded-md shadow-md">
-              <h2 className="text-xl font-medium text-gray-800">Audio</h2>
-              <p className="max-w-md mt-4 text-gray-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac
-                volutpat, viverra magna risus aliquam massa.
+            {/* Web Design and Development */}
+            <div className="px-6 py-8 overflow-hidden bg-white rounded-md shadow-md dark:bg-gray-600">
+              <h2 className="text-xl font-medium text-gray-800 dark:text-gray-50">
+                Web Design & Development
+              </h2>
+              <p className="max-w-md mt-4 text-gray-600 dark:text-gray-200">
+                Our team builds responsive, user-friendly websites that not only
+                look great but are also optimized for performance and
+                conversions.
               </p>
             </div>
 
-            <div className="px-6 py-8 overflow-hidden bg-white rounded-md shadow-md">
-              <h2 className="text-xl font-medium text-gray-800">Audio</h2>
-              <p className="max-w-md mt-4 text-gray-400">
-                Lorem ipsum dolor sit amet, consectetur adipiscing Ac aliquam ac
-                volutpat, viverra magna risus aliquam massa.
+            {/* Content Creation */}
+            <div className="px-6 py-8 overflow-hidden bg-white rounded-md shadow-md dark:bg-gray-600">
+              <h2 className="text-xl font-medium text-gray-800 dark:text-gray-50">
+                Content Creation
+              </h2>
+              <p className="max-w-md mt-4 text-gray-600 dark:text-gray-200">
+                We create captivating content across various platforms that
+                resonates with your audience and strengthens your brand presence
+                online.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-slate-100 dark:bg-gray-900 transition-colors duration-1000">
         <div className="max-w-5xl px-6 py-16 mx-auto text-center">
-          <h2 className="text-3xl font-semibold text-gray-800">
-            Lorem ipsum dolor sit amet, <br /> consectetur adipiscing
+          <h2 className="text-3xl font-semibold text-gray-800 dark:text-teal-400">
+            Capturing the Essence of Your Brand through <br /> Stunning Visuals
+            and Design
           </h2>
-          <p className="max-w-lg mx-auto mt-4 text-gray-600">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
+          <p className="max-w-lg mx-auto mt-4 text-gray-600 dark:text-gray-300">
+            We specialize in creating high-impact videos, photography, and
+            sleek, user-friendly websites to enhance your brand presence. Let us
+            bring your vision to life with captivating visuals and seamless web
+            experiences.
           </p>
 
-          <img
-            className="object-cover object-center w-full mt-16 rounded-md shadow h-80"
-            src="https://images.unsplash.com/photo-1600069226367-412873fb0637?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+          <Image
+            className="object-cover object-top w-full mt-16 rounded-md shadow h-80"
+            src="/assets/images/merchFaceUp.jpg"
+            alt="Creative visual content"
+            width={1350}
+            height={2000}
           />
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-slate-100 dark:bg-gray-900 transition-colors duration-1000">
         <div className="max-w-5xl px-6 py-16 mx-auto space-y-8 md:flex md:items-center md:space-y-0">
           <div className="md:w-2/3">
             <div className="hidden md:flex md:items-center md:space-x-10">
-              <img
+              <Image
                 className="object-cover object-center rounded-md shadow w-72 h-72"
-                src="https://images.unsplash.com/photo-1614030126544-b79b92e29e98?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                src="/assets/images/conentCreationMouhib.png"
+                width={500}
+                height={500}
               />
-              <img
+              <Image
                 className="object-cover object-center w-64 rounded-md shadow h-96"
-                src="https://images.unsplash.com/photo-1618506469810-282bef2b30b3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+                src="/assets/images/merch.jpg"
+                width={500}
+                height={1000}
               />
             </div>
-            <h2 className="text-3xl font-semibold text-gray-800 md:mt-6">
-              Lorem ipsum dolor{" "}
+            <h2 className="text-3xl font-semibold text-gray-800 dark:text-teal-400 md:mt-6">
+              Elevate Your Brand with Impactful Visuals
             </h2>
-            <p className="max-w-lg mt-4 text-gray-600">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse
-              illum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-              cupidatat non proident, sunt in culpa qui officia deserunt mollit
-              anim id est laborum dolore eu fugiat nulla pariatur. Excepteur
-              sint occaecat cupidatat non proident, sunt in culpa qui officia
-              deserunt mollit anim id est laborum.
+            <p className="max-w-lg mt-4 text-gray-600 dark:text-gray-300">
+              Our team of creative experts is dedicated to producing stunning
+              visuals that capture attention and leave a lasting impression.
+              Whether you need promotional videos, event coverage, or a complete
+              visual package, we&apos;ll help bring your vision to life and
+              elevate your brand&apos;s presence.
             </p>
           </div>
+
           <div className="md:w-1/3">
-            <img
+            <Image
               className="object-cover object-center w-full rounded-md shadow"
               style={{ height: "700px" }}
-              src="https://images.unsplash.com/photo-1593352216840-1aee13f45818?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+              src="/assets/images/git.png"
+              width={800}
+              height={2000}
             />
           </div>
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="max-w-5xl px-6 py-16 mx-auto text-center">
-          <h2 className="text-3xl font-semibold text-gray-800">
-            Our Leadership
-          </h2>
-          <p className="max-w-lg mx-auto mt-4 text-gray-600">
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
-          </p>
+      <TeamMembers />
 
-          <div className="grid gap-8 mt-6 md:grid-cols-2 lg:grid-cols-4">
-            <div>
-              <img
-                className="object-cover object-center w-full h-64 rounded-md shadow"
-                src="https://images.unsplash.com/photo-1614030126544-b79b92e29e98?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-              />
-              <h3 className="mt-2 font-medium text-gray-700">John Doe</h3>
-              <p className="text-sm text-gray-600">CEO</p>
-            </div>
-
-            <div>
-              <img
-                className="object-cover object-center w-full h-64 rounded-md shadow"
-                src="https://images.unsplash.com/photo-1614030126544-b79b92e29e98?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-              />
-              <h3 className="mt-2 font-medium text-gray-700">John Doe</h3>
-              <p className="text-sm text-gray-600">CEO</p>
-            </div>
-
-            <div>
-              <img
-                className="object-cover object-center w-full h-64 rounded-md shadow"
-                src="https://images.unsplash.com/photo-1614030126544-b79b92e29e98?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-              />
-              <h3 className="mt-2 font-medium text-gray-700">John Doe</h3>
-              <p className="text-sm text-gray-600">CEO</p>
-            </div>
-
-            <div>
-              <img
-                className="object-cover object-center w-full h-64 rounded-md shadow"
-                src="https://images.unsplash.com/photo-1614030126544-b79b92e29e98?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
-              />
-              <h3 className="mt-2 font-medium text-gray-700">John Doe</h3>
-              <p className="text-sm text-gray-600">CEO</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer className="border-t">
+      <footer className="border-t dark:bg-gray-900">
         <div className="container flex items-center justify-between px-6 py-8 mx-auto">
-          <p className="text-gray-500">© 2019-2021 All Rights Reserved.</p>
-          <p className="font-medium text-gray-700">Terms of Service</p>
+          <p className="text-gray-500 dark:text-teal-600">
+            © 2020-2025 All Rights Reserved.
+          </p>
+          <p className="font-medium text-gray-700 dark:text-teal-600">
+            Terms of Service
+          </p>
         </div>
       </footer>
     </div>
