@@ -122,7 +122,7 @@ const AboutPage = () => {
             At Stoon Production, we specialize in creating stunning visuals
             through photography, videography, and web development. Our goal is
             to combine creativity with technology to bring your vision to life,
-            whether it's for a personal project or a professional endeavor.
+            whether it&apos;s for a personal project or a professional endeavor.
           </p>
           <div className="grid gap-8 mt-10 md:mt-20 md:grid-cols-2">
             <div className="flex space-x-4">

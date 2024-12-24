@@ -53,6 +53,7 @@ const Team = () => {
               imageSrc={member.imageSrc}
               name={member.name}
               role={member.role}
+              alt={"//avoidError"}
               description={member.description}
             />
           ))}
