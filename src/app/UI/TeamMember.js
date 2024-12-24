@@ -21,7 +21,7 @@ const TeamMember = ({ imageSrc, name, role, description }) => {
           <p className="text-sm font-medium uppercase tracking-widest text-pink-500 dark:text-pink-400">
             {role}
           </p>
-          <p className="text-xl font-bold transition-colors duration-300 transform text-black dark:text-white group-hover:text-teal-500 dark:group-hover:text-teal-400">
+          <p className="text-xl font-bold transition-colors duration-300 transform text-white group-hover:text-teal-500 dark:group-hover:text-teal-400">
             {name}
           </p>
 

@@ -53,7 +53,7 @@ const Team = () => {
               imageSrc={member.imageSrc}
               name={member.name}
               role={member.role}
-              alt={"//avoidError"}
+              alt={"avoid-Error"}
               width={10}
               height={10}
               description={member.description}
