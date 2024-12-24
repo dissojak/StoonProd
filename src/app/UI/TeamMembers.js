@@ -54,6 +54,8 @@ const Team = () => {
               name={member.name}
               role={member.role}
               alt={"//avoidError"}
+              width={10}
+              height={10}
               description={member.description}
             />
           ))}
