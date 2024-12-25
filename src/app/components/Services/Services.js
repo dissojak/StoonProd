@@ -4,7 +4,7 @@ import React from "react";
 function Service({ serviceData, sectionNumber }) {
   return (
     <section
-      className={`py-10 px-6 ${
+      className={`py-20 px-6 ${
         sectionNumber ? 'bg-slate-200 dark:bg-slate-900' : 'bg-gray-50 dark:bg-slate-800'
       }`}
     >
