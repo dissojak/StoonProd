@@ -9,7 +9,7 @@ const Footer = () => {
       <section className="footer-top">
         <div className="lg:relative lg:mb-24 xs:mb-10">
           <Image
-            src="/assets/images/logostoonprod_rec_white.png"
+            src="/assets/images/stoonprod_logo_white_version.png"
             alt="Logo"
             layout="intrinsic"
             width={120}

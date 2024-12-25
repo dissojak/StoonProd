@@ -89,14 +89,22 @@ const Navbar = () => {
               className="list-none inline-block lg:px-5 lg:py-2.5 xs:px-2 xs:py-2"
             >
               <Link
-                href={item.link || `/${item.toLowerCase().replace(/\s+/g, "")}`}
+                href={
+                  typeof item === "string"
+                    ? `/${item.toLowerCase().replace(/\s+/g, "")}`
+                    : item.link
+                }
                 className={`relative py-1.5 hover:text-myRed after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[3px] after:bg-myRed after:transition-all after:duration-300 hover:after:w-full ${
-                  isActive(item.link || `/${item.toLowerCase()}`)
+                  isActive(
+                    typeof item === "string"
+                      ? `/${item.toLowerCase()}`
+                      : item.link
+                  )
                     ? "text-myRed font-bold"
                     : ""
                 }`}
               >
-                {item.name || item}
+                {typeof item === "string" ? item : item.name}
               </Link>
             </li>
           ))}
@@ -130,12 +138,22 @@ const Navbar = () => {
               ].map((item, idx) => (
                 <Link
                   key={idx}
-                  href={item.link || `/${item.toLowerCase().replace(/\s+/g, "")}`}
+                  href={
+                    typeof item === "string"
+                      ? `/${item.toLowerCase().replace(/\s+/g, "")}`
+                      : item.link
+                  }
                   className={`py-2 px-4 block hover:bg-myRed ${
-                    isActive(item.link || `/${item.toLowerCase()}`) ? "bg-myRed" : ""
+                    isActive(
+                      typeof item === "string"
+                        ? `/${item.toLowerCase().replace(/\s+/g, "")}`
+                        : item.link
+                    )
+                      ? "bg-myRed"
+                      : ""
                   }`}
                 >
-                  {item.name || item}
+                  {typeof item === "string" ? item : item.name}
                 </Link>
               ))}
             </div>
