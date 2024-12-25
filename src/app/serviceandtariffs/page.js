@@ -129,19 +129,31 @@ function ServiceAndTariffs() {
         <div className="block dark:hidden transition duration-1000">
           <Image
             src="/assets/images/merchWidth.jpg"
-            alt=""
+            alt="Light Mode Merch"
             className="absolute inset-0 -z-20 h-full w-full object-cover object-center bg-blue-500 bg-opacity-40 filter blur-sm"
             width={1920}
             height={1080}
+            sizes="(max-width: 768px) 400px, (max-width: 1024px) 800px, 1200px"
+            srcSet="
+            /assets/images/merchWidth-small.jpg 400w,
+            /assets/images/merchWidth-medium.jpg 800w,
+            /assets/images/merchWidth-large.jpg 1200w
+          "
           />
         </div>
         <div className="hidden dark:block transition duration-1000">
           <Image
             src="/assets/images/merchWidthDarkMode.png"
-            alt=""
+            alt="Dark Mode Merch"
             className="absolute inset-0 -z-20 h-full w-full object-cover object-center bg-blue-500 bg-opacity-40 filter blur-sm"
             width={1920}
             height={1080}
+            sizes="(max-width: 768px) 400px, (max-width: 1024px) 800px, 1200px"
+            srcSet="
+            /assets/images/merchWidthDarkMode-small.jpg 400w,
+            /assets/images/merchWidthDarkMode-medium.jpg 800w,
+            /assets/images/merchWidthDarkMode-large.jpg 1200w
+          "
           />
         </div>
 

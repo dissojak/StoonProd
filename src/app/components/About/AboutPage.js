@@ -284,6 +284,12 @@ const AboutPage = () => {
             alt="Creative visual content"
             width={1350}
             height={2000}
+            sizes="(max-width: 768px) 400px, (max-width: 1024px) 800px, 1920px"
+            srcSet="
+          /assets/images/merchFaceUp-small.jpg 400w,
+          /assets/images/merchFaceUp-medium.jpg 800w,
+          /assets/images/merchFaceUp-large.jpg 1920w
+        "
           />
         </div>
       </section>
@@ -297,12 +303,25 @@ const AboutPage = () => {
                 src="/assets/images/conentCreationMouhib.png"
                 width={500}
                 height={500}
+                sizes="(max-width: 768px) 300px, (max-width: 1024px) 500px, 500px"
+                srcSet="
+                  /assets/images/conentCreationMouhib-small.jpg 300w,
+                  /assets/images/conentCreationMouhib-medium.jpg 500w,
+                  /assets/images/conentCreationMouhib-large.jpg 500w
+                "
               />
+
               <Image
                 className="object-cover object-center w-64 rounded-md shadow h-96"
                 src="/assets/images/merch.jpg"
                 width={500}
                 height={1000}
+                sizes="(max-width: 768px) 300px, (max-width: 1024px) 500px, 500px"
+                srcSet="
+                  /assets/images/merch-small.jpg 300w,
+                  /assets/images/merch-medium.jpg 500w,
+                  /assets/images/merch-large.jpg 500w
+                "
               />
             </div>
             <h2 className="text-3xl font-semibold text-gray-800 dark:text-teal-400 md:mt-6">

@@ -9,12 +9,19 @@ const TeamMember = ({ imageSrc, name, role, description }) => {
       <div className="relative w-full h-72">
         {/* Image wrapper */}
         <Image
-          alt={`${name}'s photo`}
-          src={imageSrc}
-          className="object-cover h-full w-full opacity-75 transition-opacity group-hover:opacity-40"
-          width={500}
-          height={500}
-        />
+  alt={`${name}'s photo`}
+  src={imageSrc}
+  srcSet={`
+    /assets/images/${imageSrc.split('/').pop().replace(".jpg", "-small.jpg")} 500w,
+    /assets/images/${imageSrc.split('/').pop().replace(".jpg", "-medium.jpg")} 1000w,
+    /assets/images/${imageSrc.split('/').pop().replace(".jpg", "-large.jpg")} 1500w
+  `}
+  sizes="(max-width: 600px) 500px, (max-width: 1200px) 1000px, 100px"
+  className="object-cover h-full w-full opacity-75 transition-opacity group-hover:opacity-40"
+  width={500}
+  height={500}
+/>
+
 
         {/* Text overlay */}
         <div className="absolute inset-0 flex flex-col justify-end p-4">
