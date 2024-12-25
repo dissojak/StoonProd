@@ -44,7 +44,7 @@ const Navbar = () => {
       <nav className="flex items-center justify-between px-4 py-2 xs:px-6 xs:py-4 lg:px-24 lg:py-7.5 text-white">
         <Link href="/" className="flex-shrink-0">
           <Image
-            src="/assets/images/logostoonprod_rec_white.png"
+            src="/assets/images/stoonprod_logo_white_version.png"
             alt="Logo"
             className="relative lg:h-16 lg:mt-auto xs:h-12"
             layout="intrinsic"
