@@ -77,7 +77,7 @@ const Navbar = () => {
         {/* Full menu for lg screens */}
         <ul className="lg:flex space-x-4 xs:hidden lg:space-y-0">
           {[
-            "Home",
+            { name: "Home", link: "/" },
             "About",
             "Service and Tariffs",
             "Clients",
@@ -89,14 +89,14 @@ const Navbar = () => {
               className="list-none inline-block lg:px-5 lg:py-2.5 xs:px-2 xs:py-2"
             >
               <Link
-                href={`/${item.toLowerCase().replace(/\s+/g, "")}`}
+                href={item.link || `/${item.toLowerCase().replace(/\s+/g, "")}`}
                 className={`relative py-1.5 hover:text-myRed after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[3px] after:bg-myRed after:transition-all after:duration-300 hover:after:w-full ${
-                  isActive(`/${item.toLowerCase()}`)
+                  isActive(item.link || `/${item.toLowerCase()}`)
                     ? "text-myRed font-bold"
                     : ""
                 }`}
               >
-                {item}
+                {item.name || item}
               </Link>
             </li>
           ))}
@@ -121,7 +121,7 @@ const Navbar = () => {
             </div>
             <div className="flex flex-col space-y-4 p-4">
               {[
-                "Home",
+                { name: "Home", link: "/" },
                 "About",
                 "Service and Tariffs",
                 "Clients",
@@ -130,12 +130,12 @@ const Navbar = () => {
               ].map((item, idx) => (
                 <Link
                   key={idx}
-                  href={`/${item.toLowerCase().replace(/\s+/g, "")}`}
+                  href={item.link || `/${item.toLowerCase().replace(/\s+/g, "")}`}
                   className={`py-2 px-4 block hover:bg-myRed ${
-                    isActive(`/${item.toLowerCase()}`) ? "bg-myRed" : ""
+                    isActive(item.link || `/${item.toLowerCase()}`) ? "bg-myRed" : ""
                   }`}
                 >
-                  {item}
+                  {item.name || item}
                 </Link>
               ))}
             </div>
