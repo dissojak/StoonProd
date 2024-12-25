@@ -16,7 +16,7 @@ const TeamMember = ({ imageSrc, name, role, description }) => {
     /assets/images/${imageSrc.split('/').pop().replace(".jpg", "-medium.jpg")} 1000w,
     /assets/images/${imageSrc.split('/').pop().replace(".jpg", "-large.jpg")} 1500w
   `}
-  sizes="(max-width: 600px) 500px, (max-width: 1200px) 1000px, 100px"
+  sizes="(max-width: 600px) 500px, (max-width: 1200px) 1000px, 1500px"
   className="object-cover h-full w-full opacity-75 transition-opacity group-hover:opacity-40"
   width={500}
   height={500}
