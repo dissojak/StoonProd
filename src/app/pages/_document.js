@@ -27,7 +27,7 @@ export default function Document() {
         <meta name="twitter:image" content="https://stoonproduction.com/assets/images/logoStoonProduction.png" />
 
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.ico" />
 
         {/* Structured Data (JSON-LD) */}
         <script
