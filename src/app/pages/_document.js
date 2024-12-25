@@ -13,7 +13,7 @@ export default function Document() {
         {/* Open Graph meta tags */}
         <meta
           property="og:title"
-          content="Stoon Production - Videography, Photography, and Web Development"
+          content="moura Stoon Production - Videography, Photography, and Web Development"
         />
         <meta
           property="og:description"
