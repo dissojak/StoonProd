@@ -4,11 +4,6 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata = {
-  title: "Stoon Production | Videography, Photography & Web Development Services",
-  description: "mourad Stoon Production offers videography, photography, and web development services, specializing in creative content solutions and event coverage.",
-};
-
 export default function RootLayout({ children }) {
   
   return (
