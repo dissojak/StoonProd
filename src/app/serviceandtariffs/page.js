@@ -126,7 +126,7 @@ function ServiceAndTariffs() {
             className="absolute inset-0 -z-20 h-full w-full object-cover object-right md:object-center filter blur-sm"
           />
         </div> */}
-        <div className="block dark:hidden transition-all duration-1000">
+        <div className="block dark:hidden transition duration-1000">
           <Image
             src="/assets/images/merchWidth.jpg"
             alt=""
@@ -135,7 +135,7 @@ function ServiceAndTariffs() {
             height={1080}
           />
         </div>
-        <div className="hidden dark:block transition-all duration-1000">
+        <div className="hidden dark:block transition duration-1000">
           <Image
             src="/assets/images/merchWidthDarkMode.png"
             alt=""
