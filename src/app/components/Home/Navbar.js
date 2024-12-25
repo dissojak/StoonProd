@@ -79,7 +79,7 @@ const Navbar = () => {
           {[
             { name: "Home", link: "/" },
             "About",
-            "Service and Tariffs",
+            "ServiceandTariffs",
             "Clients",
             "Blog",
             "Contact",
@@ -131,7 +131,7 @@ const Navbar = () => {
               {[
                 { name: "Home", link: "/" },
                 "About",
-                "Service and Tariffs",
+                "ServiceandTariffs",
                 "Clients",
                 "Blog",
                 "Contact",
