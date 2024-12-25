@@ -21,7 +21,7 @@ export default function Document() {
         />
         <meta
           property="og:image"
-          content="https://stoonproduction.com/assets/images/SEOStoonProductionLogoMetaTag.png"
+          content="https://asset.cloudinary.com/duvougrqx/4dff2013e6ab4508221a470f538d8468"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -40,7 +40,7 @@ export default function Document() {
         />
         <meta
           name="twitter:image"
-          content="https://stoonproduction.com/assets/images/SEOStoonProductionLogoMetaTag.png"
+          content="https://asset.cloudinary.com/duvougrqx/4dff2013e6ab4508221a470f538d8468"
         />
 
         {/* Favicon */}
