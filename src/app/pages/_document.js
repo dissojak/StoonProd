@@ -1,4 +1,3 @@
-// pages/_document.js
 import { Html, Head, Main, NextScript } from 'next/document';
 
 export default function Document() {
@@ -27,8 +26,33 @@ export default function Document() {
         />
         <meta name="twitter:image" content="https://stoonproduction.com/assets/images/logoStoonProduction.png" />
 
-        {/* Favicon and other assets can be added here */}
+        {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
+
+        {/* Structured Data (JSON-LD) */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Stoon Production",
+              "url": "https://stoonproduction.com",
+              "logo": "https://stoonproduction.com/assets/images/logoStoonProduction.png",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+216-23-039-320",
+                "contactType": "Customer Service",
+                "areaServed": "TN",
+                "availableLanguage": "English",
+              },
+              "sameAs": [
+                // "https://www.facebook.com/stoonproduction",
+                "https://www.instagram.com/adem_ben_amor",
+              ]
+            }),
+          }}
+        />
       </Head>
       <body>
         <Main />
