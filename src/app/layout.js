@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Home/Navbar";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -13,6 +14,54 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={inter.className}>
+        <>
+          <Head>
+            <title>
+              Stoon Production | Videography, Photography, and Web Development
+              Services
+            </title>
+
+            {/* Meta description for search engines */}
+            <meta
+              name="description"
+              content="Stoon Production offers top-notch videography, photography, and web development services. We specialize in creative content solutions and event coverage to bring your vision to life."
+            />
+
+            {/* Open Graph meta tags */}
+            <meta
+              property="og:title"
+              content="Stoon Production - Videography, Photography, and Web Development"
+            />
+            <meta
+              property="og:description"
+              content="We provide professional event coverage and creative content solutions."
+            />
+            <meta
+              property="og:image"
+              content="https://stoonproduction.com/assets/images/logoStoonProduction.png"
+            />
+            <meta property="og:url" content="https://stoonproduction.com" />
+            <meta property="og:type" content="website" />
+
+            {/* Twitter Card meta tags */}
+            <meta name="twitter:card" content="summary_large_image" />
+            <meta
+              name="twitter:title"
+              content="Stoon Production | Videography, Photography, and Web Development"
+            />
+            <meta
+              name="twitter:description"
+              content="We offer videography, photography, and web development services to help you stand out."
+            />
+            <meta
+              name="twitter:image"
+              content="https://stoonproduction.com/assets/images/logoStoonProduction.png"
+            />
+
+            {/* Favicon */}
+            <link rel="icon" href="/favicon.ico" />
+          </Head>
+        </>
         {/* <header>
           <Navbar />
         </header> */}
