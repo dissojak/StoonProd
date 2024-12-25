@@ -44,7 +44,7 @@ export default function Document() {
         />
 
         {/* Favicon */}
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.ico" />
 
         {/* Structured Data (JSON-LD) */}
         <script
