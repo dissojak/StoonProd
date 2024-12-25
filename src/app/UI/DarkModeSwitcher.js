@@ -42,7 +42,7 @@ const DarkModeSwitcher = () => {
 
   return (
     <label className="plane-switch">
-      <input type="checkbox" onChange={toggleDarkMode} checked={isDarkMode} />
+      <input type="checkbox" onChange={toggleDarkMode} checked={!isDarkMode} />
       <div className={`plane ${isDarkMode ? "dark-mode" : "light-mode"}`}>
         <div>
           <svg viewBox="0 0 13 13">
