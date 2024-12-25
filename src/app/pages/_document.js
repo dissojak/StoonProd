@@ -21,7 +21,7 @@ export default function Document() {
         />
         <meta
           property="og:image"
-          content="https://opengraph.b-cdn.net/production/images/e997c9e9-e5ef-4b6d-bc28-da7d8f33d049.png?token=IL2KJQQONWZiWzBhGnxemUJdXrrR3GpxusN8L2wtWME&height=630&width=1200&expires=33271102088"
+          content="https://stoonproduction.com/assets/images/SEOStoonProductionLogoMetaTag.png"
         />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -40,7 +40,7 @@ export default function Document() {
         />
         <meta
           name="twitter:image"
-          content="https://opengraph.b-cdn.net/production/images/e997c9e9-e5ef-4b6d-bc28-da7d8f33d049.png?token=IL2KJQQONWZiWzBhGnxemUJdXrrR3GpxusN8L2wtWME&height=630&width=1200&expires=33271102088"
+          content="https://stoonproduction.com/assets/images/SEOStoonProductionLogoMetaTag.png"
         />
 
         {/* Favicon */}
