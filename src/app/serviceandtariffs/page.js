@@ -227,7 +227,7 @@ function ServiceAndTariffs() {
       <footer className="border-t dark:bg-gray-900">
         <div className="container flex items-center justify-between px-6 py-8 mx-auto">
           <p className="text-gray-500 dark:text-teal-600">
-            © 2020-2025 All Rights Reserved.
+            © 2020-2025 All Rights Reserved By Stoon Production.
           </p>
           <p className="font-medium text-gray-700 dark:text-teal-600">
             Terms of Service
