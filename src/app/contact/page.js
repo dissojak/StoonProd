@@ -20,7 +20,7 @@ function Contact() {
               </h3>
               <p className="mt-4 leading-7 text-gray-200 dark:text-gray-300">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
+                industry. Lorem Ipsum has been the industry&apos;s standard dummy
                 text ever since the 1500s.
               </p>
 
