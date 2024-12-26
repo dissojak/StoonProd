@@ -79,9 +79,7 @@ const Navbar = () => {
           {[
             { name: "Home", link: "/" },
             "About",
-            "ServiceandTariffs",
-            "Clients",
-            "Blog",
+            { name: "Tariffs", link: "/serviceandtariffs" },
             "Contact",
           ].map((item, idx) => (
             <li
@@ -131,9 +129,7 @@ const Navbar = () => {
               {[
                 { name: "Home", link: "/" },
                 "About",
-                "ServiceandTariffs",
-                "Clients",
-                "Blog",
+                { name: "Tariffs", link: "/serviceandtariffs" },
                 "Contact",
               ].map((item, idx) => (
                 <Link
