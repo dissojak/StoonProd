@@ -1,7 +1,7 @@
 
 # Stoon Production Website
 
-![Stoon Production Logo](public/assets/images/StoonProductionLogo.png)
+![Stoon Production Logo](public/assets/images/logostoonprod_rec.svg)
 
 Welcome to the **Stoon Production Website**! This project serves as the online portfolio for **Stoon Production**, a creative agency specializing in videography, photography, and web development services. The website is designed to showcase our professional services, highlight featured projects, and provide an easy way for clients to get in touch with us.
 
