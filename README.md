@@ -5,8 +5,8 @@
 
 Welcome to the **Stoon Production Website**! This project serves as the online portfolio for **Stoon Production**, a creative agency specializing in videography, photography, and web development services. The website is designed to showcase our professional services, highlight featured projects, and provide an easy way for clients to get in touch with us.
 
->- **Note:** This website is proprietary to Stoon Production and is not intended for external use or distribution.
- -**Please Note:** This project is strictly for internal use by Stoon Production and should not be used or repurposed by others.
+> **Note:** This website is proprietary to Stoon Production and is not intended for external use or distribution.
+**Please Note:** This project is strictly for internal use by Stoon Production and should not be used or repurposed by others.
 ---
 
 ## Table of Contents
