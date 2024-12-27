@@ -3,7 +3,7 @@ import "./globals.css";
 
 // Using Next.js metadata API for app directory
 export const metadata = {
-  title: "Stoon Production - Videography, Photography, and Web Development",
+  title: "Stoon Production - Videography, Photography, and Web Development Services",
   description:
     "Stoon Production offers top-notch videography, photography, and web development services. We specialize in creative content solutions and event coverage to bring your vision to life.",
   openGraph: {
