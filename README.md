@@ -52,7 +52,7 @@ The project is built using modern technologies:
 - **Tailwind CSS**: For efficient and customizable styling, allowing for rapid UI development.
 - **Vercel**: Deployment platform for fast, reliable hosting.
 
-- - **Express.js** (Upcoming): A backend framework to handle server-side operations and API requests.
+- **Express.js** (Upcoming): A backend framework to handle server-side operations and API requests.
 - **MongoDB** (Upcoming): NoSQL database for storing user inquiries and other dynamic content.
 
 ---
