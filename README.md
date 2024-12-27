@@ -30,6 +30,7 @@ Welcome to the **Stoon Production Website**! This project serves as the online p
 This repository contains the source code for the website, developed with modern technologies for the front-end features. It's designed to be fast, responsive, and visually appealing, with ongoing updates for new functionality.
 
 **Please Note:** This project is developed exclusively for Stoon Production. It is not intended for public use or adaptation by third parties.
+
 ---
 
 ## Features
