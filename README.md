@@ -108,8 +108,8 @@ Here's what's planned for future updates:
 
 Contributions to this project are not open to the public. This repository is strictly maintained for Stoon Production’s internal use. Please do not attempt to contribute or fork this repository for other purposes.
 
-### If you want to help us
-**If you want to help us**
+>**If you want to help us**:
+>
 We welcome contributions to improve the project! To contribute:
 
 1. Fork the repository.
