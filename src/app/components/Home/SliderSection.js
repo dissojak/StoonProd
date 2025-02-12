@@ -3,45 +3,35 @@ import Image from "next/image";
 
 const SliderSection = () => {
   return (
-    <section>
-      <div
-        className="container 
-        mx-auto flex flex-col 
-        md:flex-row items-center justify-between 
-        lg:py-16 xs:py-8 px-4" // Added px-4 to ensure padding on both sides
-      >
-        {/* Image Section */}
-        <div className="lg:w-1/2 xs:w-full">
-          <Image
-            src="/assets/images/filmingGreen.svg"
-            alt="website template image"
-            className="w-full max-w-md mx-auto xs:mt-4 brightness-100 dark:brightness-75 transition duration-1000 filter" // Set max-w-md to limit size on larger screens and ensure full width on small screens
-            width={800}
-            height={500}
-            sizes="(max-width: 640px) 80vw, (max-width: 1024px) 50vw, 40vw"
-          />
-        </div>
+    <section className="text-white py-8 sm:py-12 lg:py-16">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
+          {/* Image Section */}
+          <div className="w-full lg:w-1/2">
+            <Image
+              src="/assets/images/filmingGreen.svg"
+              alt="Film production illustration"
+              className="w-full max-w-lg mx-auto brightness-100 dark:brightness-75 transition duration-1000 filter"
+              width={800}
+              height={500}
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 40vw"
+              priority
+            />
+          </div>
 
-        {/* Text Section */}
-        <div className="lg:mr-20 md:w-1/2 text-white text-right xs:mt-6 md:mt-0">
-          <div className="space-y-6">
-            <h1 className="font-bold lg:text-5xl mb-4 text-myYellow xs:text-3xl">
-              FILM <br /> PRODUCTION
+          {/* Text Section */}
+          <div className="w-full lg:w-1/2 text-center lg:text-right z-10">
+            <h1 className="font-bold text-3xl sm:text-4xl lg:text-5xl mb-4 text-myYellow">
+              FILM <br className="hidden sm:inline" /> PRODUCTION
             </h1>
-            <p className="xs:text-base sm:text-sm md:text-base lg:text-lg xl:text-xl leading-relaxed text-right">
-              Bringing your vision to life through
-              <br className="lg:hidden" />
-              creative video production,
-              <br />
-              stunning photography, and <br className="lg:hidden" />
-              cutting-edge content creation.
-              <br />
-              We craft stories that resonate <br className="lg:hidden" /> and
-              websites that inspire.
+            <p className="text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed max-w-xl mx-auto lg:ml-auto lg:mr-0">
+              Bringing your vision to life through creative video production,
+              stunning photography, and cutting-edge content creation. We craft
+              stories that resonate and websites that inspire.
             </p>
 
             {/* Button Section */}
-            <div className="relative flex justify-start lg:ml-16 xs:mt-16">
+            <div className="lg:flex lg:justify-start mt-8 sm:mt-12">
               <Link
                 href="https://www.instagram.com/adem_ben_amor/"
                 className="inline-flex items-center bg-myYellow text-black rounded-3xl 
