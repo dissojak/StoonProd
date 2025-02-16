@@ -9,7 +9,6 @@ import WebDevelopmentSection from "./components/Home/WebDevelopmentSection";
 import Footer from "./UI/Footer";
 import ServiceNavigation from "./components/Home/ServiceNavigation";
 import LogoSlider from "./UI/LogoSlider";
-import Navbarre from "./UI/NavBarre";
 
 export default function Home() {
   return (
@@ -46,7 +45,6 @@ export default function Home() {
             <li></li>
           </ul>
           <Navbar />
-          {/* <Navbarre/> */}
           <SliderSection />
         </div>
         <LogoSlider />
