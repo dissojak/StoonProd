@@ -8,45 +8,56 @@ import ContentCreationSection from "./components/Home/ContentCreationSection";
 import WebDevelopmentSection from "./components/Home/WebDevelopmentSection";
 import Footer from "./UI/Footer";
 import ServiceNavigation from "./components/Home/ServiceNavigation";
-
+import LogoSlider from "./UI/LogoSlider";
+import Navbarre from "./UI/NavBarre";
 
 export default function Home() {
   return (
     <Fragment>
-      <div
+      <div className="min-h-screen bg-white dark:bg-gray-950">
+        {/* <div
         className="hero_area 
-        lg:rounded-br-[350px] rounded-tl-none rounded-tr-none rounded-bl-none 
+        lg:rounded-br-[350px] 
+        rounded-tl-none rounded-tr-none rounded-bl-none 
         xs:rounded-br-[175px]
         transition-colors duration-1000 transform dark:bg-[#112C30]"
-      >
-        {/* lg:min-h-[88vh] xs:min-h-[83vh]
+      > */}
+        <div
+          className="hero_area 
+        rounded-tl-none rounded-tr-none rounded-bl-none 
+        transition-colors duration-1000 transform dark:bg-[#112C30]"
+        >
+          {/* lg:min-h-[88vh] xs:min-h-[83vh]
         rounded-br-[350px] rounded-tl-none rounded-tr-none rounded-bl-none 
         xs:rounded-br-[200px] xs:rounded-tl-none xs:rounded-tr-none xs:rounded-bl-none" */}
-        <div className=" bg-[#112C30] h-16 w-auto -mb-4 xs:hidden ">
-          <div className="text-white p-4">instagram</div>
+          <div className=" bg-[#112C30] h-16 w-auto -mb-4 xs:hidden ">
+            <div className="text-white p-4">instagram</div>
+          </div>
+          <ul className="circles">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+          <Navbar />
+          {/* <Navbarre/> */}
+          <SliderSection />
         </div>
-        <ul className="circles">
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-        <Navbar />
-        <SliderSection />
+        <LogoSlider />
+        <HeroSection />
+        <ServiceNavigation />
+        <VideomakingSection />
+        <PhotographySection />
+        <ContentCreationSection />
+        <WebDevelopmentSection />
+        <Footer />
       </div>
-      <HeroSection />
-      <ServiceNavigation/>
-      <VideomakingSection />
-      <PhotographySection />
-      <ContentCreationSection />
-      <WebDevelopmentSection />
-      <Footer />
     </Fragment>
   );
 }
