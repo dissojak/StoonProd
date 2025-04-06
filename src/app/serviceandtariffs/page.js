@@ -2,6 +2,7 @@ import Head from "next/head";
 import Navbar from "../components/Home/Navbar";
 import Image from "next/image";
 import Service from "../components/Services/Services";
+import MaintenanceSection from "../UI/MaintenanceSection";
 
 function ServiceAndTariffs() {
   const eventCoverageService = {
@@ -244,11 +245,17 @@ function ServiceAndTariffs() {
           </div>
         </div>
       </div>
-      <h1 className="text-5xl text-red-500 font-semibold text-center p-2 pt-4">
-        {" "}
-        ALL THIS IS FAKE DATA ! <br/>
-        UPDATES COMMING SOON
+      {/* Maintenance notice section with adjustable height */}
+      {/* Warning header message for fake/demo content */}
+      <h1 className="text-4xl sm:text-5xl font-bold text-center text-red-600 dark:text-red-400 p-6">
+        🚨 All This Is Fake Data ! <br />
+        <span className="text-xl sm:text-2xl text-gray-700 dark:text-gray-300">
+          Updates Coming Soon...
+        </span>
       </h1>
+      <MaintenanceSection sectionHeight="40vh" />
+
+      {/* Service and Tariff sections */}
       <Service sectionNumber={0} serviceData={eventCoverageService} />
       <hr />
       <Service sectionNumber={1} serviceData={videoProductionService} />

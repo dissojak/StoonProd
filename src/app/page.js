@@ -9,6 +9,7 @@ import WebDevelopmentSection from "./components/Home/WebDevelopmentSection";
 import Footer from "./UI/Footer";
 import ServiceNavigation from "./components/Home/ServiceNavigation";
 import LogoSlider from "./UI/LogoSlider";
+import MaintenanceSection from "./UI/MaintenanceSection";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         xs:rounded-br-[175px]
         transition-colors duration-1000 transform dark:bg-[#112C30]"
       > */}
+        {/* <div className="h-16 bg-white dark:bg-gray-950"> */}
         <div
           className="hero_area 
         rounded-tl-none rounded-tr-none rounded-bl-none 
