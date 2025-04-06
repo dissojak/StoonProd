@@ -1,6 +1,7 @@
 import Head from "next/head";
 import Navbar from "../components/Home/Navbar";
 import Image from "next/image";
+import Service from "../components/Services/Services";
 
 function ServiceAndTariffs() {
   const eventCoverageService = {
@@ -135,7 +136,10 @@ function ServiceAndTariffs() {
           property="og:url"
           content="https://www.stoonproduction.com/service-and-tariffs"
         />
-        <meta name="twitter:title" content="Service and Tariffs | Stoon Production - Tunisia" />
+        <meta
+          name="twitter:title"
+          content="Service and Tariffs | Stoon Production - Tunisia"
+        />
         <meta
           name="twitter:description"
           content="Explore our event coverage, video production, and web development services with detailed pricing plans. Choose the best option for your needs. Proudly serving Tunisia."
@@ -240,6 +244,27 @@ function ServiceAndTariffs() {
           </div>
         </div>
       </div>
+      <h1 className="text-5xl text-red-500 font-semibold text-center p-2 pt-4">
+        {" "}
+        ALL THIS IS FAKE DATA ! <br/>
+        UPDATES COMMING SOON
+      </h1>
+      <Service sectionNumber={0} serviceData={eventCoverageService} />
+      <hr />
+      <Service sectionNumber={1} serviceData={videoProductionService} />
+      <hr />
+      <Service sectionNumber={0} serviceData={webDevelopmentService} />
+
+      <footer className="border-t dark:bg-gray-900">
+        <div className="container flex items-center justify-between px-6 py-8 mx-auto">
+          <p className="text-gray-500 dark:text-teal-600">
+            © 2020-2025 All Rights Reserved By Stoon Production.
+          </p>
+          <p className="font-medium text-gray-700 dark:text-teal-600">
+            Terms of Service
+          </p>
+        </div>
+      </footer>
     </>
   );
 }

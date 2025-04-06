@@ -10,6 +10,25 @@ const AboutPage = () => {
     <div>
       <header className="bg-slate-300 dark:bg-gray-800 transition-colors duration-1000">
         <Navbar />
+
+        {/* Start of the maintenance section */}
+        <section className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+          <div className="bg-yellow-100 p-8 rounded-lg shadow-xl text-center max-w-4xl mx-auto">
+            <h1 className="text-5xl text-red-600 font-bold mb-4">
+              🚧 Website Under Maintenance 🚧
+            </h1>
+            <p className="text-lg text-gray-700 mb-6">
+              We're working hard to bring you new updates and features! <br />
+              Thank you for your patience, and stay tuned for exciting things
+              ahead!
+            </p>
+            <p className="text-sm text-gray-500">
+              Updates will be available soon.
+            </p>
+          </div>
+        </section>
+        {/* End of the maintenance section */}
+
         <section
           className="flex items-center justify-center"
           style={{ height: "500px" }}
