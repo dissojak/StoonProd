@@ -171,7 +171,7 @@ const Navbar = () => {
 
       {/* Space for the Dark Mode Switcher */}
       <span className="absolute lg:top-[20vh] xs:top-[15vh] right-0 z-60">
-        <DarkModeSwitcher />
+        {/* <DarkModeSwitcher /> */}
       </span>
     </Fragment>
   );
