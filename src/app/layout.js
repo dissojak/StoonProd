@@ -1,15 +1,21 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
 
+import { Poppins } from "next/font/google";
+import { ThemeProvider } from "next-themes";
+import ScrollToTop from "./UI/ScrollToTop";
+
 // Using Next.js metadata API for app directory
 export const metadata = {
-  title: "Stoon Production - Videography, Photography, and Web Development Services",
+  title:
+    "Best Videographer & Multimedia Production in Tunisia | Stoon Production",
   description:
-    "Stoon Production offers top-notch videography, photography, and web development services. We specialize in creative content solutions and event coverage to bring your vision to life.",
+    "Looking for a videographer in Tunisia? Stoon Production offers professional videography, photography, and web development services for events and businesses. We specialize in creative content solutions and event coverage to bring your vision to life.",
   openGraph: {
-    title: "Stoon Production - Videography, Photography, and Web Development",
+    title:
+      "Best Videographer & Multimedia Production in Tunisia | Stoon Production",
     description:
-      "We provide professional event coverage and creative content solutions.",
+      "Looking for a best studio production in Tunisia? We provide professional solutions.",
     url: "https://stoonproduction.com",
     type: "website",
     images: [
@@ -22,9 +28,10 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Stoon Production | Videography, Photography, and Web Development",
+    title:
+      "Best Videographer & Multimedia Production in Tunisia | Stoon Production",
     description:
-      "We offer videography, photography, and web development services to help you stand out.",
+      "Stoon Production is a creative studio offering freelance videography, photography, and multimedia production in Tunisia. Capture your moments with the best Tunisian video team.",
     images: [
       {
         url: "https://stoonproduction.com/assets/images/SEOStoonProductionLogoMetaTag.png",
@@ -53,15 +60,29 @@ export const metadata = {
         "https://www.instagram.com/adem_ben_amor",
       ],
     }),
+    "geo.region": "TN",
   },
 };
 
 const inter = Inter({ subsets: ["latin"] });
+const font = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        <ThemeProvider
+          attribute="class"
+          enableSystem={true}
+          defaultTheme="system"
+        >
+          {children}
+          <ScrollToTop />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
