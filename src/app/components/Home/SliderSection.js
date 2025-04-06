@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import BackgroundPaths from "@/app/UI/BackgroundPaths";
+import MaintenanceSection from "@/app/UI/MaintenanceSection";
 
 const SliderSection = () => {
   return (
     <BackgroundPaths>
+      <MaintenanceSection sectionHeight="40vh" />
       <section className="text-white py-8 sm:py-12 lg:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">

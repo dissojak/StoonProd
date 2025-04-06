@@ -4,12 +4,14 @@ import Navbar from "../Home/Navbar";
 import TeamMember from "@/app/UI/TeamMember";
 import TeamMembers from "@/app/UI/TeamMembers";
 import Image from "next/image";
+import MaintenanceSection from "@/app/UI/MaintenanceSection";
 
 const AboutPage = () => {
   return (
     <div>
       <header className="bg-slate-300 dark:bg-gray-800 transition-colors duration-1000">
         <Navbar />
+        <MaintenanceSection sectionHeight="40vh" />
         <section
           className="flex items-center justify-center"
           style={{ height: "500px" }}

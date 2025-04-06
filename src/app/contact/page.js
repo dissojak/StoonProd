@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Home/Navbar";
+import MaintenanceSection from "../UI/MaintenanceSection";
 
 function Contact() {
   return (
@@ -168,6 +169,7 @@ function Contact() {
           </div>
         </div>
       </section>
+      <MaintenanceSection sectionHeight="40vh" />
       <footer className="border-t dark:bg-gray-900">
         <div className="container flex items-center justify-between px-6 py-8 mx-auto">
           <p className="text-gray-500 dark:text-teal-600">
