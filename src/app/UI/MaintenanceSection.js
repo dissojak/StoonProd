@@ -12,7 +12,7 @@ const MaintenanceSection = ({ sectionHeight }) => {
           🚧 Website Under Maintenance 🚧
         </h1>
         <p className="text-lg text-gray-700 dark:text-amber-200 mb-6">
-          We`&apos;`re working hard to bring you new updates and features! <br />
+          We&apos;re working hard to bring you new updates and features! <br />
           Thank you for your patience, and stay tuned for exciting things ahead!
         </p>
         <p className="text-sm text-gray-500 dark:text-amber-300">
