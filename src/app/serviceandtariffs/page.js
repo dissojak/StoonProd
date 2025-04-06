@@ -1,7 +1,4 @@
-import React from "react";
-import Service from "../components/Services/Services";
-import Navbar from "../components/Home/Navbar";
-import Image from "next/image";
+import Head from "next/head";
 
 function ServiceAndTariffs() {
   const eventCoverageService = {
@@ -113,19 +110,43 @@ function ServiceAndTariffs() {
 
   return (
     <>
-      {/* Add this new section above the tariffs */}
+      <Head>
+        <title>Service and Tariffs | Stoon Production - Tunisia</title>
+        <meta
+          name="description"
+          content="Explore our event coverage, video production, and web development services with detailed pricing plans. Choose the best option for your needs. Proudly serving Tunisia."
+        />
+        <meta
+          name="keywords"
+          content="event coverage Tunisia, video production Tunisia, web development Tunisia, pricing plans, professional services, Stoon Production"
+        />
+        <meta
+          property="og:title"
+          content="Service and Tariffs | Stoon Production - Tunisia"
+        />
+        <meta
+          property="og:description"
+          content="Explore our event coverage, video production, and web development services with detailed pricing plans. Choose the best option for your needs. Proudly serving Tunisia."
+        />
+        <meta property="og:image" content="/assets/images/merchWidth.jpg" />
+        <meta
+          property="og:url"
+          content="https://www.stoonproduction.com/service-and-tariffs"
+        />
+        <meta name="twitter:title" content="Service and Tariffs | Stoon Production - Tunisia" />
+        <meta
+          name="twitter:description"
+          content="Explore our event coverage, video production, and web development services with detailed pricing plans. Choose the best option for your needs. Proudly serving Tunisia."
+        />
+        <meta name="twitter:image" content="/assets/images/merchWidth.jpg" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
 
+      {/* Your component JSX code */}
       <div className="absolute w-full z-50">
         <Navbar />
       </div>
       <div className="relative py-24 sm:py-32">
-        {/* <div className="absolute inset-0 bg-blue-500 bg-opacity-40 -z-10">
-          <img
-            src="/assets/images/merchWidth.jpg"
-            alt=""
-            className="absolute inset-0 -z-20 h-full w-full object-cover object-right md:object-center filter blur-sm"
-          />
-        </div> */}
         <div className="block dark:hidden transition duration-1000">
           <Image
             src="/assets/images/merchWidth.jpg"
@@ -165,7 +186,7 @@ function ServiceAndTariffs() {
             <p className="mt-6 text-lg leading-8 text-gray-300">
               We specialize in video creation, photography, and web development.
               Our services ensure that your brand is professionally showcased
-              across various platforms.
+              across various platforms, and we are proud to serve Tunisia.
             </p>
           </div>
           <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
@@ -191,49 +212,32 @@ function ServiceAndTariffs() {
               </div>
               <div className="flex flex-col-reverse">
                 <dt className="text-base leading-7 text-gray-300">
-                  Team Members
+                  Projects Delivered
                 </dt>
                 <dd className="text-2xl font-bold leading-9 tracking-tight text-white">
-                  20+
+                  210+
                 </dd>
               </div>
               <div className="flex flex-col-reverse">
                 <dt className="text-base leading-7 text-gray-300">
-                  Hours per Week
+                  Creative Team Members
                 </dt>
                 <dd className="text-2xl font-bold leading-9 tracking-tight text-white">
-                  40+
+                  18
                 </dd>
               </div>
               <div className="flex flex-col-reverse">
                 <dt className="text-base leading-7 text-gray-300">
-                  Paid Time Off
+                  Years in Business
                 </dt>
                 <dd className="text-2xl font-bold leading-9 tracking-tight text-white">
-                  Unlimited
+                  5
                 </dd>
               </div>
             </dl>
           </div>
         </div>
       </div>
-
-      <Service sectionNumber={0} serviceData={eventCoverageService} />
-      <hr />
-      <Service sectionNumber={1} serviceData={videoProductionService} />
-      <hr />
-      <Service sectionNumber={0} serviceData={webDevelopmentService} />
-
-      <footer className="border-t dark:bg-gray-900">
-        <div className="container flex items-center justify-between px-6 py-8 mx-auto">
-          <p className="text-gray-500 dark:text-teal-600">
-            © 2020-2025 All Rights Reserved By Stoon Production.
-          </p>
-          <p className="font-medium text-gray-700 dark:text-teal-600">
-            Terms of Service
-          </p>
-        </div>
-      </footer>
     </>
   );
 }
