@@ -1,4 +1,6 @@
 import Head from "next/head";
+import Navbar from "../components/Home/Navbar";
+import Image from "next/image";
 
 function ServiceAndTariffs() {
   const eventCoverageService = {
