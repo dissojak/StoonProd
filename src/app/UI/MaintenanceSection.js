@@ -7,7 +7,7 @@ const MaintenanceSection = ({ sectionHeight }) => {
       style={{ minHeight: sectionHeight }}
     >
       {/* Section container for the maintenance message */}
-      <div className="bg-yellow-100 dark:bg-amber-600/30 p-6 sm:p-8 rounded-lg shadow-xl text-center max-w-4xl mx-4 sm:mx-auto border dark:border-amber-500">
+      <div className="bg-yellow-100 dark:bg-amber-600/30 p-6 sm:p-8 rounded-lg shadow-xl text-center max-w-4xl mx-8 my-12 sm:mx-auto border dark:border-amber-500">
         <h1 className="text-3xl sm:text-4xl md:text-5xl text-red-600 dark:text-amber-400 font-bold mb-4">
           🚧 Website Under Maintenance 🚧
         </h1>
