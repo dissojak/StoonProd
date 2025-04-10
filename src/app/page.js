@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import Navbar from "./components/Home/Navbar";
+import Navbar from "./UI/Header/Navbar";
 import SliderSection from "./components/Home/SliderSection";
 import HeroSection from "./components/Home/HeroSection";
 import VideomakingSection from "./components/Home/VideomakingSection";
@@ -10,6 +10,8 @@ import Footer from "./UI/Footer";
 import ServiceNavigation from "./components/Home/ServiceNavigation";
 import LogoSlider from "./UI/LogoSlider";
 import MaintenanceSection from "./UI/MaintenanceSection";
+import Header from "./UI/Header/Header";
+import Services from "./components/Home/Services";
 
 export default function Home() {
   return (
@@ -26,7 +28,7 @@ export default function Home() {
         <div
           className="hero_area 
         rounded-tl-none rounded-tr-none rounded-bl-none 
-        transition-colors duration-1000 transform dark:bg-[#112C30]"
+        transition-colors duration-1000 transform dark:bg-[#318a87]"
         >
           {/* lg:min-h-[88vh] xs:min-h-[83vh]
         rounded-br-[350px] rounded-tl-none rounded-tr-none rounded-bl-none 
@@ -46,12 +48,14 @@ export default function Home() {
             <li></li>
             <li></li>
           </ul>
-          <Navbar />
+          {/* <Header/> */}
+          {/* <Navbar /> */}
           <SliderSection />
         </div>
         <LogoSlider />
         <HeroSection />
-        <ServiceNavigation />
+        {/* <ServiceNavigation /> */}
+        <Services/>
         <VideomakingSection />
         <PhotographySection />
         <ContentCreationSection />

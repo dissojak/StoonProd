@@ -6,8 +6,8 @@ import MaintenanceSection from "@/app/UI/MaintenanceSection";
 const SliderSection = () => {
   return (
     <BackgroundPaths>
-      <MaintenanceSection sectionHeight="40vh" />
-      <section className="text-white py-8 sm:py-12 lg:py-16">
+      {/* <MaintenanceSection sectionHeight="40vh" /> */}
+      <section className="text-white flex items-center xs:min-h-screen sm:min-h-[110vh] lg:min-h-screen">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
             {/* Image Section */}
@@ -35,7 +35,7 @@ const SliderSection = () => {
               </p>
 
               {/* Button Section */}
-              <div className="lg:flex lg:justify-start mt-8 sm:mt-12">
+              <div className="lg:flex lg:justify-start mt-8 sm:mt-4 sm:mb-12">
                 <Link
                   href="https://www.instagram.com/adem_ben_amor/"
                   className="inline-flex items-center bg-myYellow text-black rounded-3xl 

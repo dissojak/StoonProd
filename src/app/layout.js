@@ -6,6 +6,7 @@ import { ThemeProvider } from "next-themes";
 import ScrollToTop from "./UI/ScrollToTop";
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import Header from "./UI/Header/Header";
 
 // Using Next.js metadata API for app directory
 export const metadata = {
@@ -75,12 +76,13 @@ const font = Poppins({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={font.className}>
         <ThemeProvider
           attribute="class"
           enableSystem={true}
           defaultTheme="system"
         >
+          <Header />
           {children}
           <ScrollToTop />
           {/* Insert SpeedInsights component that belong to vercel */}

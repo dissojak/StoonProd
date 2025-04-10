@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { useState, useEffect, useRef, Fragment } from "react";
-import DarkModeSwitcher from "../../UI/DarkModeSwitcher";
+import DarkModeSwitcher from "../DarkModeSwitcher";
 import Image from "next/image";
 
 const Navbar = () => {
