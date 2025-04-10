@@ -19,17 +19,11 @@ const WebDevelopmentSection = () => {
         </div>
         <div className="md:w-1/2">
           <Image
-            src="/assets/images/webdev.jpg"
+            src="/assets/images/webDev.svg"
             alt="Web Development"
             width={600}
             height={400}
             className="w-full max-w-xs mx-auto rounded-3xl"
-            sizes="(max-width: 768px) 300px, (max-width: 1024px) 500px, 600px"
-            srcSet="
-              /assets/images/webdev-small.jpg 300w,
-              /assets/images/webdev-medium.jpg 500w,
-              /assets/images/webdev-large.jpg 600w
-            "
           />
         </div>
       </div>

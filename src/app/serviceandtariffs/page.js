@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Navbar from "../components/Home/Navbar";
+import Navbar from "../UI/Header/Navbar";
 import Image from "next/image";
 import Service from "../components/Services/Services";
 import MaintenanceSection from "../UI/MaintenanceSection";
@@ -151,7 +151,7 @@ function ServiceAndTariffs() {
 
       {/* Your component JSX code */}
       <div className="absolute w-full z-50">
-        <Navbar />
+        {/* <Navbar /> */}
       </div>
       <div className="relative py-24 sm:py-32">
         <div className="block dark:hidden transition duration-1000">

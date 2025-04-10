@@ -1,13 +1,13 @@
 import React from "react";
-import Navbar from "../components/Home/Navbar";
+import Navbar from "../UI/Header/Navbar";
 import MaintenanceSection from "../UI/MaintenanceSection";
 
 function Contact() {
   return (
     <>
-      <span className="bg-teal-500 w-full h-full block">
-        <Navbar />
-      </span>
+      <div className="bg-teal-500 w-full h-24 block">
+        {/* <Navbar /> */}
+      </div>
       <section className="bg-white text-black py-20 dark:bg-gray-950 dark:text-white">
         <div className="max-w-screen-lg p-5 m-auto sm:mx-20">
           <div className="grid grid-cols-1 md:grid-cols-12 border border-gray-600 dark:border-teal-400">

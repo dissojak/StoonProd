@@ -7,7 +7,7 @@ const VideomakingSection = () => {
       className="bg-white text-black dark:bg-gray-900 dark:text-white py-20"
     >
       <div className="container mx-auto flex flex-col md:flex-row items-center">
-        <div className="md:w-1/2">
+        {/* <div className="md:w-1/2">
           <Image
             src="/assets/images/video.jpg"
             alt="Video Production"
@@ -20,6 +20,15 @@ const VideomakingSection = () => {
               /assets/images/video-medium.jpg 500w,
               /assets/images/video-large.jpg 600w
             "
+          />
+        </div> */}
+        <div className="md:w-1/2">
+          <Image
+            src="/assets/images/videographer.svg"
+            alt="Video Production"
+            width={600}
+            height={400}
+            className="w-full max-w-xs mx-auto rounded-3xl"
           />
         </div>
 
