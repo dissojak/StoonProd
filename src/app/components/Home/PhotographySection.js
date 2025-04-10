@@ -28,8 +28,8 @@ const PhotographySection = () => {
         </div> */}
         <div className="md:w-1/2">
           <Image
-            src="/assets/images/photography.svg"
-            alt="Web Development"
+            src="/assets/images/Photography.svg"
+            alt="Photography"
             width={600}
             height={400}
             className="w-full max-w-xs mx-auto rounded-3xl"
