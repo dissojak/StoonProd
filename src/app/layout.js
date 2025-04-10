@@ -11,7 +11,7 @@ import Header from "./UI/Header/Header";
 // Using Next.js metadata API for app directory
 export const metadata = {
   title:
-    "Best Videographer & Multimedia Production in Tunisia | Stoon Production",
+    "Stoon Production | Best Videographer & Multimedia Production in Tunisia",
   description:
     "Looking for a videographer in Tunisia? Stoon Production offers professional videography, photography, and web development services for events and businesses. We specialize in creative content solutions and event coverage to bring your vision to life.",
   openGraph: {
