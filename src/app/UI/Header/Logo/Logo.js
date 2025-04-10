@@ -12,7 +12,7 @@ const Logo = () => {
         width={60}
         height={100}
       />
-      Stoon Production
+      <span className="xs:hidden sm:block">Stoon Production</span>
     </Link>
   );
 };
