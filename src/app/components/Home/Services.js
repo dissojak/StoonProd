@@ -56,7 +56,7 @@ const Services = () => {
               </p>
               <div className="flex items-center justify-center">
                 <Link
-                  href="/"
+                  href={service.id}
                   className="text-center text-lg group duration-300 ease-in-out font-medium text-primary mt-2 overflow-hidden flex items-center relative after:absolute after:w-full after:h-px after:bg-primary after:bottom-0 after:right-0 after:translate-x-full hover:after:translate-x-0"
                 >
                   Learn More
