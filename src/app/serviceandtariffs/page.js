@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Navbar from "../UI/Header/Navbar";
 import Image from "next/image";
 import Service from "../components/Services/Services";
 import MaintenanceSection from "../UI/MaintenanceSection";
