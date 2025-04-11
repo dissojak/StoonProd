@@ -12,7 +12,7 @@ const NewFooter = () => {
             </div>
             <p class="text-center text-gray-200">
               Building trust with clients worldwide. Have a question or need
-              assistance? <br /> Contact us – we're here to support your
+              assistance? <br /> Contact us – we&apos;re here to support your
               creative and business needs.
             </p>
 
