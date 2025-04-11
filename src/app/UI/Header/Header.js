@@ -56,7 +56,7 @@ const Header = () => {
             ))}
           </nav>
           <div className="flex items-center gap-4">
-            <Link href="#" className="text-lg font-medium hover:text-myRed text-white">
+            <Link href="#" className="xs:text-xs sm:text-lg font-medium hover:text-myRed text-white">
               <Icon
                 icon="solar:phone-bold"
                 className="text-myRed text-3xl inline-block me-2"

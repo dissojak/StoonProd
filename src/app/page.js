@@ -6,12 +6,13 @@ import VideomakingSection from "./components/Home/VideomakingSection";
 import PhotographySection from "./components/Home/PhotographySection";
 import ContentCreationSection from "./components/Home/ContentCreationSection";
 import WebDevelopmentSection from "./components/Home/WebDevelopmentSection";
-import Footer from "./UI/Footer";
+import Footer from "./UI/Footers/Footer";
 import ServiceNavigation from "./components/Home/ServiceNavigation";
 import LogoSlider from "./UI/LogoSlider";
 import MaintenanceSection from "./UI/MaintenanceSection";
 import Header from "./UI/Header/Header";
 import Services from "./components/Home/Services";
+import NewFooter from "./UI/Footers/NewFooter";
 
 export default function Home() {
   return (
@@ -60,7 +61,8 @@ export default function Home() {
         <PhotographySection />
         <ContentCreationSection />
         <WebDevelopmentSection />
-        <Footer />
+        {/* <Footer /> */}
+        <NewFooter />
       </div>
     </Fragment>
   );
