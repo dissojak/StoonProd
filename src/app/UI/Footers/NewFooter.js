@@ -198,8 +198,8 @@ const NewFooter = () => {
       <div class="py-4 bg-teal-100">
         <div class="flex items-center justify-center">
           <span class="block text-center text-sm text-gray-800">
-            © 2022 All Rights Reserved by
-            <a href="https://stoonproduction.com/"> StoonProduction</a>
+            © 2020 All Rights Reserved by
+            <a href="https://stoonproduction.com/"> Stoon Production</a>
           </span>
         </div>
       </div>
