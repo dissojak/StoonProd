@@ -1,6 +1,6 @@
 const VideoContent = () => {
   return (
-    <section className="relative bg-gray-100 dark:bg-gray-800 my-32 text-black dark:text-white">
+    <section className="relative bg-gray-100 dark:bg-gray-800 my-32 dark:my-10 text-black dark:text-white">
       <div className="mx-auto w-full max-w-7xl px-5 py-16 md:px-10 md:py-24 lg:py-32">
         <div className="mx-auto mb-12 w-full max-w-3xl text-center md:mb-16 lg:mb-20">
           <h1 className="mb-4 text-4xl font-semibold md:text-6xl">
