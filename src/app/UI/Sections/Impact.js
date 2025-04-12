@@ -33,7 +33,7 @@ const ImpactSection = () => {
                   Video. Web. Visuals.
                 </h2>
                 <p className="mt-1 text-sm sm:text-base font-light text-gray-400 dark:text-gray-400">
-                  Real stories. Real impact. <br className="sm:block xs:hidden"/> Powered by Stoon Production.
+                  Real stories. Real impact. <br className="sm:hidden xs:block"/> Powered by Stoon Production.
                 </p>
               </div>
               <div className="absolute -bottom-10 md:-bottom-20 -right-16 sm:w-32 sm:h-32 lg:w-64 lg:h-64 bg-teal-500 -rotate-12 rounded-lg border-teal-700 border-r-4 border-b-8 max-sm:hidden" />
