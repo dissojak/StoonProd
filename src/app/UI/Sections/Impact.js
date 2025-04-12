@@ -1,6 +1,6 @@
 const ImpactSection = () => {
     return (
-      <div className="p-10 sm:p-10 m-10 rounded-3xl bg-slate-100 dark:bg-gray-900 dark:text-white  text-black flex items-center justify-center overflow-hidden shadow-2xl">
+      <div className="p-10 sm:p-10 xs:m-5 sm:m-10 rounded-3xl bg-slate-100 dark:bg-gray-900 dark:text-white  text-black flex items-center justify-center overflow-hidden shadow-2xl">
         <div className="w-full max-w-6xl px-4 sm:px-6">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             <div className="flex flex-col justify-center text-center md:text-left z-10">
