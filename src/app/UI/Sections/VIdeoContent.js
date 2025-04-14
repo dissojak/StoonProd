@@ -1,4 +1,15 @@
+"use client";
+import { useState } from "react";
+import useMedia from "use-media";
+
 const VideoContent = () => {
+  const youtubeVideoId = "yNt29Kn-wBQ"; // Your short video ID
+  const youtubeVideoIdXL = "dQw4w9WgXcQ"; // Your wide video ID
+  const [showVideo, setShowVideo] = useState(false);
+  const isMediumOrLarger = useMedia({ minWidth: 768 }); // md breakpoint
+
+  const selectedVideoId = isMediumOrLarger ? youtubeVideoIdXL : youtubeVideoId;
+
   return (
     <section
       className="relative bg-gray-100 dark:bg-gray-900 text-black dark:text-white"
@@ -25,8 +36,8 @@ const VideoContent = () => {
             >
               Contact Us
             </a>
-            <a
-              href="#"
+            <button
+              onClick={() => setShowVideo(true)}
               className="flex items-center justify-center rounded-xl border border-solid border-teal-500 px-6 py-3 font-semibold text-teal-500 shadow-[rgb(26,132,112)_6px_6px]"
             >
               <img
@@ -39,17 +50,49 @@ const VideoContent = () => {
                 }}
               />
               <p className="text-black dark:text-white">Watch Our Work</p>
-            </a>
+            </button>
           </div>
         </div>
-        <div className="relative mx-auto h-[512px]">
-          <img
-            src="/assets/images/tealGraphic.png"
-            alt="Commercial Videography"
-            className="inline-block h-full w-full rounded-xl object-cover sm:rounded-2xl"
-          />
-          <div className="absolute bottom-0 left-4 right-0 top-4 -z-10 h-full w-full rounded-2xl bg-black opacity-40 dark:opacity-60"></div>
-        </div>
+        {!showVideo ? (
+          <div className="relative mx-auto h-[512px]">
+            <img
+              src="/assets/images/tealGraphic.png"
+              alt="Commercial Videography"
+              className="inline-block h-full w-full rounded-xl object-cover sm:rounded-2xl"
+            />
+            <div className="absolute bottom-0 left-4 right-0 top-4 -z-10 h-full w-full rounded-2xl bg-black opacity-40 dark:opacity-60"></div>
+          </div>
+        ) : (
+          <>
+            {/* Wide video for larger screens */}
+            {isMediumOrLarger && (
+              <div className="relative mx-auto w-full max-w-3xl aspect-video overflow-hidden rounded-xl shadow-lg">
+                <iframe
+                  src={`https://www.youtube.com/embed/${selectedVideoId}?autoplay=1&loop=1&playlist=${selectedVideoId}&controls=0&modestbranding=1&showinfo=0`}
+                  title="YouTube Video"
+                  className="h-full w-full"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            )}
+            
+            {/* Short video for smaller screens */}
+            {!isMediumOrLarger && (
+              <div className="relative mx-auto w-[360px] h-[640px] overflow-hidden rounded-xl shadow-lg sm:w-[400px] sm:h-[711px]">
+                <iframe
+                  src={`https://www.youtube.com/embed/${selectedVideoId}?autoplay=1&loop=1&playlist=${selectedVideoId}&controls=0&modestbranding=1&showinfo=0`}
+                  title="YouTube Video"
+                  className="h-full w-full"
+                  frameBorder="0"
+                  allow="autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            )}
+          </>
+        )}
       </div>
 
       <img
