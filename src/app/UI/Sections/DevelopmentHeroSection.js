@@ -61,7 +61,7 @@ const DevelopmentHeroSection = () => {
             </div>
           </div>
 
-          <div className="w-full md:w-2/5 md:pl-12">
+          <div className="w-full md:w-2/5 md:pl-12 xl:w-2/6">
             <div className="bg-white bg-opacity-10 backdrop-filter md:backdrop-blur-lg relative rounded-xl p-8 shadow-2xl">
               <h2 className="text-2xl font-semibold mb-6">What We Offer</h2>
               <img
@@ -132,7 +132,7 @@ const DevelopmentHeroSection = () => {
         >
           <path
             d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-            className="fill-white dark:fill-black"
+            className="fill-white dark:fill-gray-950"
           />
         </svg>
       </div>

@@ -1,8 +1,8 @@
 const ContentCreation = () => {
   return (
-    <div className="dark:bg-slate-900 bg-gray-100">
+    <div className="dark:bg-slate-900 bg-gray-100 xl:px-20">
     <section
-      className="mx-auto max-w-[1440px] min-w-[280px] py-8 px-4 sm:px-8 md:px-10 lg:px-20"
+      className="mx-auto max-w-[1440px] xl:max-w-[1920px] min-w-[280px] py-8 px-4 sm:px-8 md:px-10 lg:px-20 lg:py-14 md:py-10"
       id="contentCreation"
     >
       <div className="w-full rounded-[50px] sm:rounded-[60px] md:rounded-[70px] lg:rounded-[80px] bg-teal-500 flex flex-col lg:flex-row items-center py-6 sm:py-9 md:py-11 lg:py-14 px-2 sm:px-4 md:px-8 xl:px-16">

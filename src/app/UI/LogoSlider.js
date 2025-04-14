@@ -7,7 +7,7 @@ const LogoSlider = () => {
       <div className="absolute top-0 right-0 h-full w-32 sm:w-48 bg-gradient-to-r from-transparent to-white dark:to-black z-10" />
 
       <div className="relative w-screen overflow-x-hidden">
-        <div className="flex items-center space-x-10 animate-slide">
+      <div className="flex items-center space-x-10 animate-slide-xs sm:animate-slide-sm md:animate-slide-md">
           {[
             { src: "APLM.svg" },
             { src: "djassaku.svg" },

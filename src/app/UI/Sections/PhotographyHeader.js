@@ -1,7 +1,7 @@
 const PhotographyHeader = () => {
   return (
     <div
-      className="bg-white dark:bg-slate-800 overflow-hidden pb-9 px-4 md:px-8"
+      className="bg-white dark:bg-slate-800 overflow-hidden pb-9 px-4 md:px-8 xl:pr-24"
       id="photography"
     >
       <section className="relative flex flex-col-reverse md:flex-row mx-auto justify-between items-center gap-9 md:gap-4 max-w-[1300px] py-4 my-12">

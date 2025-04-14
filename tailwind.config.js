@@ -45,6 +45,14 @@ module.exports = {
           },
         },
       },
+      animation: {
+        slide: "slide 35s linear infinite",
+        "slide-xl": "slide 35s linear infinite",
+        "slide-lg": "slide 30s linear infinite",
+        "slide-md": "slide 20s linear infinite",
+        "slide-sm": "slide 10s linear infinite",
+        "slide-xs": "slide 6s linear infinite",
+      },
     },
     screens: {
       xs: "320px",
@@ -58,7 +66,7 @@ module.exports = {
 
       lg: "1280px",
       // => @media (min-width: 1280px) { ... }
-      xl:"1920px"
+      xl: "1920px",
     },
   },
   plugins: [],
