@@ -148,7 +148,7 @@ const PhotographyHeader = () => {
         </div>
 
         {/* Image */}
-        <div className="p-4 z-20 dark:bg-black bg-white rounded-[100px] md:rounded-bl-[200px] lg:rounded-bl-[250px] dark:bg-opacity-20 bg-opacity-50">
+        <div className="p-4 z-20 dark:bg-black bg-white rounded-[100px] md:rounded-bl-[200px] lg:rounded-bl-[250px] sm:dark:bg-opacity-20 dark:xs:bg-opacity-0 xs:bg-opacity-0 sm:bg-opacity-50">
           <img
             className="max-w-[490px] w-full"
             src="/assets/images/MalePhotography.png"
