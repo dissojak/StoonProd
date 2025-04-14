@@ -15,6 +15,9 @@ import Services from "./components/Home/Services";
 import NewFooter from "./UI/Footers/NewFooter";
 import ImpactSection from "./UI/Sections/Impact";
 import Graphic from "./UI/Sections/VIdeoContent";
+import ContentCreation from "./UI/Sections/ContentCreationSection";
+import PhotographyHeader from "./UI/Sections/PhotographyHeader";
+import DevelopmentHeroSection from "./UI/Sections/DevelopmentHeroSection";
 
 export default function Home() {
   return (
@@ -58,13 +61,16 @@ export default function Home() {
         <LogoSlider />
         <HeroSection />
         {/* <ServiceNavigation /> */}
-        <Services/>
         <ImpactSection/>
+        <Services/>
         <Graphic/>
-        <VideomakingSection />
+        <PhotographyHeader/>
+        <ContentCreation/>
+        <DevelopmentHeroSection/>
+        {/* <VideomakingSection />
         <PhotographySection />
         <ContentCreationSection />
-        <WebDevelopmentSection />
+        <WebDevelopmentSection /> */}
         {/* <Footer /> */}
         <NewFooter />
       </div>

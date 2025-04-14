@@ -33,7 +33,7 @@ const services = [
 
 const Services = () => {
   return (
-    <section className="bg-gray-100 dark:bg-gray-800">
+    <section className="bg-white dark:bg-gray-800">
       <div
         className="container mx-auto lg:max-w-screen-lg md:max-w-screen-sm py-20 "
         id="services-section"
