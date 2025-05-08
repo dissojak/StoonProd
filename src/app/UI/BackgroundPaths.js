@@ -10,7 +10,7 @@ function FloatingPaths({ position }) {
   const paths = Array.from({ length: 36 }, (_, i) => ({
     id: i,
     d: `M-${380 - i * 5 * safePosition} -${189 + i * 6}C-${
-      380 - i * 5 * position
+      380 - i * 5 * safePosition
     } -${189 + i * 6} -${312 - i * 5 * safePosition} ${216 - i * 6} ${
       152 - i * 5 * safePosition
     } ${343 - i * 6}C${616 - i * 5 * safePosition} ${470 - i * 6} ${
@@ -22,11 +22,7 @@ function FloatingPaths({ position }) {
 
   return (
     <div className="absolute sm:block xs:hidden inset-0 pointer-events-none">
-      <svg
-        className="w-full h-full text-white"
-        viewBox="0 0 696 316"
-        fill="none"
-      >
+      <svg className="w-full h-full text-white" viewBox="0 0 696 316" fill="none">
         {paths.map((path) => (
           <motion.path
             key={path.id}
@@ -51,6 +47,11 @@ function FloatingPaths({ position }) {
     </div>
   );
 }
+
+FloatingPaths.propTypes = {
+  position: PropTypes.number.isRequired,
+};
+
 
 export default function BackgroundPaths({ children }) {
   return (
