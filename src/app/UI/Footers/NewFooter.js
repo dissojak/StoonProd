@@ -18,7 +18,7 @@ const NewFooter = () => {
 
             <div class="flex  space-x-4 sm:justify-center  ">
               <a
-                href="javascript:;"
+                href="/"
                 class="w-9 h-9 rounded-full bg-white flex justify-center items-center hover:shadow-md"
               >
                 <svg
@@ -38,7 +38,7 @@ const NewFooter = () => {
                 </svg>
               </a>
               <a
-                href="javascript:;"
+                href="/"
                 class="w-9 h-9 rounded-full bg-white flex justify-center items-center hover:shadow-md"
               >
                 <svg
@@ -67,7 +67,7 @@ const NewFooter = () => {
                 </svg>
               </a>
               <a
-                href="javascript:;"
+                href="/"
                 class="w-9 h-9 rounded-full bg-white flex justify-center items-center hover:shadow-md"
               >
                 <svg
@@ -131,30 +131,30 @@ const NewFooter = () => {
             <div class="flex gap-6 xl:gap-12 max-xl:justify-center">
               <ul class="text-gray-600 transition-all duration-500 grid gap-6">
                 <li>
-                  <a href="javascript:;">Home</a>
+                  <a href="/">Home</a>
                 </li>
                 <li>
-                  <a href="javascript:;">FAQs</a>
+                  <a href="/">FAQs</a>
                 </li>
                 <li>
-                  <a href="javascript:;">Price Plan</a>
+                  <a href="/">Price Plan</a>
                 </li>
                 <li>
-                  <a href="javascript:;">Features</a>
+                  <a href="/">Features</a>
                 </li>
               </ul>
               <ul class="text-gray-600 transition-all duration-500 grid gap-6">
                 <li>
-                  <a href="javascript:;">Careers</a>
+                  <a href="/">Careers</a>
                 </li>
                 <li>
-                  <a href="javascript:;">About </a>
+                  <a href="/">About </a>
                 </li>
                 <li>
-                  <a href="javascript:;">Contact</a>
+                  <a href="/">Contact</a>
                 </li>
                 <li>
-                  <a href="javascript:;">Products</a>
+                  <a href="/">Products</a>
                 </li>
               </ul>
             </div>

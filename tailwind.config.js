@@ -34,6 +34,11 @@ module.exports = {
       },
       animation: {
         slide: "slide 35s linear infinite", // Custom slide animation
+        "slide-xl": "slide 35s linear infinite",
+        "slide-lg": "slide 30s linear infinite",
+        "slide-md": "slide 20s linear infinite",
+        "slide-sm": "slide 10s linear infinite",
+        "slide-xs": "slide 6s linear infinite",
       },
       keyframes: {
         slide: {
@@ -44,14 +49,6 @@ module.exports = {
             transform: "translateX(-100%)", // Moves the logos from right to left
           },
         },
-      },
-      animation: {
-        slide: "slide 35s linear infinite",
-        "slide-xl": "slide 35s linear infinite",
-        "slide-lg": "slide 30s linear infinite",
-        "slide-md": "slide 20s linear infinite",
-        "slide-sm": "slide 10s linear infinite",
-        "slide-xs": "slide 6s linear infinite",
       },
     },
     screens: {
