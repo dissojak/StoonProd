@@ -1,11 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
-import BackgroundPaths from "@/app/UI/BackgroundPaths";
+// import BackgroundPaths from "@/app/UI/BackgroundPaths";
 import MaintenanceSection from "@/app/UI/MaintenanceSection";
 
 const SliderSection = () => {
   return (
-    <BackgroundPaths>
+    <>
+     {/* <BackgroundPaths> */}
       {/* <MaintenanceSection sectionHeight="40vh" /> */}
       <section className="text-white flex items-center xs:min-h-screen sm:min-h-[110vh] lg:min-h-screen xl:max-w-[1536px] xl:w-full xl:mx-auto">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -55,7 +56,8 @@ const SliderSection = () => {
           </div>
         </div>
       </section>
-    </BackgroundPaths>
+    {/* </BackgroundPaths> */}
+    </>
   );
 };
 
