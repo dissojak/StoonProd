@@ -8,6 +8,7 @@ import ScrollToTop from "./UI/ScrollToTop";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Header from "./UI/Header/Header";
 
+
 // Using Next.js metadata API for app directory
 export const metadata = {
   title:
