@@ -1,4 +1,4 @@
-import PricingPlan from "@/UI/PricingPlan";
+import PricingPlan from "@/app/UI/PricingPlan";
 import React from "react";
 
 function Service({ serviceData, sectionNumber }) {

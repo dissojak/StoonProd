@@ -5,7 +5,7 @@ import Image from "next/image";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 // import BackgroundPaths from "@/app/UI/BackgroundPaths";
-import MaintenanceSection from "@/UI/MaintenanceSection";
+import MaintenanceSection from "@/app/UI/MaintenanceSection";
 
 const SliderSection = () => {
   return (

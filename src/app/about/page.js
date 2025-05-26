@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
-import Navbar from "../../UI/Header/Navbar";
-import TeamMember from "@/UI/TeamMember";
-import TeamMembers from "@/UI/TeamMembers";
+import Navbar from "../UI/Header/Navbar";
+import TeamMember from "@/app/UI/TeamMember";
+import TeamMembers from "@/app/UI/TeamMembers";
 import Image from "next/image";
-import MaintenanceSection from "@/UI/MaintenanceSection";
+import MaintenanceSection from "@/app/UI/MaintenanceSection";
 
 const AboutPage = () => {
   return (

@@ -1,6 +1,6 @@
-import Navbar from "../../UI/Header/Navbar";
-import InstagramReel from "../../UI/InstagramReel";
-import YouTubeVideo from "../../UI/YouTubeVideo"; // Import the YouTube component
+import Navbar from "../UI/Header/Navbar";
+import InstagramReel from "../UI/InstagramReel";
+import YouTubeVideo from "../UI/YouTubeVideo"; // Import the YouTube component
 
 const Content = () => {
   const instaReel_1 = "CasQwfslT7H";
