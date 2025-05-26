@@ -3,23 +3,23 @@ import Logo from "../Header/Logo/Logo";
 
 const NewFooter = () => {
   return (
-    <footer class="w-full">
-      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div class="py-14 grid grid-cols-12 gap-x-5 gap-y-8">
-          <div class="col-span-full xl:col-span-3 relative bg-gradient-to-tr from-teal-500 to-teal-700 rounded-2xl gap-12 p-6 xl:w-72 h-96 flex flex-col justify-center items-center">
-            <div class="flex justify-center lg:justify-start">
+    <footer className="w-full">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="py-14 grid grid-cols-12 gap-x-5 gap-y-8">
+          <div className="col-span-full xl:col-span-3 relative bg-gradient-to-tr from-teal-500 to-teal-700 rounded-2xl gap-12 p-6 xl:w-72 h-96 flex flex-col justify-center items-center">
+            <div className="flex justify-center lg:justify-start">
               <Logo />
             </div>
-            <p class="text-center text-gray-200">
+            <p className="text-center text-gray-200">
               Building trust with clients worldwide. Have a question or need
               assistance? <br /> Contact us – we&apos;re here to support your
               creative and business needs.
             </p>
 
-            <div class="flex  space-x-4 sm:justify-center  ">
+            <div className="flex  space-x-4 sm:justify-center  ">
               <a
                 href="/"
-                class="w-9 h-9 rounded-full bg-white flex justify-center items-center hover:shadow-md"
+                className="w-9 h-9 rounded-full bg-white flex justify-center items-center hover:shadow-md"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -39,10 +39,10 @@ const NewFooter = () => {
               </a>
               <a
                 href="/"
-                class="w-9 h-9 rounded-full bg-white flex justify-center items-center hover:shadow-md"
+                className="w-9 h-9 rounded-full bg-white flex justify-center items-center hover:shadow-md"
               >
                 <svg
-                  class="w-[1.25rem] h-[1.125rem]"
+                  className="w-[1.25rem] h-[1.125rem]"
                   viewBox="0 0 15 15"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -60,18 +60,18 @@ const NewFooter = () => {
                       y2="14.3286"
                       gradientUnits="userSpaceOnUse"
                     >
-                      <stop stop-color="#FACC15" />
-                      <stop offset="0.993738" stop-color="#FDE047" />
+                      <stop stopColor="#FACC15" />
+                      <stop offset="0.993738" stopColor="#FDE047" />
                     </linearGradient>
                   </defs>
                 </svg>
               </a>
               <a
                 href="/"
-                class="w-9 h-9 rounded-full bg-white flex justify-center items-center hover:shadow-md"
+                className="w-9 h-9 rounded-full bg-white flex justify-center items-center hover:shadow-md"
               >
                 <svg
-                  class="w-[1rem] h-[1rem]"
+                  className="w-[1rem] h-[1rem]"
                   viewBox="0 0 13 12"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -89,8 +89,8 @@ const NewFooter = () => {
                       y2="11.4629"
                       gradientUnits="userSpaceOnUse"
                     >
-                      <stop stop-color="#FACC15" />
-                      <stop offset="0.993738" stop-color="#FDE047" />
+                      <stop stopColor="#FACC15" />
+                      <stop offset="0.993738" stopColor="#FDE047" />
                     </linearGradient>
                   </defs>
                 </svg>
@@ -98,15 +98,15 @@ const NewFooter = () => {
             </div>
           </div>
 
-          <div class="block text-center xl:text-left xl:py-16 col-span-full min-[500px]:col-span-6 md:col-span-4 xl:col-span-3 xl:pl-5">
-            <h4 class="text-lg text-emerald-950 dark:text-white font-bold mb-9">
+          <div className="block text-center xl:text-left xl:py-16 col-span-full min-[500px]:col-span-6 md:col-span-4 xl:col-span-3 xl:pl-5">
+            <h4 className="text-lg text-emerald-950 dark:text-white font-bold mb-9">
               Get In Touch
             </h4>
-            <ul class="text-emerald-950 dark:text-white transition-all duration-500 grid gap-6">
+            <ul className="text-emerald-950 dark:text-white transition-all duration-500 grid gap-6">
               <li>
                 <a
                   href="mailto:StoonProduction@gmail.com"
-                  class="hover:underline cursor-pointer"
+                  className="hover:underline cursor-pointer"
                 >
                   StoonProduction@gmail.com
                 </a>
@@ -117,19 +117,19 @@ const NewFooter = () => {
                   href="https://wa.me/21623039320"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="cursor-pointer"
+                  className="cursor-pointer"
                 >
                   +216 23 039 320
                 </a>
               </li>
             </ul>
           </div>
-          <div class="block xl:py-16 col-span-full min-[500px]:col-span-6 md:col-span-4 xl:col-span-3">
-            <h4 class="text-lg text-emerald-950 dark:text-white font-bold mb-9 text-center xl:text-left">
+          <div className="block xl:py-16 col-span-full min-[500px]:col-span-6 md:col-span-4 xl:col-span-3">
+            <h4 className="text-lg text-emerald-950 dark:text-white font-bold mb-9 text-center xl:text-left">
               Quick Links
             </h4>
-            <div class="flex gap-6 xl:gap-12 max-xl:justify-center">
-              <ul class="text-gray-600 transition-all duration-500 grid gap-6">
+            <div className="flex gap-6 xl:gap-12 max-xl:justify-center">
+              <ul className="text-gray-600 transition-all duration-500 grid gap-6">
                 <li>
                   <a href="/">Home</a>
                 </li>
@@ -143,7 +143,7 @@ const NewFooter = () => {
                   <a href="/">Features</a>
                 </li>
               </ul>
-              <ul class="text-gray-600 transition-all duration-500 grid gap-6">
+              <ul className="text-gray-600 transition-all duration-500 grid gap-6">
                 <li>
                   <a href="/">Careers</a>
                 </li>
@@ -159,20 +159,20 @@ const NewFooter = () => {
               </ul>
             </div>
           </div>
-          <div class="block xl:py-16 col-span-full md:col-span-4 xl:col-span-3">
-            <h4 class="text-lg text-emerald-950 dark:text-white font-bold mb-9 text-center xl:text-left">
+          <div className="block xl:py-16 col-span-full md:col-span-4 xl:col-span-3">
+            <h4 className="text-lg text-emerald-950 dark:text-white font-bold mb-9 text-center xl:text-left">
               Newsletter
             </h4>
-            <div class="grid gap-7 ">
+            <div className="grid gap-7 ">
               <input
                 type="text"
                 name="email"
-                class="py-2 px-4 border border-gray-300 shadow-sm h-14 text-lg text-gray-800 rounded-full w-full  xl:w-64 placeholder:text-gray-400 focus:outline-none"
+                className="py-2 px-4 border border-gray-300 shadow-sm h-14 text-lg text-gray-800 rounded-full w-full  xl:w-64 placeholder:text-gray-400 focus:outline-none"
                 placeholder="Enter email.."
               />
               <button
                 type="submit"
-                class="flex gap-2 justify-center items-center py-3.5 px-7 rounded-full text-white bg-teal-600 shadow-md w-fit transition-all duration-500 mx-auto xl:mx-0 hover:bg-teal-700"
+                className="flex gap-2 justify-center items-center py-3.5 px-7 rounded-full text-white bg-teal-600 shadow-md w-fit transition-all duration-500 mx-auto xl:mx-0 hover:bg-teal-700"
               >
                 Subscribe
                 <svg
@@ -185,9 +185,9 @@ const NewFooter = () => {
                   <path
                     d="M1.5 6.88281L14.8333 6.88281M10.6667 11.8828L15.0774 7.47207C15.3552 7.19429 15.4941 7.0554 15.4941 6.88281C15.4941 6.71022 15.3552 6.57133 15.0774 6.29356L10.6667 1.88281"
                     stroke="white"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
               </button>
@@ -195,11 +195,11 @@ const NewFooter = () => {
           </div>
         </div>
       </div>
-      <div class="py-4 bg-teal-100">
-        <div class="flex items-center justify-center">
-          <span class="block text-center text-sm text-gray-800">
+      <div className="py-4 bg-teal-100">
+        <div className="flex items-center justify-center">
+          <span className="block text-center text-sm text-gray-800">
             © 2020 All Rights Reserved by
-            <a href="https://stoonproduction.com/"> Stoon Production</a>
+            <Link href="https://stoonproduction.com/"> Stoon Production</Link>
           </span>
         </div>
       </div>
