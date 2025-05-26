@@ -1,6 +1,6 @@
 import React from "react";
-import Navbar from "../UI/Header/Navbar";
-import MaintenanceSection from "../UI/MaintenanceSection";
+import Navbar from "../../UI/Header/Navbar";
+import MaintenanceSection from "../../UI/MaintenanceSection";
 
 function Contact() {
   return (

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
-import Service from "../components/Services/Services";
-import MaintenanceSection from "../UI/MaintenanceSection";
+import Service from "../../components/Services/Services";
+import MaintenanceSection from "../../UI/MaintenanceSection";
 import Link from "next/link";
 
 function ServiceAndTariffs() {

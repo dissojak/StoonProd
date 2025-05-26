@@ -1,23 +1,23 @@
 import { Fragment } from "react";
-import Navbar from "./UI/Header/Navbar";
-import SliderSection from "./components/Home/SliderSection";
-import HeroSection from "./components/Home/HeroSection";
-import VideomakingSection from "./components/Home/VideomakingSection";
-import PhotographySection from "./components/Home/PhotographySection";
-import ContentCreationSection from "./components/Home/ContentCreationSection";
-import WebDevelopmentSection from "./components/Home/WebDevelopmentSection";
-import Footer from "./UI/Footers/Footer";
-import ServiceNavigation from "./components/Home/ServiceNavigation";
-import LogoSlider from "./UI/LogoSlider";
-import MaintenanceSection from "./UI/MaintenanceSection";
-import Header from "./UI/Header/Header";
-import Services from "./components/Home/Services";
-import NewFooter from "./UI/Footers/NewFooter";
-import ImpactSection from "./UI/Sections/Impact";
-import Graphic from "./UI/Sections/VIdeoContent";
-import ContentCreation from "./UI/Sections/ContentCreationSection";
-import PhotographyHeader from "./UI/Sections/PhotographyHeader";
-import DevelopmentHeroSection from "./UI/Sections/DevelopmentHeroSection";
+import Navbar from "../UI/Header/Navbar";
+import SliderSection from "../components/Home/SliderSection";
+import HeroSection from "../components/Home/HeroSection";
+import VideomakingSection from "../components/Home/VideomakingSection";
+import PhotographySection from "../components/Home/PhotographySection";
+import ContentCreationSection from "../components/Home/ContentCreationSection";
+import WebDevelopmentSection from "../components/Home/WebDevelopmentSection";
+import Footer from "../UI/Footers/Footer";
+import ServiceNavigation from "../components/Home/ServiceNavigation";
+import LogoSlider from "../UI/LogoSlider";
+import MaintenanceSection from "../UI/MaintenanceSection";
+import Header from "../UI/Header/Header";
+import Services from "../components/Home/Services";
+import NewFooter from "../UI/Footers/NewFooter";
+import ImpactSection from "../UI/Sections/Impact";
+import Graphic from "../UI/Sections/VIdeoContent";
+import ContentCreation from "../UI/Sections/ContentCreationSection";
+import PhotographyHeader from "../UI/Sections/PhotographyHeader";
+import DevelopmentHeroSection from "../UI/Sections/DevelopmentHeroSection";
 
 export default function Home() {
   return (
