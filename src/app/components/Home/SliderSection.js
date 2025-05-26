@@ -1,19 +1,23 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+
 // import BackgroundPaths from "@/app/UI/BackgroundPaths";
 import MaintenanceSection from "@/app/UI/MaintenanceSection";
 
 const SliderSection = () => {
   return (
     <>
-     {/* <BackgroundPaths> */}
+      {/* <BackgroundPaths> */}
       {/* <MaintenanceSection sectionHeight="40vh" /> */}
       <section className="text-white flex items-center xs:min-h-screen sm:min-h-[110vh] lg:min-h-screen xl:max-w-[1536px] xl:w-full xl:mx-auto">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-12">
             {/* Image Section */}
             <div className="w-full lg:w-1/2">
-              <Image
+              {/* <Image
                 src="/assets/images/filmingGreen.svg"
                 alt="Film production illustration"
                 className="w-full max-w-lg mx-auto brightness-100 dark:brightness-75 transition duration-1000 filter"
@@ -21,6 +25,46 @@ const SliderSection = () => {
                 height={500}
                 sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 40vw"
                 priority
+              /> */}
+
+              {/* <DotLottieReact
+                src="https://lottie.host/030750b9-3de5-487e-b423-bde64873f3f7/pXeKCWZCit.lottie"
+                background="transparent"
+                speed={1}
+                style={{ width: 300, height: 300 }}
+                direction={1}
+                playMode="forward"
+                loop
+                controls
+                autoplay
+              /> */}
+              {/* <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full max-w-lg h-auto mx-auto block"
+                style={{
+                  backgroundColor: "transparent",
+                  mixBlendMode: "multiply",
+                  border: "none",
+                  outline: "none",
+                }}
+              >
+                <source
+                  src="/assets/animations/vediographycontentanimation.webm"
+                  type="video/webm"
+                />
+                <source
+                  src="/assets/animations/vediographycontentanimation.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video> */}
+              <img
+                src="/assets/animations/vediocru.gif"
+                alt="Film production illustration"
+                className="w-full max-w-3xl mx-auto h-auto lg:mb-32"
               />
             </div>
 
@@ -56,7 +100,7 @@ const SliderSection = () => {
           </div>
         </div>
       </section>
-    {/* </BackgroundPaths> */}
+      {/* </BackgroundPaths> */}
     </>
   );
 };
