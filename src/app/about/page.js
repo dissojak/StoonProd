@@ -11,7 +11,7 @@ const AboutPage = () => {
     <div>
       <header className="bg-slate-300 dark:bg-gray-800 transition-colors duration-1000">
         {/* <Navbar /> */}
-        <MaintenanceSection sectionHeight="60vh" />
+         {/*<MaintenanceSection sectionHeight="60vh" />*/}
         <section
           className="flex items-center justify-center"
           style={{ height: "500px" }}
