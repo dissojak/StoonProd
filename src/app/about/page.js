@@ -303,6 +303,7 @@ const AboutPage = () => {
               <Image
                 className="object-cover object-center rounded-md shadow w-72 h-72"
                 src="/assets/images/conentCreationMouhib.png"
+                alt="Figma showcase item"
                 width={500}
                 height={500}
                 sizes="(max-width: 768px) 300px, (max-width: 1024px) 500px, 500px"
@@ -316,6 +317,7 @@ const AboutPage = () => {
               <Image
                 className="object-cover object-center w-64 rounded-md shadow h-96"
                 src="/assets/images/merch.jpg"
+                alt="Merch product"
                 width={500}
                 height={1000}
                 sizes="(max-width: 768px) 300px, (max-width: 1024px) 500px, 500px"
@@ -343,6 +345,7 @@ const AboutPage = () => {
               className="object-cover object-center w-full rounded-md shadow"
               style={{ height: "700px" }}
               src="/assets/images/git.png"
+              alt="Git logo"
               width={800}
               height={2000}
             />
