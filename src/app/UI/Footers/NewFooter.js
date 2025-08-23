@@ -17,7 +17,7 @@ const NewFooter = () => {
             </p>
 
             <div className="flex  space-x-4 sm:justify-center  ">
-              <a
+              <Link
                 href="/"
                 className="w-9 h-9 rounded-full bg-white flex justify-center items-center hover:shadow-md"
               >
@@ -36,8 +36,8 @@ const NewFooter = () => {
                     />
                   </g>
                 </svg>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/"
                 className="w-9 h-9 rounded-full bg-white flex justify-center items-center hover:shadow-md"
               >
@@ -65,8 +65,8 @@ const NewFooter = () => {
                     </linearGradient>
                   </defs>
                 </svg>
-              </a>
-              <a
+              </Link>
+              <Link
                 href="/"
                 className="w-9 h-9 rounded-full bg-white flex justify-center items-center hover:shadow-md"
               >
@@ -94,7 +94,7 @@ const NewFooter = () => {
                     </linearGradient>
                   </defs>
                 </svg>
-              </a>
+              </Link>
             </div>
           </div>
 
@@ -104,23 +104,23 @@ const NewFooter = () => {
             </h4>
             <ul className="text-emerald-950 dark:text-white transition-all duration-500 grid gap-6">
               <li>
-                <a
+                <Link
                   href="mailto:StoonProduction@gmail.com"
                   className="hover:underline cursor-pointer"
                 >
                   StoonProduction@gmail.com
-                </a>
+                </Link>
               </li>
 
               <li>
-                <a
+                <Link
                   href="https://wa.me/21623039320"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="cursor-pointer"
                 >
                   +216 23 039 320
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -131,30 +131,30 @@ const NewFooter = () => {
             <div className="flex gap-6 xl:gap-12 max-xl:justify-center">
               <ul className="text-gray-600 transition-all duration-500 grid gap-6">
                 <li>
-                  <a href="/">Home</a>
+                  <Link href="/">Home</Link>
                 </li>
                 <li>
-                  <a href="/">FAQs</a>
+                  <Link href="/">FAQs</Link>
                 </li>
                 <li>
-                  <a href="/">Price Plan</a>
+                  <Link href="/">Price Plan</Link>
                 </li>
                 <li>
-                  <a href="/">Features</a>
+                  <Link href="/">Features</Link>
                 </li>
               </ul>
               <ul className="text-gray-600 transition-all duration-500 grid gap-6">
                 <li>
-                  <a href="/">Careers</a>
+                  <Link href="/">Careers</Link>
                 </li>
                 <li>
-                  <a href="/">About </a>
+                  <Link href="/">About </Link>
                 </li>
                 <li>
-                  <a href="/">Contact</a>
+                  <Link href="/">Contact</Link>
                 </li>
                 <li>
-                  <a href="/">Products</a>
+                  <Link href="/">Products</Link>
                 </li>
               </ul>
             </div>
