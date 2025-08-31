@@ -1,8 +1,72 @@
-import React from "react";
-import Navbar from "../UI/Header/Navbar";
+"use client";
+
+import React, { useRef, useState } from "react";
 import MaintenanceSection from "../UI/MaintenanceSection";
 
+function SuccessMessage({ onHome, onSendAnother, onSendEmail }) {
+  return (
+    <div className="flex flex-col items-center justify-center py-10">
+      <div className="bg-green-100 rounded-full p-4 mb-4">
+        <svg className="h-12 w-12 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+        </svg>
+      </div>
+      <h2 className="text-2xl font-bold text-green-600 mb-2">Email Sent Successfully!</h2>
+      <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">
+        Your message was sent. Our team will respond within 24 hours.
+      </p>
+      <div className="flex flex-row gap-4">
+        <button
+          className="bg-gray-200 hover:bg-gray-300 text-teal-700 font-bold py-2 px-4 rounded flex items-center gap-2"
+          onClick={onHome}
+        >
+          Go Home
+        </button>
+        <button
+          className="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded"
+          onClick={onSendAnother}
+        >
+          Send Another Message
+        </button>
+        <button
+          className="bg-gray-200 hover:bg-gray-300 text-teal-700 font-bold py-2 px-4 rounded flex items-center gap-2"
+          onClick={onSendEmail}
+        >
+          <svg className="h-5 w-5 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2.94 6.94A2 2 0 014 6h12a2 2 0 011.06.94l-7.06 4.41-7.06-4.41zM18 8.08V14a2 2 0 01-2 2H4a2 2 0 01-2-2V8.08l7.47 4.67a1 1 0 001.06 0L18 8.08z" />
+          </svg>
+          Send Email
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function Contact() {
+  const formRef = useRef();
+  const [showSuccess, setShowSuccess] = useState(false);
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const form = formRef.current;
+    const fullName = form["grid-full-name"].value;
+    const phone = form["grid-phone-number"].value;
+    const email = form["grid-email"].value;
+    const message = form["grid-message"].value;
+
+    await fetch("/api/contact-send", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ fullName, phone, email, message }),
+    });
+    setShowSuccess(true);
+    form.reset();
+  }
+
+  const handleGoHome = () => window.location.href = "/";
+  const handleSendAnother = () => setShowSuccess(false);
+  const handleSendEmail = () => window.open('mailto:stoonproduction@gmail.com', '_blank');
+
   return (
     <>
       <div className="bg-teal-500 w-full h-24 block">
@@ -20,9 +84,7 @@ function Contact() {
                 <span className="text-teal-500 dark:text-teal-400">Touch</span>
               </h3>
               <p className="mt-4 leading-7 text-gray-200 dark:text-gray-300">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry&apos;s standard
-                dummy text ever since the 1500s.
+                We would love to hear from you! Whether you have a question about our services, want to start a project, or just want to say hello, our team is ready to help. Fill out the form and we&apos;ll get back to you as soon as possible.
               </p>
               <div className="flex items-center mt-5">
                 <svg
@@ -41,7 +103,7 @@ function Contact() {
                   </g>
                 </svg>
                 <span className="text-sm dark:text-gray-400">
-                  House #14, Street #12, Darulaman Road, Kabul, Afghanistan.
+                  FR82+8V8, Al-Maamoura, Nabeul, Tunisia
                 </span>
               </div>
               <div className="flex items-center mt-5">
@@ -74,7 +136,7 @@ function Contact() {
                   </g>
                 </svg>
                 <span className="text-sm dark:text-gray-400">
-                  +93 749 99 65 50
+                  +216 23 039 320
                 </span>
               </div>
               <div className="flex items-center mt-5">
@@ -96,80 +158,107 @@ function Contact() {
                     <polygon points="142.994,142.995 83.148,142.995 83.148,157.995 157.994,157.995 157.994,43.883 142.994,43.883" />
                   </g>
                 </svg>
-                <span className="text-sm dark:text-gray-400">24/7</span>
+                <span className="text-sm dark:text-gray-400">We reply within 24 hours</span>
               </div>
             </div>
-            <form className="md:col-span-8 p-10">
-              <div className="flex flex-wrap -mx-3 mb-6">
-                <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                  <label
-                    className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-gray-300"
-                    htmlFor="grid-first-name"
-                  >
-                    First Name
-                  </label>
-                  <input
-                    type="text"
-                    id="grid-first-name"
-                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 dark:focus:border-gray-300 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-800"
-                  />
-                </div>
+            <div className="md:col-span-8 p-10">
+              {showSuccess ? (
+                <SuccessMessage
+                  onHome={handleGoHome}
+                  onSendAnother={handleSendAnother}
+                  onSendEmail={handleSendEmail}
+                />
+              ) : (
+                <form ref={formRef} onSubmit={handleSubmit}>
+                  <div className="flex flex-wrap -mx-3 mb-6">
+                    <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                      <label
+                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-gray-300"
+                        htmlFor="grid-full-name"
+                      >
+                        Full Name
+                      </label>
+                      <input
+                        type="text"
+                        id="grid-full-name"
+                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 dark:focus:border-gray-300 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-800"
+                      />
+                    </div>
 
-                <div className="w-full md:w-1/2 px-3">
-                  <label
-                    className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-gray-300"
-                    htmlFor="grid-last-name"
-                  >
-                    Last Name
-                  </label>
-                  <input
-                    type="text"
-                    id="grid-last-name"
-                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 dark:focus:border-gray-300 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-800"
-                  />
-                </div>
-              </div>
-              <div className="flex flex-wrap -mx-3 mb-6">
-                <div className="w-full px-3">
-                  <label
-                    className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-gray-300"
-                    htmlFor="grid-email"
-                  >
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="grid-email"
-                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 dark:focus:border-gray-300 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-800"
-                  />
-                </div>
-              </div>
-              <div className="flex flex-wrap -mx-3 mb-6">
-                <div className="w-full px-3">
-                  <label
-                    className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-gray-300"
-                    htmlFor="grid-message"
-                  >
-                    Your Message
-                  </label>
-                  <textarea
-                    id="grid-message"
-                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 dark:focus:border-gray-300 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-800"
-                    rows="5"
-                  ></textarea>
-                </div>
-              </div>
-              <button
-                type="submit"
-                className="mt-4 bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded dark:bg-teal-500 dark:hover:bg-teal-600"
-              >
-                Send Message
-              </button>
-            </form>
+                    <div className="w-full md:w-1/2 px-3">
+                      <label
+                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-gray-300"
+                        htmlFor="grid-phone-number"
+                      >
+                        Phone Number
+                      </label>
+                      <input
+                        type="text"
+                        id="grid-phone-number"
+                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 dark:focus:border-gray-300 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-800"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap -mx-3 mb-6">
+                    <div className="w-full px-3">
+                      <label
+                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-gray-300"
+                        htmlFor="grid-email"
+                      >
+                        Email Address
+                      </label>
+                      <input
+                        type="email"
+                        id="grid-email"
+                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 dark:focus:border-gray-300 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-800"
+                      />
+                    </div>
+                  </div>
+                  <div className="flex flex-wrap -mx-3 mb-6">
+                    <div className="w-full px-3">
+                      <label
+                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-gray-300"
+                        htmlFor="grid-message"
+                      >
+                        Your Message
+                      </label>
+                      <textarea
+                        id="grid-message"
+                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 dark:focus:border-gray-300 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-800"
+                        rows="5"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div className="flex flex-row gap-4 mt-4">
+                    <button
+                      type="submit"
+                      className="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded dark:bg-teal-500 dark:hover:bg-teal-600"
+                    >
+                      Send Message
+                    </button>
+                    <button
+                      type="button"
+                      className="bg-gray-200 hover:bg-gray-300 text-teal-700 font-bold py-2 px-4 rounded flex items-center gap-2 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-teal-400"
+                      onClick={handleSendEmail}
+                    >
+                      <svg
+                        className="h-5 w-5 text-teal-600 dark:text-teal-400"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M2.94 6.94A2 2 0 014 6h12a2 2 0 011.06.94l-7.06 4.41-7.06-4.41zM18 8.08V14a2 2 0 01-2 2H4a2 2 0 01-2-2V8.08l7.47 4.67a1 1 0 001.06 0L18 8.08z" />
+                      </svg>
+                      Email Us Directly
+                    </button>
+                  </div>
+                </form>
+              )}
+            </div>
           </div>
         </div>
       </section>
-      <MaintenanceSection sectionHeight="40vh" />
+      {/* <MaintenanceSection sectionHeight="40vh" /> */}
       <footer className="border-t dark:bg-gray-900">
         <div className="container flex items-center justify-between px-6 py-8 mx-auto">
           <p className="text-gray-500 dark:text-teal-600">

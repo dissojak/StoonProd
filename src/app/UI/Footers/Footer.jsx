@@ -11,6 +11,7 @@ const Footer = () => {
           <Image
             src="/assets/images/stoonprod_logo_white_version.png"
             alt="Logo"
+            layout="intrinsic"
             width={120}
             height={100}
             className="lg:absolute lg:left-8 xs:max-w-xs xs:mx-auto lg:-top-10"
