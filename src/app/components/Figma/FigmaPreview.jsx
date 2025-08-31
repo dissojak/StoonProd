@@ -13,10 +13,21 @@ export default function FigmaPreview({ items }) {
 
 function FigmaPreviewItem({ item }) {
   const [loading, setLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
   useEffect(() => {
     if (!loading) return;
-    const timer = setTimeout(() => setLoading(false), 10000);
-    return () => clearTimeout(timer);
+    let start = Date.now();
+    const duration = 10000; // 10 seconds
+    const interval = setInterval(() => {
+      const elapsed = Date.now() - start;
+      const percent = Math.min(100, Math.round((elapsed / duration) * 100));
+      setProgress(percent);
+      if (percent >= 100) {
+        setLoading(false);
+        clearInterval(interval);
+      }
+    }, 100);
+    return () => clearInterval(interval);
   }, [loading]);
   return (
     <div className="w-[48%] h-[400px] relative">
@@ -31,9 +42,12 @@ function FigmaPreviewItem({ item }) {
             priority
           />
           <div className="w-3/4 h-2 bg-zinc-700 rounded-full overflow-hidden mb-2">
-            <div className="h-full bg-green-500 animate-pulse" style={{ width: '100%' }}></div>
+            <div
+              className="h-full bg-green-500 transition-all duration-100 animate-none"
+              style={{ width: `${progress}%` }}
+            ></div>
           </div>
-          <span className="text-white text-lg font-semibold">Loading Figma preview...</span>
+          <span className="text-white text-lg font-semibold">Loading Figma preview... {progress}%</span>
         </div>
       )}
       <iframe
