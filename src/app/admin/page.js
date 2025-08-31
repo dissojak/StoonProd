@@ -10,9 +10,12 @@ export default async function AdminPage() {
     redirect("/auth/signin");
   }
   return (
-    <main className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white py-16 px-4 sm:px-8">
+    <main className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white py-32 px-4 sm:px-8">
       <div className="max-w-2xl mx-auto">
         <AdminFigmaForm />
+        <form action="/api/auth/signout" method="POST" className="mt-8 flex justify-center">
+          <button type="submit" className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">Logout</button>
+        </form>
       </div>
     </main>
   );

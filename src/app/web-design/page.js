@@ -28,7 +28,7 @@ const WebDesign = () => {
   }, []);
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white py-16 px-4 sm:px-8">
+    <section className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white py-32 px-4 sm:px-8">
       <div className="max-w-6xl mx-auto">
         {loading ? (
           <div>Loading Figma items...</div>
