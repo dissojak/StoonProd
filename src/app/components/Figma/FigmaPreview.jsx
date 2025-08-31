@@ -17,7 +17,7 @@ function FigmaPreviewItem({ item }) {
   useEffect(() => {
     if (!loading) return;
     let start = Date.now();
-    const duration = 10000; // 10 seconds
+    const duration = 20000; // 20 seconds
     const interval = setInterval(() => {
       const elapsed = Date.now() - start;
       const percent = Math.min(100, Math.round((elapsed / duration) * 100));
@@ -43,11 +43,13 @@ function FigmaPreviewItem({ item }) {
           />
           <div className="w-3/4 h-2 bg-zinc-700 rounded-full overflow-hidden mb-2">
             <div
-              className="h-full bg-green-500 transition-all duration-100 animate-none"
+              className="h-full bg-green-500 transition-all duration-100"
               style={{ width: `${progress}%` }}
             ></div>
           </div>
-          <span className="text-white text-lg font-semibold">Loading Figma preview... {progress}%</span>
+          <span className="text-white text-lg font-semibold">
+            Loading Figma preview... {progress}%
+          </span>
         </div>
       )}
       <iframe
@@ -56,9 +58,10 @@ function FigmaPreviewItem({ item }) {
         src={item.link}
         allowFullScreen
         title={item.title}
-        onLoad={() => setLoading(false)}
       ></iframe>
-      <h1 className="mt-4 text-xl font-semibold text-center relative z-20">{item.title}</h1>
+      <h1 className="mt-4 text-xl font-semibold text-center relative z-20">
+        {item.title}
+      </h1>
     </div>
   );
 }
