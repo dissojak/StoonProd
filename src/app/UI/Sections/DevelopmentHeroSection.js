@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const DevelopmentHeroSection = () => {
   return (
     <section
@@ -64,9 +66,11 @@ const DevelopmentHeroSection = () => {
           <div className="w-full md:w-2/5 md:pl-12 xl:w-2/6">
             <div className="bg-white bg-opacity-10 backdrop-filter md:backdrop-blur-lg relative rounded-xl p-8 shadow-2xl">
               <h2 className="text-2xl font-semibold mb-6">What We Offer</h2>
-              <img
+              <Image
                 src="/assets/images/logostoonprod_rec.svg"
                 alt="Logo"
+                width={64}
+                height={64}
                 className="h-16 right-2 top-2 drop_shadow lg:block sm:block hidden absolute"
               />
               <ul className="space-y-4">

@@ -18,8 +18,8 @@ function Service({ serviceData, sectionNumber }) {
       </div>
 
       <div className="flex flex-wrap justify-center gap-6">
-        {serviceData.plans.map((plan) => (
-          <PricingPlan key={plan.title} planDetails={plan} />
+        {serviceData.plans.map((plan, idx) => (
+          <PricingPlan key={plan.title + '-' + idx} planDetails={plan} />
         ))}
       </div>
     </section>

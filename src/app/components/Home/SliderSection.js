@@ -61,9 +61,11 @@ const SliderSection = () => {
                 />
                 Your browser does not support the video tag.
               </video> */}
-              <img
+              <Image
                 src="/assets/animations/vediocru.gif"
                 alt="Film production illustration"
+                width={800}
+                height={600}
                 className="w-full max-w-3xl mx-auto h-auto lg:mb-32"
               />
             </div>
