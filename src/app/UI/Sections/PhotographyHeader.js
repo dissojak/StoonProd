@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const PhotographyHeader = () => {
   return (
     <div
@@ -149,10 +151,12 @@ const PhotographyHeader = () => {
 
         {/* Image */}
         <div className="p-4 z-20 dark:bg-black bg-slate-200 rounded-[100px] md:rounded-bl-[200px] lg:rounded-bl-[250px] sm:dark:bg-opacity-20 dark:xs:bg-opacity-0 xs:bg-opacity-0 sm:bg-opacity-50">
-          <img
+          <Image
             className="max-w-[490px] w-full"
             src="/assets/images/MalePhotography.png"
             alt="camera lens"
+            width={490}
+            height={490}
           />
         </div>
       </section>

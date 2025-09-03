@@ -16,17 +16,17 @@ const Header = () => {
     setSticky(window.scrollY >= 20);
   };
 
-  const handleClickOutside = (event) => {
-    if (
-      mobileMenuRef.current &&
-      !mobileMenuRef.current.contains(event.target) &&
-      navbarOpen
-    ) {
-      setNavbarOpen(false);
-    }
-  };
-
+  // Move handleClickOutside inside useEffect to avoid dependency warning
   useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target) &&
+        navbarOpen
+      ) {
+        setNavbarOpen(false);
+      }
+    };
     window.addEventListener("scroll", handleScroll);
     document.addEventListener("mousedown", handleClickOutside);
     return () => {

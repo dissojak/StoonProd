@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const logos = [
@@ -44,9 +45,11 @@ const LogoSlider = () => {
       <div className="relative w-screen overflow-x-hidden">
         <div className="flex items-center space-x-10 animate-slide-xs sm:animate-slide-sm md:animate-slide-md">
           {fullList.map((logo, i) => (
-            <img
+            <Image
               key={`logo-${i}`}
               src={`/assets/images/logos/${logo.src}`}
+              width={80}
+              height={32}
               className={`h-6 sm:h-8 ${
                 logo.invert ? "invert dark:invert-0" : "dark:invert"
               } ${logo.wide ? "w-24 sm:w-32 object-contain" : ""}`}
