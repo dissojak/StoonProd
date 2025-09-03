@@ -3,6 +3,7 @@
 import { useState } from "react";
 import FigmaSuccess from "./FigmaSuccess";
 
+
 export default function AdminFigmaForm() {
   const [title, setTitle] = useState("");
   const [link, setLink] = useState("");
@@ -59,7 +60,7 @@ export default function AdminFigmaForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto mt-10 p-6 bg-zinc-900 rounded-lg shadow">
+    <form onSubmit={handleSubmit} className="space-y-4 max-w-md mx-auto mt-32 p-6 bg-zinc-900 rounded-lg shadow">
       <h2 className="text-xl font-bold mb-2">Add Figma Item</h2>
       <input
         className="w-full p-2 rounded bg-zinc-800 border border-zinc-700 text-white"

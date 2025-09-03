@@ -42,9 +42,40 @@ function SuccessMessage({ onHome, onSendAnother, onSendEmail }) {
   );
 }
 
+function ErrorMessage({ onHome, onSendAnother }) {
+  return (
+    <div className="flex flex-col items-center justify-center py-10">
+      <div className="bg-red-100 rounded-full p-4 mb-4">
+        <svg className="h-12 w-12 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </div>
+      <h2 className="text-2xl font-bold text-red-600 mb-2">Error Sending Message</h2>
+      <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">
+        There was a problem sending your message. Please try again later or contact us directly.
+      </p>
+      <div className="flex flex-row gap-4">
+        <button
+          className="bg-gray-200 hover:bg-gray-300 text-teal-700 font-bold py-2 px-4 rounded flex items-center gap-2"
+          onClick={onHome}
+        >
+          Go Home
+        </button>
+        <button
+          className="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded"
+          onClick={onSendAnother}
+        >
+          Try Again
+        </button>
+      </div>
+    </div>
+  );
+}
+
 function Contact() {
   const formRef = useRef();
   const [showSuccess, setShowSuccess] = useState(false);
+  const [showError, setShowError] = useState(false);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -54,17 +85,28 @@ function Contact() {
     const email = form["grid-email"].value;
     const message = form["grid-message"].value;
 
-    await fetch("/api/contact-send", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ fullName, phone, email, message }),
-    });
-    setShowSuccess(true);
-    form.reset();
+    try {
+      const res = await fetch("/api/contact-send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ fullName, phone, email, message }),
+      });
+      if (!res.ok) {
+        setShowError(true);
+        return;
+      }
+      setShowSuccess(true);
+      form.reset();
+    } catch (err) {
+      setShowError(true);
+    }
   }
 
   const handleGoHome = () => window.location.href = "/";
-  const handleSendAnother = () => setShowSuccess(false);
+  const handleSendAnother = () => {
+    setShowSuccess(false);
+    setShowError(false);
+  };
   const handleSendEmail = () => window.open('mailto:stoonproduction@gmail.com', '_blank');
 
   return (
@@ -167,6 +209,11 @@ function Contact() {
                   onHome={handleGoHome}
                   onSendAnother={handleSendAnother}
                   onSendEmail={handleSendEmail}
+                />
+              ) : showError ? (
+                <ErrorMessage
+                  onHome={handleGoHome}
+                  onSendAnother={handleSendAnother}
                 />
               ) : (
                 <form ref={formRef} onSubmit={handleSubmit}>

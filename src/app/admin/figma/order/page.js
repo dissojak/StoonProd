@@ -1,4 +1,4 @@
-import AdminContactMessages from "../pages/mails/AdminContactMessages";
+import AdminFigmaOrder from "../../pages/figma/AdminFigmaOrder";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
@@ -8,5 +8,5 @@ export default async function Page() {
   if (!session || session.user?.role !== "admin") {
     redirect("/auth/signin");
   }
-  return <AdminContactMessages />;
+  return <AdminFigmaOrder />;
 }

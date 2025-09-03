@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 
-export default function ContactMessagesPage() {
+export default function AdminContactMessages() {
   const [messages, setMessages] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -15,8 +15,8 @@ export default function ContactMessagesPage() {
   }, []);
 
   return (
-    <div className="max-w-3xl mx-auto py-12 px-4">
-      <h1 className="text-3xl font-bold mb-8">Contact Messages</h1>
+    <div className="max-w-4xl mx-auto py-24 px-4">
+      <h1 className="text-3xl font-bold mb-8">Admin: Contact Messages</h1>
       {loading ? (
         <div>Loading messages...</div>
       ) : messages.length === 0 ? (

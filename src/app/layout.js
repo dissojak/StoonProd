@@ -7,6 +7,7 @@ import ScrollToTop from "./UI/ScrollToTop";
 
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Header from "./UI/Header/Header";
+import ClientThemeProvider from "./components/ClientThemeProvider";
 
 
 // Using Next.js metadata API for app directory
@@ -78,7 +79,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={font.className}>
-        <ThemeProvider
+        <ClientThemeProvider
           attribute="class"
           enableSystem={true}
           defaultTheme="system"
@@ -88,7 +89,7 @@ export default function RootLayout({ children }) {
           <ScrollToTop />
           {/* Insert SpeedInsights component that belong to vercel */}
           <SpeedInsights />
-        </ThemeProvider>
+        </ClientThemeProvider>
       </body>
     </html>
   );

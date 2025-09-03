@@ -4,7 +4,9 @@ import mongoose from 'mongoose';
 // For local development, set it in your shell before running the app:
 // PowerShell: $env:MONGODB_URI="your-mongodb-uri-here"; npm run dev
 // For production, set MONGODB_URI in your host's environment variable dashboard.
+
 const MONGODB_URI = process.env.MONGODB_URI;
+// MONGODB_URI="mongodb+srv://dissojak:stoondissojakb2a@stoon.r8tcyqv.mongodb.net/StoonProd?retryWrites=true&w=majority";
 
 if (!MONGODB_URI) {
   throw new Error('Please define the MONGODB_URI environment variable');

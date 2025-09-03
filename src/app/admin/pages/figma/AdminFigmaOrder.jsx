@@ -46,34 +46,46 @@ export default function AdminFigmaOrder() {
     }
   }
 
-  if (loading) return <div className="text-center py-12">Loading Figma items...</div>;
+  if (loading)
+    return <div className="text-center py-12">Loading Figma items...</div>;
 
   return (
-    <div className="max-w-2xl mx-auto mt-10 p-6 bg-zinc-900 rounded-lg shadow">
+    <div className="max-w-2xl mx-auto mt-24 p-6 bg-zinc-900 rounded-lg shadow">
       <h2 className="text-xl font-bold mb-6">Order Figma Items</h2>
-      <ul className="space-y-4">
-        {order.map((id, idx) => {
-          const item = figmaItems.find((i) => i._id === id);
-          if (!item) return null;
-          return (
-            <li key={id} className="flex items-center justify-between bg-zinc-800 p-4 rounded">
-              <span className="font-semibold">{item.title}</span>
-              <div className="space-x-2">
-                <button
-                  onClick={() => moveItem(idx, "up")}
-                  disabled={idx === 0}
-                  className="bg-zinc-700 text-white px-2 py-1 rounded disabled:opacity-50"
-                >↑</button>
-                <button
-                  onClick={() => moveItem(idx, "down")}
-                  disabled={idx === order.length - 1}
-                  className="bg-zinc-700 text-white px-2 py-1 rounded disabled:opacity-50"
-                >↓</button>
-              </div>
-            </li>
-          );
-        })}
-      </ul>
+
+      <div className="max-h-[480px] overflow-y-auto space-y-4">
+        <ul>
+          {order.map((id, idx) => {
+            const item = figmaItems.find((i) => i._id === id);
+            if (!item) return null;
+            return (
+              <li
+                key={id}
+                className="flex items-center justify-between bg-zinc-800 p-4 rounded"
+              >
+                <span className="font-semibold">{item.title}</span>
+                <div className="space-x-2">
+                  <button
+                    onClick={() => moveItem(idx, "up")}
+                    disabled={idx === 0}
+                    className="bg-zinc-700 text-white px-2 py-1 rounded disabled:opacity-50"
+                  >
+                    ↑
+                  </button>
+                  <button
+                    onClick={() => moveItem(idx, "down")}
+                    disabled={idx === order.length - 1}
+                    className="bg-zinc-700 text-white px-2 py-1 rounded disabled:opacity-50"
+                  >
+                    ↓
+                  </button>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+
       <button
         onClick={saveOrder}
         disabled={saving}
