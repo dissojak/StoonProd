@@ -5,7 +5,9 @@
   "scripts": {
     "start": "next dev",
     "build": "next build",
-    "lint": "next lint"
+    "lint": "next lint",
+    "clean": "rimraf .next",
+    "analyze": "cross-env ANALYZE=true next build --no-lint"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
@@ -29,6 +31,7 @@
     "use-media": "^1.5.0"
   },
   "devDependencies": {
+    "cross-env": "^10.0.0",
     "eslint": "^8",
     "eslint-config-next": "15.4.6",
     "postcss": "^8",
