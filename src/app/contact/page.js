@@ -7,11 +7,23 @@ function SuccessMessage({ onHome, onSendAnother, onSendEmail }) {
   return (
     <div className="flex flex-col items-center justify-center py-10">
       <div className="bg-green-100 rounded-full p-4 mb-4">
-        <svg className="h-12 w-12 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+        <svg
+          className="h-12 w-12 text-green-600"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M5 13l4 4L19 7"
+          />
         </svg>
       </div>
-      <h2 className="text-2xl font-bold text-green-600 mb-2">Email Sent Successfully!</h2>
+      <h2 className="text-2xl font-bold text-green-600 mb-2">
+        Email Sent Successfully!
+      </h2>
       <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">
         Your message was sent. Our team will respond within 24 hours.
       </p>
@@ -32,7 +44,11 @@ function SuccessMessage({ onHome, onSendAnother, onSendEmail }) {
           className="bg-gray-200 hover:bg-gray-300 text-teal-700 font-bold py-2 px-4 rounded flex items-center gap-2"
           onClick={onSendEmail}
         >
-          <svg className="h-5 w-5 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
+          <svg
+            className="h-5 w-5 text-teal-600"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+          >
             <path d="M2.94 6.94A2 2 0 014 6h12a2 2 0 011.06.94l-7.06 4.41-7.06-4.41zM18 8.08V14a2 2 0 01-2 2H4a2 2 0 01-2-2V8.08l7.47 4.67a1 1 0 001.06 0L18 8.08z" />
           </svg>
           Send Email
@@ -46,13 +62,26 @@ function ErrorMessage({ onHome, onSendAnother }) {
   return (
     <div className="flex flex-col items-center justify-center py-10">
       <div className="bg-red-100 rounded-full p-4 mb-4">
-        <svg className="h-12 w-12 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+        <svg
+          className="h-12 w-12 text-red-600"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M6 18L18 6M6 6l12 12"
+          />
         </svg>
       </div>
-      <h2 className="text-2xl font-bold text-red-600 mb-2">Error Sending Message</h2>
+      <h2 className="text-2xl font-bold text-red-600 mb-2">
+        Error Sending Message
+      </h2>
       <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">
-        There was a problem sending your message. Please try again later or contact us directly.
+        There was a problem sending your message. Please try again later or
+        contact us directly.
       </p>
       <div className="flex flex-row gap-4">
         <button
@@ -76,14 +105,44 @@ function Contact() {
   const formRef = useRef();
   const [showSuccess, setShowSuccess] = useState(false);
   const [showError, setShowError] = useState(false);
+  const [errors, setErrors] = useState({});
+
+  const validate = ({ fullName, phone, email, message }) => {
+    const newErrors = {};
+    if (!fullName) newErrors.fullName = "Full name is required.";
+    else if (!fullName.includes(" "))
+      newErrors.fullName = "Enter both first and last name.";
+
+    if (!phone) newErrors.phone = "Phone is required.";
+    else if (!/^\d{8}$/.test(phone))
+      newErrors.phone = "Phone must be 8 digits (Tunisian number).";
+
+    if (!email) newErrors.email = "Email is required.";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+      newErrors.email = "Enter a valid email.";
+
+    if (!message) newErrors.message = "Message cannot be empty.";
+
+    return newErrors;
+  };
 
   async function handleSubmit(e) {
     e.preventDefault();
     const form = formRef.current;
-    const fullName = form["grid-full-name"].value;
-    const phone = form["grid-phone-number"].value;
-    const email = form["grid-email"].value;
-    const message = form["grid-message"].value;
+    const fullName = form["grid-full-name"].value.trim();
+    const phone = form["grid-phone-number"].value.trim();
+    const email = form["grid-email"].value.trim();
+    const message = form["grid-message"].value.trim();
+
+    const newErrors = validate({ fullName, phone, email, message });
+    setErrors(newErrors);
+    if (Object.keys(newErrors).length > 0) return;
+
+    // Frontend validation
+    if (!fullName || !phone || !email || !message) {
+      console.log("All fields are required.");
+      return;
+    }
 
     try {
       const res = await fetch("/api/contact-send", {
@@ -102,18 +161,22 @@ function Contact() {
     }
   }
 
-  const handleGoHome = () => window.location.href = "/";
+  const handleGoHome = () => (window.location.href = "/");
   const handleSendAnother = () => {
     setShowSuccess(false);
     setShowError(false);
   };
-  const handleSendEmail = () => window.open('mailto:stoonproduction@gmail.com', '_blank');
+  const handleSendEmail = () =>
+    window.open("mailto:stoonproduction@gmail.com", "_blank");
+
+  const inputClass = (error) =>
+    `appearance-none block w-full bg-gray-200 text-gray-700 border ${
+      error ? "border-red-600" : "border-gray-200"
+    } rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 dark:focus:border-gray-300 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-800`;
 
   return (
     <>
-      <div className="bg-teal-500 w-full h-24 block">
-        {/* <Navbar /> */}
-      </div>
+      <div className="bg-teal-500 w-full h-24 block">{/* <Navbar /> */}</div>
       <section className="bg-white text-black py-20 dark:bg-gray-950 dark:text-white">
         <div className="max-w-screen-lg p-5 m-auto sm:mx-20">
           <div className="grid grid-cols-1 md:grid-cols-12 border border-gray-600 dark:border-teal-400">
@@ -126,7 +189,10 @@ function Contact() {
                 <span className="text-teal-500 dark:text-teal-400">Touch</span>
               </h3>
               <p className="mt-4 leading-7 text-gray-200 dark:text-gray-300">
-                We would love to hear from you! Whether you have a question about our services, want to start a project, or just want to say hello, our team is ready to help. Fill out the form and we&apos;ll get back to you as soon as possible.
+                We would love to hear from you! Whether you have a question
+                about our services, want to start a project, or just want to say
+                hello, our team is ready to help. Fill out the form and
+                we&apos;ll get back to you as soon as possible.
               </p>
               <div className="flex items-center mt-5">
                 <svg
@@ -161,19 +227,19 @@ function Contact() {
                   <g>
                     <path
                       d="M59.002,37.992c-3.69,0-6.693-3.003-6.693-6.693c0-0.553-0.447-1-1-1s-1,0.447-1,1c0,4.794,3.899,8.693,8.693,8.693
-    c0.553,0,1-0.447,1-1S59.554,37.992,59.002,37.992z"
+      c0.553,0,1-0.447,1-1S59.554,37.992,59.002,37.992z"
                     ></path>
                     <path
                       d="M58.256,35.65c0.553,0,1-0.447,1-1s-0.447-1-1-1c-0.886,0-1.605-0.72-1.605-1.605c0-0.553-0.447-1-1-1s-1,0.447-1,1
-    C54.65,34.033,56.267,35.65,58.256,35.65z"
+      C54.65,34.033,56.267,35.65,58.256,35.65z"
                     ></path>
                     <path
                       d="M20.002,2.992c3.691,0,6.693,3.003,6.693,6.693c0,0.553,0.448,1,1,1s1-0.447,1-1c0-4.794-3.9-8.693-8.693-8.693
-    c-0.552,0-1,0.447-1,1S19.449,2.992,20.002,2.992z"
+      c-0.552,0-1,0.447-1,1S19.449,2.992,20.002,2.992z"
                     ></path>
                     <path
                       d="M19.748,6.334c0,0.553,0.448,1,1,1c0.885,0,1.604,0.72,1.604,1.605c0,0.553,0.448,1,1,1s1-0.447,1-1
-    c0-1.988-1.617-3.605-3.604-3.605C20.196,5.334,19.748,5.781,19.748,6.334z"
+      c0-1.988-1.617-3.605-3.604-3.605C20.196,5.334,19.748,5.781,19.748,6.334z"
                     ></path>
                   </g>
                 </svg>
@@ -194,13 +260,15 @@ function Contact() {
                   <g>
                     <path
                       d="M150.494,0.001C67.511,0.001,0,67.512,0,150.495s67.511,150.493,150.494,150.493s150.494-67.511,150.494-150.493
-        S233.476,0.001,150.494,0.001z M150.494,285.987C75.782,285.987,15,225.206,15,150.495S75.782,15.001,150.494,15.001
-        s135.494,60.782,135.494,135.493S225.205,285.987,150.494,285.987z"
+          S233.476,0.001,150.494,0.001z M150.494,285.987C75.782,285.987,15,225.206,15,150.495S75.782,15.001,150.494,15.001
+          s135.494,60.782,135.494,135.493S225.205,285.987,150.494,285.987z"
                     ></path>
                     <polygon points="142.994,142.995 83.148,142.995 83.148,157.995 157.994,157.995 157.994,43.883 142.994,43.883" />
                   </g>
                 </svg>
-                <span className="text-sm dark:text-gray-400">We reply within 24 hours</span>
+                <span className="text-sm dark:text-gray-400">
+                  We reply within 24 hours
+                </span>
               </div>
             </div>
             <div className="md:col-span-8 p-10">
@@ -220,62 +288,85 @@ function Contact() {
                   <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                       <label
-                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-gray-300"
                         htmlFor="grid-full-name"
+                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-gray-300"
                       >
                         Full Name
                       </label>
                       <input
                         type="text"
                         id="grid-full-name"
-                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 dark:focus:border-gray-300 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-800"
+                        className={inputClass(errors.fullName)}
                       />
+                      {errors.fullName && (
+                        <p className="text-red-600 text-xs mt-1">
+                          {errors.fullName}
+                        </p>
+                      )}
                     </div>
 
                     <div className="w-full md:w-1/2 px-3">
                       <label
-                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-gray-300"
                         htmlFor="grid-phone-number"
+                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-gray-300"
                       >
                         Phone Number
                       </label>
                       <input
                         type="text"
                         id="grid-phone-number"
-                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 dark:focus:border-gray-300 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-800"
+                        className={inputClass(errors.phone)}
                       />
+                      {errors.phone && (
+                        <p className="text-red-600 text-xs mt-1">
+                          {errors.phone}
+                        </p>
+                      )}
                     </div>
                   </div>
+
                   <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full px-3">
                       <label
-                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-gray-300"
                         htmlFor="grid-email"
+                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-gray-300"
                       >
                         Email Address
                       </label>
                       <input
                         type="email"
                         id="grid-email"
-                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 dark:focus:border-gray-300 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-800"
+                        className={inputClass(errors.email)}
                       />
+                      {errors.email && (
+                        <p className="text-red-600 text-xs mt-1">
+                          {errors.email}
+                        </p>
+                      )}
                     </div>
                   </div>
+
                   <div className="flex flex-wrap -mx-3 mb-6">
                     <div className="w-full px-3">
                       <label
-                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-gray-300"
                         htmlFor="grid-message"
+                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2 dark:text-gray-300"
                       >
                         Your Message
                       </label>
                       <textarea
                         id="grid-message"
-                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 dark:focus:border-gray-300 dark:bg-gray-900 dark:text-gray-200 dark:border-gray-800"
+                        className={inputClass(errors.message)}
                         rows="5"
                       ></textarea>
+                      {errors.message && (
+                        <p className="text-red-600 text-xs mt-1">
+                          {errors.message}
+                        </p>
+                      )}
                     </div>
                   </div>
+
                   <div className="flex flex-row gap-4 mt-4">
                     <button
                       type="submit"
