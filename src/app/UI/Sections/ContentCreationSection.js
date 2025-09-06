@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const ContentCreation = () => {
   return (
     <div className="dark:bg-slate-900 bg-gray-100 xl:px-20">
@@ -6,10 +8,12 @@ const ContentCreation = () => {
       id="contentCreation"
     >
       <div className="w-full rounded-[50px] sm:rounded-[60px] md:rounded-[70px] lg:rounded-[80px] bg-teal-500 flex flex-col lg:flex-row items-center py-6 sm:py-9 md:py-11 lg:py-14 px-2 sm:px-4 md:px-8 xl:px-16">
-        <img
+        <Image
           className="w-full lg:w-1/2 xl:w-full max-w-[550px] lg:order-2"
           src="/assets/images/SocialMediaContent.png"
-          alt=""
+          alt="Social Media Content"
+          width={550}
+          height={400}
         />
         <div className="text-center md:text-left text-white dark:text-gray-900">
           <h1 className="text-4xl leading-[48px] md:text-5xl md:leading-[58px] lg:text-[50px] lg:leading-[70px] font-bold mb-6 md:mb-12">

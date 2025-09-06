@@ -2,5 +2,5 @@ projectKey=squ_c5f73926460e7c094921906bcd8b1adc0a463fee
 serverUrl=http://localhost:9000
 serverVersion=25.5.0.107428
 dashboardUrl=http://localhost:9000/dashboard?id=squ_c5f73926460e7c094921906bcd8b1adc0a463fee
-ceTaskId=9ae5b4eb-fea8-4509-ab08-0b556d2d57c5
-ceTaskUrl=http://localhost:9000/api/ce/task?id=9ae5b4eb-fea8-4509-ab08-0b556d2d57c5
+ceTaskId=b4df4ade-8814-4011-a074-e297e77c83c8
+ceTaskUrl=http://localhost:9000/api/ce/task?id=b4df4ade-8814-4011-a074-e297e77c83c8

@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 import useMedia from "use-media";
 
@@ -40,9 +41,11 @@ const VideoContent = () => {
               onClick={() => setShowVideo(true)}
               className="flex items-center justify-center rounded-xl border border-solid border-teal-500 px-6 py-3 font-semibold text-teal-500 shadow-[rgb(26,132,112)_6px_6px]"
             >
-              <img
+              <Image
                 src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63905a575ec39b6784fc687c_Play.svg"
                 alt="play"
+                width={24}
+                height={24}
                 className="mr-2 w-6"
                 style={{
                   filter:
@@ -55,9 +58,11 @@ const VideoContent = () => {
         </div>
         {!showVideo ? (
           <div className="relative mx-auto h-[512px]">
-            <img
+            <Image
               src="/assets/images/tealGraphic.png"
               alt="Commercial Videography"
+              width={800}
+              height={512}
               className="inline-block h-full w-full rounded-xl object-cover sm:rounded-2xl"
             />
             <div className="absolute bottom-0 left-4 right-0 top-4 -z-10 h-full w-full rounded-2xl bg-black opacity-40 dark:opacity-60"></div>
@@ -95,14 +100,18 @@ const VideoContent = () => {
         )}
       </div>
 
-      <img
+      <Image
         src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63905b9f809b5c8180ce30c5_pattern-1.svg"
-        alt=""
+        alt="Pattern background 1"
+        width={120}
+        height={120}
         className="absolute bottom-0 left-0 -z-10 hidden md:inline-block md:bottom-1/2"
       />
-      <img
+      <Image
         src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63905ba1538296b3f50a905e_pattern-2.svg"
-        alt=""
+        alt="Pattern background 2"
+        width={120}
+        height={120}
         className="absolute right-0 top-0 -z-10 hidden sm:inline-block"
       />
     </section>
