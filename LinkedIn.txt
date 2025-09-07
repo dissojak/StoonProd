@@ -1,0 +1,19 @@
+My LinkedIn account has been hacked, starting with unauthorized access to my email (ademadembenamor@hotmail.com
+). The hacker changed my profile name from Adem Ben Amor to Wei Zhang. My original name was Adem Ben Amor, sometimes with the nickname Dissojak.
+
+Even though I’ve recovered my email, I cannot access my LinkedIn account, which remains locked in the identity verification process. This situation has been ongoing for far too long and is severely affecting me professionally. I urgently request immediate action to restore my original account.
+
+Profile email: ademadembenamor@hotmail.com
+Profile GitHub: github.com/dissojak
+Profile URL: linkedin.com/adem_ben_amor
+
+To verify my identity, I will attach:
+My previous professional LinkedIn photo
+My GitHub profile
+My Tunisian national ID
+
+Additional verification: 
+I am actively committing to my GitHub projects.
+As I send this report, I will make a new commit in my repo (github.com/dissojak/stoonprod) containing this exact message in a text file named linkedin.txt.
+This commit serves as proof that I am the rightful owner of the account.
+You can check the commit to confirm my identity.
