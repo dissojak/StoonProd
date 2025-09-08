@@ -5,11 +5,11 @@ import { Poppins } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 import ScrollToTop from "./UI/ScrollToTop";
 
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Header from "./UI/Header/Header";
 import ClientThemeProvider from "./components/ClientThemeProvider";
 import GoogleAnalytics from "./components/GoogleAnalytics";
-
+import Script from "next/script";
 
 // Using Next.js metadata API for app directory
 export const metadata = {
@@ -79,6 +79,23 @@ const font = Poppins({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script id="ga-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '${process.env.NEXT_GA_MEASUREMENT_ID}', {
+              page_path: window.location.pathname,
+            });
+          `}
+        </Script>
+      </head>
       <body className={font.className}>
         <ClientThemeProvider
           attribute="class"
@@ -89,7 +106,7 @@ export default function RootLayout({ children }) {
           {children}
           <ScrollToTop />
           {/* Insert SpeedInsights component that belong to vercel */}
-          <GoogleAnalytics />
+          {/* <GoogleAnalytics /> */}
           <SpeedInsights />
         </ClientThemeProvider>
       </body>
