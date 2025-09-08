@@ -62,7 +62,8 @@ const SliderSection = () => {
                 Your browser does not support the video tag.
               </video> */}
               <Image
-                src="/assets/animations/vediocru.gif"
+                // src="/assets/animations/vediocru.gif"
+                src="https://res.cloudinary.com/duvougrqx/image/upload/v1757355185/figmaUploads/vediocru_yqftqk.gif"
                 alt="Film production illustration"
                 width={800}
                 height={600}
