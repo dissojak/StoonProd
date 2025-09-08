@@ -8,6 +8,7 @@ import ScrollToTop from "./UI/ScrollToTop";
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import Header from "./UI/Header/Header";
 import ClientThemeProvider from "./components/ClientThemeProvider";
+import GoogleAnalytics from "./components/GoogleAnalytics";
 
 
 // Using Next.js metadata API for app directory
@@ -88,6 +89,7 @@ export default function RootLayout({ children }) {
           {children}
           <ScrollToTop />
           {/* Insert SpeedInsights component that belong to vercel */}
+          <GoogleAnalytics />
           <SpeedInsights />
         </ClientThemeProvider>
       </body>
