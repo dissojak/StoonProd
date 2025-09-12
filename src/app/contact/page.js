@@ -3,6 +3,33 @@
 import React, { useRef, useState } from "react";
 import MaintenanceSection from "../UI/MaintenanceSection";
 
+// Simple and safe email validator to avoid super-linear regex backtracking (SonarQube)
+// This follows basic RFC-inspired constraints without complex patterns.
+function isValidEmail(email) {
+  if (!email || email.length > 254) return false;
+  const at = email.indexOf("@");
+  // exactly one '@' and not at start/end
+  if (at <= 0 || at !== email.lastIndexOf("@") || at === email.length - 1) return false;
+
+  const local = email.slice(0, at);
+  const domain = email.slice(at + 1);
+
+  if (local.length === 0 || local.length > 64) return false;
+  if (domain.length < 3 || domain.length > 255) return false;
+  if (domain.includes("..")) return false;
+
+  // basic domain label checks
+  const labels = domain.split(".");
+  if (labels.length < 2) return false; // must have at least one dot
+  for (const label of labels) {
+    if (label.length === 0 || label.length > 63) return false;
+    // labels shouldn't start or end with hyphen
+    if (label.startsWith("-") || label.endsWith("-")) return false;
+  }
+
+  return true;
+}
+
 function SuccessMessage({ onHome, onSendAnother, onSendEmail }) {
   return (
     <div className="flex flex-col items-center justify-center py-10">
@@ -101,8 +128,8 @@ function Contact() {
     if (!phone) newErrors.phone = "Phone is required.";
     else if (!/^\d{8}$/.test(phone)) newErrors.phone = "Phone must be 8 digits (Tunisian number).";
 
-    if (!email) newErrors.email = "Email is required.";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) newErrors.email = "Enter a valid email.";
+  if (!email) newErrors.email = "Email is required.";
+  else if (!isValidEmail(email)) newErrors.email = "Enter a valid email.";
 
     if (!message) newErrors.message = "Message cannot be empty.";
 
