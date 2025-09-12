@@ -18,27 +18,16 @@ const HeaderLink = ({ item }) => {
   };
 
   return (
-    <div
-      className="relative"
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    >
+    <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
       <Link
         href={item.href}
         className={`text-xl flex font-medium duration-300 ${
-          path === item.href
-            ? "text-myRed"
-            : "text-white hover:text-myRed"
+          path === item.href ? "text-myRed" : "text-white hover:text-myRed"
         }`}
       >
         {item.label}
         {item.submenu && (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="1.5em"
-            height="1.5em"
-            viewBox="0 0 24 24"
-          >
+          <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
             <path
               fill="none"
               stroke="currentColor"

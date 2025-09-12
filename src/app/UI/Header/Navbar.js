@@ -82,10 +82,7 @@ const Navbar = () => {
             { name: "Tariffs", link: "/serviceandtariffs" },
             "Contact",
           ].map((item, idx) => (
-            <li
-              key={idx}
-              className="list-none inline-block lg:px-5 lg:py-2.5 xs:px-2 xs:py-2"
-            >
+            <li key={idx} className="list-none inline-block lg:px-5 lg:py-2.5 xs:px-2 xs:py-2">
               <Link
                 href={
                   typeof item === "string"
@@ -93,11 +90,7 @@ const Navbar = () => {
                     : item.link
                 }
                 className={`relative py-1.5 hover:text-myRed after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[3px] after:bg-myRed after:transition-all after:duration-300 hover:after:w-full ${
-                  isActive(
-                    typeof item === "string"
-                      ? `/${item.toLowerCase()}`
-                      : item.link
-                  )
+                  isActive(typeof item === "string" ? `/${item.toLowerCase()}` : item.link)
                     ? "text-myRed font-bold"
                     : ""
                 }`}
@@ -143,7 +136,7 @@ const Navbar = () => {
                     isActive(
                       typeof item === "string"
                         ? `/${item.toLowerCase().replace(/\s+/g, "")}`
-                        : item.link
+                        : item.link,
                     )
                       ? "bg-myRed"
                       : ""

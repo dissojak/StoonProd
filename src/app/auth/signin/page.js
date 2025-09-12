@@ -9,7 +9,6 @@ export default function SignInPage() {
   const [notification, setNotification] = useState("");
   const [showSecret, setShowSecret] = useState(false);
 
-
   const secretPassword = "ena9a7betAdem";
 
   const handleUsernameChange = (e) => {
@@ -41,7 +40,7 @@ export default function SignInPage() {
     const res = await signIn("credentials", {
       redirect: false,
       username: finalUsername,
-      password
+      password,
     });
 
     if (res.error) setError(res.error);
@@ -50,8 +49,8 @@ export default function SignInPage() {
 
   return (
     <main className="min-h-screen flex items-center justify-center bg-zinc-900 p-4 sm:p-6">
-      <form 
-        onSubmit={handleSubmit} 
+      <form
+        onSubmit={handleSubmit}
         className="bg-zinc-800 p-6 sm:p-8 rounded-lg shadow w-full max-w-md space-y-4 sm:space-y-6 relative"
       >
         {notification && (

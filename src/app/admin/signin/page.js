@@ -19,7 +19,7 @@ export default function SignIn() {
       password,
     });
     if (res.ok) {
-      router.push("/admin");
+      router.push("/admin/figma/form");
     } else {
       setError("Invalid credentials");
     }
@@ -27,13 +27,16 @@ export default function SignIn() {
 
   return (
     <main className="min-h-screen flex items-center justify-center bg-gradient-to-b from-black via-zinc-900 to-black text-white">
-      <form onSubmit={handleSubmit} className="bg-zinc-900 p-8 rounded-lg shadow max-w-sm w-full space-y-4">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-zinc-900 p-8 rounded-lg shadow max-w-sm w-full space-y-4"
+      >
         <h2 className="text-xl font-bold mb-2">Sign In</h2>
         <input
           className="w-full p-2 rounded bg-zinc-800 border border-zinc-700 text-white"
           placeholder="Username"
           value={username}
-          onChange={e => setUsername(e.target.value)}
+          onChange={(e) => setUsername(e.target.value)}
           required
         />
         <input
@@ -41,7 +44,7 @@ export default function SignIn() {
           placeholder="Password"
           type="password"
           value={password}
-          onChange={e => setPassword(e.target.value)}
+          onChange={(e) => setPassword(e.target.value)}
           required
         />
         <button

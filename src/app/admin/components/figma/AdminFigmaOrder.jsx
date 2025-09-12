@@ -46,8 +46,7 @@ export default function AdminFigmaOrder() {
     }
   }
 
-  if (loading)
-    return <div className="text-center py-12">Loading Figma items...</div>;
+  if (loading) return <div className="text-center py-12">Loading Figma items...</div>;
 
   return (
     <div className="max-w-2xl mx-auto mt-24 p-6 bg-zinc-900 rounded-lg shadow">
@@ -59,10 +58,7 @@ export default function AdminFigmaOrder() {
             const item = figmaItems.find((i) => i._id === id);
             if (!item) return null;
             return (
-              <li
-                key={id}
-                className="flex items-center justify-between bg-zinc-800 p-4 rounded"
-              >
+              <li key={id} className="flex items-center justify-between bg-zinc-800 p-4 rounded">
                 <span className="font-semibold">{item.title}</span>
                 <div className="space-x-2">
                   <button

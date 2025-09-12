@@ -19,11 +19,7 @@ const Header = () => {
   // Move handleClickOutside inside useEffect to avoid dependency warning
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (
-        mobileMenuRef.current &&
-        !mobileMenuRef.current.contains(event.target) &&
-        navbarOpen
-      ) {
+      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target) && navbarOpen) {
         setNavbarOpen(false);
       }
     };
@@ -42,9 +38,7 @@ const Header = () => {
   return (
     <header
       className={`fixed top-0 z-40 w-full transition-all duration-300 ${
-        sticky
-          ? "shadow-lg bg-black dark:bg-slate-900 py-4"
-          : "shadow-none py-4"
+        sticky ? "shadow-lg bg-black dark:bg-slate-900 py-4" : "shadow-none py-4"
       }`}
     >
       <div className="lg:py-0 py-2">
@@ -56,11 +50,11 @@ const Header = () => {
             ))}
           </nav>
           <div className="flex items-center gap-4">
-            <Link href="#" className="xs:text-xs sm:text-lg font-medium hover:text-myRed text-white">
-              <Icon
-                icon="solar:phone-bold"
-                className="text-myRed text-3xl inline-block me-2"
-              />
+            <Link
+              href="#"
+              className="xs:text-xs sm:text-lg font-medium hover:text-myRed text-white"
+            >
+              <Icon icon="solar:phone-bold" className="text-myRed text-3xl inline-block me-2" />
               +216 23-039-320
             </Link>
             <button

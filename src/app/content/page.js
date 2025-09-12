@@ -24,8 +24,7 @@ const Content = () => {
             <InstagramReel reelId={instaReel_3} />
           </div>
           <h1 className="mt-10">Watch our latest YouTube video!</h1>
-          <YouTubeVideo videoId={youtubeVideoId} />{" "}
-          {/* Add the YouTube video component */}
+          <YouTubeVideo videoId={youtubeVideoId} /> {/* Add the YouTube video component */}
         </div>
       </section>
     </>

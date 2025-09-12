@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import Service from "../components/Services/Services";
+import Service from "@/app/components/Services/Services";
 import MaintenanceSection from "../UI/MaintenanceSection";
 import Link from "next/link";
 
@@ -67,8 +67,7 @@ function ServiceAndTariffs() {
         minPrice: "2500",
         maxPrice: "3000",
         title: "Premium Production Plan",
-        description:
-          "For larger video projects, including commercials and music videos.",
+        description: "For larger video projects, including commercials and music videos.",
         features: [
           { id: 1, text: "Full production crew" },
           { id: 2, text: "Up to 30 minutes of video" },
@@ -86,8 +85,7 @@ function ServiceAndTariffs() {
         minPrice: "1500",
         maxPrice: "2000",
         title: "Basic Web Development Plan",
-        description:
-          "Ideal for small business websites or personal portfolios.",
+        description: "Ideal for small business websites or personal portfolios.",
         features: [
           { id: 1, text: "Responsive website design" },
           { id: 2, text: "Up to 5 pages" },
@@ -99,8 +97,7 @@ function ServiceAndTariffs() {
         minPrice: "3000",
         maxPrice: "5000",
         title: "Advanced Web Development Plan",
-        description:
-          "For larger websites with custom features and advanced functionality.",
+        description: "For larger websites with custom features and advanced functionality.",
         features: [
           { id: 1, text: "Custom web application development" },
           { id: 2, text: "Up to 15 pages" },
@@ -124,23 +121,14 @@ function ServiceAndTariffs() {
           name="keywords"
           content="event coverage Tunisia, video production Tunisia, web development Tunisia, pricing plans, professional services, Stoon Production"
         />
-        <meta
-          property="og:title"
-          content="Service and Tariffs | Stoon Production - Tunisia"
-        />
+        <meta property="og:title" content="Service and Tariffs | Stoon Production - Tunisia" />
         <meta
           property="og:description"
           content="Explore our event coverage, video production, and web development services with detailed pricing plans. Choose the best option for your needs. Proudly serving Tunisia."
         />
         <meta property="og:image" content="/assets/images/merchWidth.jpg" />
-        <meta
-          property="og:url"
-          content="https://www.stoonproduction.com/service-and-tariffs"
-        />
-        <meta
-          name="twitter:title"
-          content="Service and Tariffs | Stoon Production - Tunisia"
-        />
+        <meta property="og:url" content="https://www.stoonproduction.com/service-and-tariffs" />
+        <meta name="twitter:title" content="Service and Tariffs | Stoon Production - Tunisia" />
         <meta
           name="twitter:description"
           content="Explore our event coverage, video production, and web development services with detailed pricing plans. Choose the best option for your needs. Proudly serving Tunisia."
@@ -189,9 +177,9 @@ function ServiceAndTariffs() {
               Work with us
             </h2>
             <p className="mt-6 text-lg leading-8 text-gray-300">
-              We specialize in video creation, photography, and web development.
-              Our services ensure that your brand is professionally showcased
-              across various platforms, and we are proud to serve Tunisia.
+              We specialize in video creation, photography, and web development. Our services ensure
+              that your brand is professionally showcased across various platforms, and we are proud
+              to serve Tunisia.
             </p>
           </div>
           <div className="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
@@ -208,36 +196,20 @@ function ServiceAndTariffs() {
             </div>
             <dl className="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
               <div className="flex flex-col-reverse">
-                <dt className="text-base leading-7 text-gray-300">
-                  Offices Worldwide
-                </dt>
-                <dd className="text-2xl font-bold leading-9 tracking-tight text-white">
-                  3
-                </dd>
+                <dt className="text-base leading-7 text-gray-300">Offices Worldwide</dt>
+                <dd className="text-2xl font-bold leading-9 tracking-tight text-white">3</dd>
               </div>
               <div className="flex flex-col-reverse">
-                <dt className="text-base leading-7 text-gray-300">
-                  Projects Delivered
-                </dt>
-                <dd className="text-2xl font-bold leading-9 tracking-tight text-white">
-                  210+
-                </dd>
+                <dt className="text-base leading-7 text-gray-300">Projects Delivered</dt>
+                <dd className="text-2xl font-bold leading-9 tracking-tight text-white">210+</dd>
               </div>
               <div className="flex flex-col-reverse">
-                <dt className="text-base leading-7 text-gray-300">
-                  Creative Team Members
-                </dt>
-                <dd className="text-2xl font-bold leading-9 tracking-tight text-white">
-                  18
-                </dd>
+                <dt className="text-base leading-7 text-gray-300">Creative Team Members</dt>
+                <dd className="text-2xl font-bold leading-9 tracking-tight text-white">18</dd>
               </div>
               <div className="flex flex-col-reverse">
-                <dt className="text-base leading-7 text-gray-300">
-                  Years in Business
-                </dt>
-                <dd className="text-2xl font-bold leading-9 tracking-tight text-white">
-                  5
-                </dd>
+                <dt className="text-base leading-7 text-gray-300">Years in Business</dt>
+                <dd className="text-2xl font-bold leading-9 tracking-tight text-white">5</dd>
               </div>
             </dl>
           </div>
@@ -265,9 +237,7 @@ function ServiceAndTariffs() {
           <p className="text-gray-500 dark:text-teal-600">
             © 2020-2025 All Rights Reserved By Stoon Production.
           </p>
-          <p className="font-medium text-gray-700 dark:text-teal-600">
-            Terms of Service
-          </p>
+          <p className="font-medium text-gray-700 dark:text-teal-600">Terms of Service</p>
         </div>
       </footer>
     </>

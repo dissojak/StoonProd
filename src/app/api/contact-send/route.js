@@ -4,17 +4,12 @@ import { connectToDatabase } from "@/lib/mongodb";
 export async function POST(req) {
   const { fullName, phone, email, message } = await req.json();
 
-  //  check values are not empty 
-  if (
-    !fullName?.trim() ||
-    !phone?.trim() ||
-    !email?.trim() ||
-    !message?.trim()
-  ) {
-    return new Response(
-      JSON.stringify({ success: false, error: "All fields are required." }),
-      { status: 400, headers: { "Content-Type": "application/json" } }
-    );
+  //  check values are not empty
+  if (!fullName?.trim() || !phone?.trim() || !email?.trim() || !message?.trim()) {
+    return new Response(JSON.stringify({ success: false, error: "All fields are required." }), {
+      status: 400,
+      headers: { "Content-Type": "application/json" },
+    });
   }
 
   // Ensure DB connection
@@ -33,7 +28,7 @@ export async function POST(req) {
         success: false,
         error: "Database error: " + err.message,
       }),
-      { status: 500, headers: { "Content-Type": "application/json" } }
+      { status: 500, headers: { "Content-Type": "application/json" } },
     );
   }
 }

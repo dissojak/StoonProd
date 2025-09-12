@@ -29,7 +29,9 @@ export default function AdminContactMessages() {
               <div className="text-sm text-gray-600 mb-1">Phone: {msg.phone}</div>
               <div className="text-sm text-gray-600 mb-1">Email: {msg.email}</div>
               <div className="mt-2 text-gray-800">{msg.message}</div>
-              <div className="mt-2 text-xs text-gray-400">{new Date(msg.createdAt).toLocaleString()}</div>
+              <div className="mt-2 text-xs text-gray-400">
+                {new Date(msg.createdAt).toLocaleString()}
+              </div>
             </li>
           ))}
         </ul>

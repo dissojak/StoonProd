@@ -3,14 +3,11 @@ import Link from "next/link";
 
 export default function UrlsPage() {
   const isLocalhost =
-    typeof window !== "undefined" &&
-    window.location.hostname.includes("localhost");
+    typeof window !== "undefined" && window.location.hostname.includes("localhost");
 
-  const baseUrl = isLocalhost
-    ? "http://localhost:3000"
-    : "https://stoonproduction.com";
+  const baseUrl = isLocalhost ? "http://localhost:3000" : "https://stoonproduction.com";
 
-    console.log("Base URL:", baseUrl);
+  console.log("Base URL:", baseUrl);
 
   const publicUrls = [
     { name: "Home", path: "/" },

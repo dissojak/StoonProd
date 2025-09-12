@@ -5,7 +5,7 @@ function Service({ serviceData, sectionNumber }) {
   return (
     <section
       className={`py-20 px-6 ${
-        sectionNumber ? 'bg-slate-200 dark:bg-slate-900' : 'bg-gray-50 dark:bg-slate-800'
+        sectionNumber ? "bg-slate-200 dark:bg-slate-900" : "bg-gray-50 dark:bg-slate-800"
       }`}
     >
       <div className="text-center mb-12">
@@ -13,13 +13,14 @@ function Service({ serviceData, sectionNumber }) {
           Our {serviceData.title}
         </h2>
         <p className="text-xl text-gray-700 dark:text-gray-300 mt-4">
-          Choose the service plan that best suits your needs. Whether it&apos;s an event or a creative project, we have the right options for you.
+          Choose the service plan that best suits your needs. Whether it&apos;s an event or a
+          creative project, we have the right options for you.
         </p>
       </div>
 
       <div className="flex flex-wrap justify-center gap-6">
         {serviceData.plans.map((plan, idx) => (
-          <PricingPlan key={plan.title + '-' + idx} planDetails={plan} />
+          <PricingPlan key={plan.title + "-" + idx} planDetails={plan} />
         ))}
       </div>
     </section>

@@ -59,9 +59,7 @@ function FigmaPreviewItem({ item }) {
         allowFullScreen
         title={item.title}
       ></iframe>
-      <h1 className="mt-4 text-xl font-semibold text-center relative z-20">
-        {item.title}
-      </h1>
+      <h1 className="mt-4 text-xl font-semibold text-center relative z-20">{item.title}</h1>
     </div>
   );
 }

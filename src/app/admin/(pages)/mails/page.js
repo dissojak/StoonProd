@@ -1,4 +1,4 @@
-import AdminFigmaForm from "@/app/admin/pages/figma/AdminFigmaForm";
+import AdminContactMessages from "@/app/admin/components/mails/AdminContactMessages";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";
@@ -8,5 +8,5 @@ export default async function Page() {
   if (!session || session.user?.role !== "admin") {
     redirect("/auth/signin");
   }
-  return <AdminFigmaForm />;
+  return <AdminContactMessages />;
 }

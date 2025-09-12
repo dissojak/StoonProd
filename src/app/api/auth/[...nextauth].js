@@ -18,9 +18,9 @@ export const authOptions = {
           username: credentials.username,
         });
         if (user && user.password === credentials.password) {
-            console.log("User authenticated:", user.username);
-            console.log("User ID:", user._id.toString());
-            console.log("User role:", password);
+          console.log("User authenticated:", user.username);
+          console.log("User ID:", user._id.toString());
+          console.log("User role:", password);
           return { id: user._id.toString(), email: user.email, role: "admin" };
         }
         throw new Error("Invalid credentials");

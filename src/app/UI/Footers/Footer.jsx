@@ -49,10 +49,7 @@ const Footer = () => {
 
           <div className="footer-links-column footer-socials-column">
             <h2>Social Media</h2>
-            <p>
-              Follow me on social media to get the latest awesome reels and
-              posts.
-            </p>
+            <p>Follow me on social media to get the latest awesome reels and posts.</p>
             <div className="footer-socials xs:mb-20">
               <a href="https://instagram.com" target="_blank">
                 <FaInstagram />
@@ -69,9 +66,7 @@ const Footer = () => {
       </section>
 
       <section className="footer-bottom">
-        <p className="footer-copyright lg:ml-8">
-          © 2024 All rights reserved by Stoon Production.
-        </p>
+        <p className="footer-copyright lg:ml-8">© 2024 All rights reserved by Stoon Production.</p>
         <div className="footer-legal">
           <Link href="/contact">Contact</Link>
           <Link href="/terms">Terms</Link>

@@ -32,11 +32,7 @@ const PhotographyHeader = () => {
               <stop stopColor="#ffffff" className="dark:stop-[#1E1B2E]" />
               <stop offset="0.2" stopColor="#A7F3D0" />
               <stop offset="0.7" stopColor="#5EEAD4" />
-              <stop
-                offset="1"
-                stopColor="#ffffff"
-                className="dark:stop-[#1E1B2E]"
-              />
+              <stop offset="1" stopColor="#ffffff" className="dark:stop-[#1E1B2E]" />
             </linearGradient>
           </defs>
         </svg>
@@ -63,18 +59,10 @@ const PhotographyHeader = () => {
               y2="814"
               gradientUnits="userSpaceOnUse"
             >
-              <stop
-                offset="0.01"
-                stopColor="#ffffff"
-                className="dark:stop-[#1E1B2E]"
-              />
+              <stop offset="0.01" stopColor="#ffffff" className="dark:stop-[#1E1B2E]" />
               <stop offset="0.23" stopColor="#A7F3D0" />
               <stop offset="0.77" stopColor="#2DD4BF" />
-              <stop
-                offset="1"
-                stopColor="#ffffff"
-                className="dark:stop-[#1E1B2E]"
-              />
+              <stop offset="1" stopColor="#ffffff" className="dark:stop-[#1E1B2E]" />
             </linearGradient>
           </defs>
         </svg>
@@ -104,11 +92,7 @@ const PhotographyHeader = () => {
               <stop stopColor="#ffffff" className="dark:stop-[#1E1B2E]" />
               <stop offset="0.28" stopColor="#5EEAD4" />
               <stop offset="0.74" stopColor="#14B8A6" />
-              <stop
-                offset="1"
-                stopColor="#ffffff"
-                className="dark:stop-[#1E1B2E]"
-              />
+              <stop offset="1" stopColor="#ffffff" className="dark:stop-[#1E1B2E]" />
             </linearGradient>
           </defs>
         </svg>
@@ -116,17 +100,13 @@ const PhotographyHeader = () => {
         {/* Text content */}
         <div className="md:w-[520px] z-20">
           <h1 className="text-3xl md:text-[36px] lg:text-[46px] leading-[56px] dark:text-white text-slate-700 font-bold">
-            <span className="text-teal-500 dark:text-teal-300">Freeze</span>{" "}
-            Every Moment
+            <span className="text-teal-500 dark:text-teal-300">Freeze</span> Every Moment
             <br />
-            With{" "}
-            <span className="text-teal-500 dark:text-teal-300">
-              Timeless Precision
-            </span>
+            With <span className="text-teal-500 dark:text-teal-300">Timeless Precision</span>
           </h1>
           <p className="text-base dark:text-white text-slate-700 mt-4 md:mt-9 mb-10 md:mb-16">
-            From weddings to personal portraits, we capture the essence of your
-            most important moments with artistic vision and technical mastery.
+            From weddings to personal portraits, we capture the essence of your most important
+            moments with artistic vision and technical mastery.
           </p>
           <div className="flex gap-6 sm:gap-10">
             <button className="uppercase font-bold text-xs rounded-[40px] py-2 lg:py-4 px-4 lg:px-9 text-[#1E1B2E] bg-gradient-to-r from-teal-200 to-teal-400">

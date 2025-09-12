@@ -10,8 +10,8 @@ const WebDevelopmentSection = () => {
         <div className="md:w-1/2 md:pr-10 mb-8 md:mb-0 lg:ml-20">
           <h2 className="text-3xl font-bold mb-4">Web Development</h2>
           <p className="md:text-base lg:text-lg leading-relaxed">
-            From design to deployment, we build custom websites that are fast,
-            secure, and visually stunning.
+            From design to deployment, we build custom websites that are fast, secure, and visually
+            stunning.
           </p>
           <button className="bg-myOrange text-white hover:bg-myOrangeDark dark:bg-myOrangeDark dark:hover:bg-myOrangeDarken py-3 px-6 rounded-full mt-6 transition">
             Get Started

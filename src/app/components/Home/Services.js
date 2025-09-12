@@ -53,12 +53,7 @@ const Services = () => {
               key={i}
             >
               <div className="work-img-bg bg-white rounded-full flex justify-center absolute -top-[30%] sm:top-[-20%] md:top-[-25%] lg:top-[-25%] left-1/2 transform -translate-x-1/2">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  width={120}
-                  height={80}
-                />
+                <Image src={service.image} alt={service.title} width={120} height={80} />
               </div>
               <h3 className="text-2xl text-black dark:text-white font-semibold text-center mt-16">
                 {service.title}

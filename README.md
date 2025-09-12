@@ -1,4 +1,3 @@
-
 # Stoon Production Website
 
 ![Stoon Production Logo](public/assets/images/logostoonprod_rec.svg)
@@ -8,9 +7,11 @@ Welcome to the **Stoon Production Website**! This project serves as the online p
 > **Note:** This website is proprietary to Stoon Production and is not intended for external use or distribution.
 >
 > **Please Note:** This project is strictly for internal use by Stoon Production and should not be used or repurposed by others.
+
 ---
 
 ## Table of Contents
+
 - [About](#about)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
@@ -62,17 +63,20 @@ The project is built using modern technologies:
 Follow these steps to set up the project locally:
 
 1. **Clone the repository**:
+
    ```bash
    git clone https://github.com/dissojak/StoonProd.git
    cd StoonProd
    ```
 
 2. **Install dependencies**:
+
    ```bash
    npm install
    ```
 
 3. **Run the development server**:
+
    ```bash
    npm run dev || npm start
    ```
@@ -108,9 +112,9 @@ Here's what's planned for future updates:
 
 Contributions to this project are not open to the public. This repository is strictly maintained for Stoon Production’s internal use. Please do not attempt to contribute or fork this repository for other purposes.
 
->**If you want to help us**:
+> **If you want to help us**:
 >
-We welcome contributions to improve the project! To contribute:
+> We welcome contributions to improve the project! To contribute:
 
 1. Fork the repository.
 2. Create a new branch (`git checkout -b feature-branch`).

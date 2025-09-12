@@ -1,14 +1,14 @@
-// app/admin/AdminPageClient.jsx (client component)
-"use client"
+// app/admin/components/admin/AdminPageClient.jsx (client component)
+"use client";
 
-import { useState } from "react"
+import { useState } from "react";
 
-import AdminFigmaForm from "../figma/AdminFigmaForm"
-import AdminFigmaOrder from "../figma/AdminFigmaOrder"
-import AdminContactMessages from "../mails/AdminContactMessages"
+import AdminFigmaForm from "../figma/AdminFigmaForm";
+import AdminFigmaOrder from "../figma/AdminFigmaOrder";
+import AdminContactMessages from "../mails/AdminContactMessages";
 
 export default function AdminPageClient() {
-  const [active, setActive] = useState("figmaForm")
+  const [active, setActive] = useState("figmaForm");
 
   return (
     <main className="min-h-screen flex bg-gradient-to-b from-black via-zinc-900 to-black text-white">
@@ -53,5 +53,5 @@ export default function AdminPageClient() {
         {active === "messages" && <AdminContactMessages />}
       </section>
     </main>
-  )
+  );
 }
