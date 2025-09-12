@@ -45,9 +45,7 @@ export default function AdminLayout({ children }) {
       </aside>
 
       {/* Main content */}
-      <section className="flex-1 p-8 overflow-y-auto">
-        {children}
-      </section>
+      <section className="flex-1 p-8 overflow-y-auto">{children}</section>
     </main>
   );
 }

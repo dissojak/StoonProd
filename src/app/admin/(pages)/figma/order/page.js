@@ -1,4 +1,4 @@
-import AdminFigmaOrder from "../../pages/figma/AdminFigmaOrder";
+import AdminFigmaOrder from "@/app/admin/components/figma/AdminFigmaOrder";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { redirect } from "next/navigation";

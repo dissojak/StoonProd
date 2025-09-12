@@ -11,9 +11,8 @@ const NewFooter = () => {
               <Logo />
             </div>
             <p className="text-center text-gray-200">
-              Building trust with clients worldwide. Have a question or need
-              assistance? <br /> Contact us – we&apos;re here to support your
-              creative and business needs.
+              Building trust with clients worldwide. Have a question or need assistance? <br />{" "}
+              Contact us – we&apos;re here to support your creative and business needs.
             </p>
 
             <div className="flex  space-x-4 sm:justify-center  ">

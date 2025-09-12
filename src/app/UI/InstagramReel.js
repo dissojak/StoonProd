@@ -9,7 +9,7 @@ const InstagramReel = ({ reelId }) => {
         width: "27%",
         height: "94vh",
         // paddingBottom: "120%",
-        margin: "auto"
+        margin: "auto",
       }}
     >
       <iframe

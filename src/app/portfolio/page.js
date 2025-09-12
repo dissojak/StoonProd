@@ -21,7 +21,7 @@ const portfolioItems = [
     description:
       "A dynamic music video for a local artist, featuring creative direction, filming, and post-production.",
     image: "/assets/images/filmingZabour.jpg",
-    },
+  },
   {
     title: "promotional video",
     description:
@@ -39,9 +39,8 @@ const PortfolioPage = () => {
           Portfolio
         </h1>
         <p className="text-lg mb-12 text-center max-w-2xl mx-auto text-zinc-300">
-          Explore our recent projects in film production, photography, and
-          content creation. Each project showcases our passion for storytelling
-          and visual excellence.
+          Explore our recent projects in film production, photography, and content creation. Each
+          project showcases our passion for storytelling and visual excellence.
         </p>
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
           {portfolioItems.map((item, idx) => (
@@ -64,9 +63,7 @@ const PortfolioPage = () => {
                 <h2 className="text-2xl font-bold mb-2 text-myYellow drop-shadow-sm group-hover:text-white transition-colors duration-200">
                   {item.title}
                 </h2>
-                <p className="text-base text-zinc-300 flex-1 mb-4">
-                  {item.description}
-                </p>
+                <p className="text-base text-zinc-300 flex-1 mb-4">{item.description}</p>
                 <button
                   className="mt-auto inline-block bg-myYellow text-black rounded-2xl px-5 py-2 font-semibold shadow hover:bg-myYellowHover hover:text-white transition-colors duration-200"
                   disabled

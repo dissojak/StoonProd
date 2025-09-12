@@ -26,9 +26,9 @@ const VideoContent = () => {
             .
           </h1>
           <p className="mx-auto mb-5 max-w-[528px] text-xl text-gray-600 dark:text-gray-300 lg:mb-8">
-            Stoon Production specializes in commercial videos that elevate your
-            brand, promote your services, and connect with your audience. We
-            make video creation simple, leaving you to focus on your business.
+            Stoon Production specializes in commercial videos that elevate your brand, promote your
+            services, and connect with your audience. We make video creation simple, leaving you to
+            focus on your business.
           </p>
           <div className="flex justify-center">
             <a
@@ -82,7 +82,7 @@ const VideoContent = () => {
                 ></iframe>
               </div>
             )}
-            
+
             {/* Short video for smaller screens */}
             {!isMediumOrLarger && (
               <div className="relative mx-auto w-[360px] h-[640px] overflow-hidden rounded-xl shadow-lg sm:w-[400px] sm:h-[711px]">

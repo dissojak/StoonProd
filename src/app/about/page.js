@@ -11,18 +11,14 @@ const AboutPage = () => {
     <div>
       <header className="bg-slate-300 dark:bg-gray-800 transition-colors duration-1000">
         {/* <Navbar /> */}
-         {/*<MaintenanceSection sectionHeight="60vh" />*/}
-        <section
-          className="flex items-center justify-center"
-          style={{ height: "500px" }}
-        >
+        {/*<MaintenanceSection sectionHeight="60vh" />*/}
+        <section className="flex items-center justify-center" style={{ height: "500px" }}>
           <div className="text-center">
             <p className="text-xl font-medium tracking-wider text-gray-700 dark:text-gray-300 transition-colors duration-1000">
               Creative Vision, Captured Perfectly
             </p>
             <h2 className="mt-6 text-3xl font-bold text-gray-900 dark:text-white md:text-5xl transition-colors duration-1000">
-              Bringing Your Ideas to Life with <br /> Stunning Visuals and Web
-              Solutions
+              Bringing Your Ideas to Life with <br /> Stunning Visuals and Web Solutions
             </h2>
 
             <div className="flex justify-center mt-8">
@@ -45,15 +41,11 @@ const AboutPage = () => {
                 Capturing Moments, Creating Experiences
               </h3>
               <p className="max-w-md mt-4 text-gray-600 dark:text-gray-300">
-                From breathtaking photography and videography to innovative web
-                design, we bring your vision to life with creativity and
-                precision. Our experienced team specializes in crafting content
-                that resonates with your audience.
+                From breathtaking photography and videography to innovative web design, we bring
+                your vision to life with creativity and precision. Our experienced team specializes
+                in crafting content that resonates with your audience.
               </p>
-              <a
-                href="#team"
-                className="block mt-8 text-teal-500 dark:text-teal-400 underline"
-              >
+              <a href="#team" className="block mt-8 text-teal-500 dark:text-teal-400 underline">
                 Meet Our Team
               </a>
             </div>
@@ -100,11 +92,10 @@ const AboutPage = () => {
                 Crafting Visual Stories for Every Moment
               </h3>
               <p className="max-w-md mt-4 text-gray-600 dark:text-gray-300 transition-colors duration-1000">
-                At Stoon Production, we capture stunning moments through
-                photography and videography. Whether it&apos;s a personal event
-                or a professional project, we bring creativity and precision to
-                every frame. Our work ensures your story is told in the most
-                impactful way.
+                At Stoon Production, we capture stunning moments through photography and
+                videography. Whether it&apos;s a personal event or a professional project, we bring
+                creativity and precision to every frame. Our work ensures your story is told in the
+                most impactful way.
               </p>
               <a
                 href="#team"
@@ -123,10 +114,10 @@ const AboutPage = () => {
             Bringing Your Ideas to Life through Visuals and Technology
           </h2>
           <p className="max-w-lg mt-4 text-gray-600 dark:text-gray-300 transition-colors duration-1000">
-            At Stoon Production, we specialize in creating stunning visuals
-            through photography, videography, and web development. Our goal is
-            to combine creativity with technology to bring your vision to life,
-            whether it&apos;s for a personal project or a professional endeavor.
+            At Stoon Production, we specialize in creating stunning visuals through photography,
+            videography, and web development. Our goal is to combine creativity with technology to
+            bring your vision to life, whether it&apos;s for a personal project or a professional
+            endeavor.
           </p>
           <div className="grid gap-8 mt-10 md:mt-20 md:grid-cols-2">
             <div className="flex space-x-4">
@@ -148,12 +139,11 @@ const AboutPage = () => {
                   Commercial Video & Photography for Promotions
                 </h4>
                 <p className="max-w-lg mt-4 text-gray-600 dark:text-gray-300 transition-colors duration-1000">
-                  We provide professional video and photography services
-                  tailored to your promotional needs. From product launches to
-                  event coverage, our team captures high-impact visuals that
-                  drive engagement and elevate your brand. Whether for marketing
-                  campaigns or corporate events, we create content that boosts
-                  your visibility and connects with your audience.
+                  We provide professional video and photography services tailored to your
+                  promotional needs. From product launches to event coverage, our team captures
+                  high-impact visuals that drive engagement and elevate your brand. Whether for
+                  marketing campaigns or corporate events, we create content that boosts your
+                  visibility and connects with your audience.
                 </p>
               </div>
             </div>
@@ -177,10 +167,9 @@ const AboutPage = () => {
                   Web Development & Digital Solutions
                 </h4>
                 <p className="max-w-lg mt-4 text-gray-600 dark:text-gray-300 transition-colors duration-1000">
-                  Our expertise extends to developing fully responsive and
-                  user-friendly websites that drive engagement and conversion.
-                  From custom web applications to e-commerce solutions, we
-                  deliver results.
+                  Our expertise extends to developing fully responsive and user-friendly websites
+                  that drive engagement and conversion. From custom web applications to e-commerce
+                  solutions, we deliver results.
                 </p>
               </div>
             </div>
@@ -196,8 +185,8 @@ const AboutPage = () => {
                 Ad Video Production
               </h3>
               <p className="max-w-md mt-4 text-gray-400 dark:text-gray-300">
-                We specialize in creating impactful ad videos to promote your
-                brand, products, and services.
+                We specialize in creating impactful ad videos to promote your brand, products, and
+                services.
               </p>
             </div>
 
@@ -215,14 +204,10 @@ const AboutPage = () => {
         <div className="max-w-5xl px-6 py-16 mx-auto">
           <div className="md:flex md:justify-between">
             <h2 className="text-3xl font-semibold text-gray-800 dark:text-gray-100">
-              Elevating Your Brand with Video, Web Design,{" "}
-              <br className="sm:hidden md:block" />
+              Elevating Your Brand with Video, Web Design, <br className="sm:hidden md:block" />
               and Content Creation
             </h2>
-            <a
-              href="#"
-              className="block mt-6 text-teal-500 underline md:mt-0 dark:text-teal-400"
-            >
+            <a href="#" className="block mt-6 text-teal-500 underline md:mt-0 dark:text-teal-400">
               Our Expertise
             </a>
           </div>
@@ -234,9 +219,8 @@ const AboutPage = () => {
                 Video Creation & Photography
               </h2>
               <p className="max-w-md mt-4 text-gray-600 dark:text-gray-200">
-                From stunning promotional videos to high-quality photography, we
-                capture your brand&apos;s essence in visuals that engage and
-                convert.
+                From stunning promotional videos to high-quality photography, we capture your
+                brand&apos;s essence in visuals that engage and convert.
               </p>
             </div>
 
@@ -246,9 +230,8 @@ const AboutPage = () => {
                 Web Design & Development
               </h2>
               <p className="max-w-md mt-4 text-gray-600 dark:text-gray-200">
-                Our team builds responsive, user-friendly websites that not only
-                look great but are also optimized for performance and
-                conversions.
+                Our team builds responsive, user-friendly websites that not only look great but are
+                also optimized for performance and conversions.
               </p>
             </div>
 
@@ -258,9 +241,8 @@ const AboutPage = () => {
                 Content Creation
               </h2>
               <p className="max-w-md mt-4 text-gray-600 dark:text-gray-200">
-                We create captivating content across various platforms that
-                resonates with your audience and strengthens your brand presence
-                online.
+                We create captivating content across various platforms that resonates with your
+                audience and strengthens your brand presence online.
               </p>
             </div>
           </div>
@@ -270,14 +252,12 @@ const AboutPage = () => {
       <section className="bg-slate-100 dark:bg-gray-900 transition-colors duration-1000">
         <div className="max-w-5xl px-6 py-16 mx-auto text-center">
           <h2 className="text-3xl font-semibold text-gray-800 dark:text-teal-400">
-            Capturing the Essence of Your Brand through <br /> Stunning Visuals
-            and Design
+            Capturing the Essence of Your Brand through <br /> Stunning Visuals and Design
           </h2>
           <p className="max-w-lg mx-auto mt-4 text-gray-600 dark:text-gray-300">
-            We specialize in creating high-impact videos, photography, and
-            sleek, user-friendly websites to enhance your brand presence. Let us
-            bring your vision to life with captivating visuals and seamless web
-            experiences.
+            We specialize in creating high-impact videos, photography, and sleek, user-friendly
+            websites to enhance your brand presence. Let us bring your vision to life with
+            captivating visuals and seamless web experiences.
           </p>
 
           <Image
@@ -332,10 +312,9 @@ const AboutPage = () => {
               Elevate Your Brand with Impactful Visuals
             </h2>
             <p className="max-w-lg mt-4 text-gray-600 dark:text-gray-300">
-              Our team of creative experts is dedicated to producing stunning
-              visuals that capture attention and leave a lasting impression.
-              Whether you need promotional videos, event coverage, or a complete
-              visual package, we&apos;ll help bring your vision to life and
+              Our team of creative experts is dedicated to producing stunning visuals that capture
+              attention and leave a lasting impression. Whether you need promotional videos, event
+              coverage, or a complete visual package, we&apos;ll help bring your vision to life and
               elevate your brand&apos;s presence.
             </p>
           </div>
@@ -360,9 +339,7 @@ const AboutPage = () => {
           <p className="text-gray-500 dark:text-teal-600">
             © 2020-2025 All Rights Reserved By Stoon Production.
           </p>
-          <p className="font-medium text-gray-700 dark:text-teal-600">
-            Terms of Service
-          </p>
+          <p className="font-medium text-gray-700 dark:text-teal-600">Terms of Service</p>
         </div>
       </footer>
     </div>

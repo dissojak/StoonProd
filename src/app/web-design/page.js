@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import FigmaPreview from "../components/Figma/FigmaPreview";
+import FigmaPreview from "@/app/components/Figma/FigmaPreview";
 
 // const figmaItems = [
 //   {
@@ -33,9 +33,7 @@ const WebDesign = () => {
         {loading ? (
           <div>Loading Figma items...</div>
         ) : figmaItems.length === 0 ? (
-          <div className="text-center text-zinc-400 py-12 text-lg">
-            No Figma works found yet.
-          </div>
+          <div className="text-center text-zinc-400 py-12 text-lg">No Figma works found yet.</div>
         ) : (
           <FigmaPreview items={figmaItems} />
         )}

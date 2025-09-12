@@ -11,7 +11,11 @@ export async function POST(req) {
   try {
     // Update each item's order field
     for (let i = 0; i < order.length; i++) {
-      const result = await FigmaItem.findByIdAndUpdate(order[i], { order: i }, { new: true, strict: false });
+      const result = await FigmaItem.findByIdAndUpdate(
+        order[i],
+        { order: i },
+        { new: true, strict: false },
+      );
       if (!result) {
         console.error(`Failed to update item ${order[i]}`);
       } else {
@@ -20,7 +24,7 @@ export async function POST(req) {
     }
     return NextResponse.json({ success: true });
   } catch (err) {
-    console.error('Order update error:', err);
+    console.error("Order update error:", err);
     return NextResponse.json({ error: err.message }, { status: 500 });
   }
 }

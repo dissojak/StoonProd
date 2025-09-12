@@ -6,7 +6,10 @@ export const runtime = "nodejs";
 cloudinary.v2.config({
   cloud_name: "duvougrqx",
   api_key: "513133278582537",
-  api_secret: "0UgeZPnsrmRfbWu-u8eZxo-W0uk"
+  api_secret: "0UgeZPnsrmRfbWu-u8eZxo-W0uk",
+  // cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  // api_key: process.env.CLOUDINARY_API_KEY,
+  // api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 export async function POST(req) {
@@ -21,7 +24,7 @@ export async function POST(req) {
   const dataUri = `data:${file.type};base64,${base64}`;
   try {
     const result = await cloudinary.v2.uploader.upload(dataUri, {
-      folder: "figmaUploads"
+      folder: "figmaUploads",
     });
     return NextResponse.json({ url: result.secure_url });
   } catch (err) {

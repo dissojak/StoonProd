@@ -10,8 +10,8 @@ const PhotographySection = () => {
         <div className="md:w-1/2 md:pr-10 mb-8 md:mb-0 lg:ml-20">
           <h2 className="text-3xl font-bold mb-4">Photography</h2>
           <p className="md:text-base lg:text-lg leading-relaxed">
-            Capture stunning visuals with our professional photography services.
-            From portraits to product shots, we&apos;ve got you covered.
+            Capture stunning visuals with our professional photography services. From portraits to
+            product shots, we&apos;ve got you covered.
           </p>
           <button className="bg-myRed text-white hover:bg-myRedHover dark:bg-myRedDark dark:hover:bg-myRedDarken py-3 px-6 rounded-full mt-6 transition">
             View Gallery

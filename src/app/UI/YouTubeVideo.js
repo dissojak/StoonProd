@@ -32,9 +32,7 @@ const YouTubeVideo = ({ videoId }) => {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="bg-blue-500 text-white py-2 px-4 rounded">
-            Watch on YouTube
-          </button>
+          <button className="bg-blue-500 text-white py-2 px-4 rounded">Watch on YouTube</button>
         </a>
       </div>
     </div>

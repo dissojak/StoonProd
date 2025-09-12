@@ -1,17 +1,17 @@
 import { Fragment } from "react";
 import Navbar from "./UI/Header/Navbar";
-import SliderSection from "./components/Home/SliderSection";
-import HeroSection from "./components/Home/HeroSection";
-import VideomakingSection from "./components/Home/VideomakingSection";
-import PhotographySection from "./components/Home/PhotographySection";
-import ContentCreationSection from "./components/Home/ContentCreationSection";
-import WebDevelopmentSection from "./components/Home/WebDevelopmentSection";
+import SliderSection from "@/app/components/Home/SliderSection";
+import HeroSection from "@/app/components/Home/HeroSection";
+import VideomakingSection from "@/app/components/Home/VideomakingSection";
+import PhotographySection from "@/app/components/Home/PhotographySection";
+import ContentCreationSection from "@/app/components/Home/ContentCreationSection";
+import WebDevelopmentSection from "@/app/components/Home/WebDevelopmentSection";
 import Footer from "./UI/Footers/Footer";
-import ServiceNavigation from "./components/Home/ServiceNavigation";
+import ServiceNavigation from "@/app/components/Home/ServiceNavigation";
 import LogoSlider from "./UI/LogoSlider";
 import MaintenanceSection from "./UI/MaintenanceSection";
 import Header from "./UI/Header/Header";
-import Services from "./components/Home/Services";
+import Services from "@/app/components/Home/Services";
 import NewFooter from "./UI/Footers/NewFooter";
 import ImpactSection from "./UI/Sections/Impact";
 import Graphic from "./UI/Sections/VIdeoContent";
@@ -61,12 +61,12 @@ export default function Home() {
         <LogoSlider />
         <HeroSection />
         {/* <ServiceNavigation /> */}
-        <ImpactSection/>
-        <Services/>
-        <Graphic/>
-        <PhotographyHeader/>
-        <ContentCreation/>
-        <DevelopmentHeroSection/>
+        <ImpactSection />
+        <Services />
+        <Graphic />
+        <PhotographyHeader />
+        <ContentCreation />
+        <DevelopmentHeroSection />
         {/* <VideomakingSection />
         <PhotographySection />
         <ContentCreationSection />

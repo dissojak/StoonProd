@@ -77,9 +77,9 @@ const SliderSection = () => {
                 FILM <br className="hidden sm:inline" /> PRODUCTION
               </h1>
               <p className="text-sm sm:text-base lg:text-lg xl:text-xl leading-relaxed max-w-xl mx-auto lg:ml-auto lg:mr-0">
-                Bringing your vision to life through creative video production,
-                stunning photography, and cutting-edge content creation. We
-                craft stories that resonate and websites that inspire.
+                Bringing your vision to life through creative video production, stunning
+                photography, and cutting-edge content creation. We craft stories that resonate and
+                websites that inspire.
               </p>
 
               {/* Button Section */}

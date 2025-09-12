@@ -28,10 +28,7 @@ const shuffleAvoidConsecutiveDupes = (arr) => {
       [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
     }
     attempt++;
-  } while (
-    shuffled.some((logo, i) => i > 0 && logo.src === shuffled[i - 1].src) &&
-    attempt < 10
-  );
+  } while (shuffled.some((logo, i) => i > 0 && logo.src === shuffled[i - 1].src) && attempt < 10);
   return shuffled;
 };
 

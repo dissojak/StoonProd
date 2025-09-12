@@ -13,17 +13,10 @@ function SuccessMessage({ onHome, onSendAnother, onSendEmail }) {
           viewBox="0 0 24 24"
           stroke="currentColor"
         >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth={2}
-            d="M5 13l4 4L19 7"
-          />
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
         </svg>
       </div>
-      <h2 className="text-2xl font-bold text-green-600 mb-2">
-        Email Sent Successfully!
-      </h2>
+      <h2 className="text-2xl font-bold text-green-600 mb-2">Email Sent Successfully!</h2>
       <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">
         Your message was sent. Our team will respond within 24 hours.
       </p>
@@ -44,11 +37,7 @@ function SuccessMessage({ onHome, onSendAnother, onSendEmail }) {
           className="bg-gray-200 hover:bg-gray-300 text-teal-700 font-bold py-2 px-4 rounded flex items-center gap-2"
           onClick={onSendEmail}
         >
-          <svg
-            className="h-5 w-5 text-teal-600"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-          >
+          <svg className="h-5 w-5 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
             <path d="M2.94 6.94A2 2 0 014 6h12a2 2 0 011.06.94l-7.06 4.41-7.06-4.41zM18 8.08V14a2 2 0 01-2 2H4a2 2 0 01-2-2V8.08l7.47 4.67a1 1 0 001.06 0L18 8.08z" />
           </svg>
           Send Email
@@ -76,12 +65,9 @@ function ErrorMessage({ onHome, onSendAnother }) {
           />
         </svg>
       </div>
-      <h2 className="text-2xl font-bold text-red-600 mb-2">
-        Error Sending Message
-      </h2>
+      <h2 className="text-2xl font-bold text-red-600 mb-2">Error Sending Message</h2>
       <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">
-        There was a problem sending your message. Please try again later or
-        contact us directly.
+        There was a problem sending your message. Please try again later or contact us directly.
       </p>
       <div className="flex flex-row gap-4">
         <button
@@ -110,16 +96,13 @@ function Contact() {
   const validate = ({ fullName, phone, email, message }) => {
     const newErrors = {};
     if (!fullName) newErrors.fullName = "Full name is required.";
-    else if (!fullName.includes(" "))
-      newErrors.fullName = "Enter both first and last name.";
+    else if (!fullName.includes(" ")) newErrors.fullName = "Enter both first and last name.";
 
     if (!phone) newErrors.phone = "Phone is required.";
-    else if (!/^\d{8}$/.test(phone))
-      newErrors.phone = "Phone must be 8 digits (Tunisian number).";
+    else if (!/^\d{8}$/.test(phone)) newErrors.phone = "Phone must be 8 digits (Tunisian number).";
 
     if (!email) newErrors.email = "Email is required.";
-    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
-      newErrors.email = "Enter a valid email.";
+    else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) newErrors.email = "Enter a valid email.";
 
     if (!message) newErrors.message = "Message cannot be empty.";
 
@@ -166,8 +149,7 @@ function Contact() {
     setShowSuccess(false);
     setShowError(false);
   };
-  const handleSendEmail = () =>
-    window.open("mailto:stoonproduction@gmail.com", "_blank");
+  const handleSendEmail = () => window.open("mailto:stoonproduction@gmail.com", "_blank");
 
   const inputClass = (error) =>
     `appearance-none block w-full bg-gray-200 text-gray-700 border ${
@@ -181,18 +163,14 @@ function Contact() {
         <div className="max-w-screen-lg p-5 m-auto sm:mx-20">
           <div className="grid grid-cols-1 md:grid-cols-12 border border-gray-600 dark:border-teal-400">
             <div className="bg-gray-900 md:col-span-4 p-10 text-white dark:bg-gray-800 dark:text-gray-100">
-              <p className="mt-4 text-sm leading-7 font-regular uppercase">
-                Contact
-              </p>
+              <p className="mt-4 text-sm leading-7 font-regular uppercase">Contact</p>
               <h3 className="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight">
-                Get In{" "}
-                <span className="text-teal-500 dark:text-teal-400">Touch</span>
+                Get In <span className="text-teal-500 dark:text-teal-400">Touch</span>
               </h3>
               <p className="mt-4 leading-7 text-gray-200 dark:text-gray-300">
-                We would love to hear from you! Whether you have a question
-                about our services, want to start a project, or just want to say
-                hello, our team is ready to help. Fill out the form and
-                we&apos;ll get back to you as soon as possible.
+                We would love to hear from you! Whether you have a question about our services, want
+                to start a project, or just want to say hello, our team is ready to help. Fill out
+                the form and we&apos;ll get back to you as soon as possible.
               </p>
               <div className="flex items-center mt-5">
                 <svg
@@ -243,9 +221,7 @@ function Contact() {
                     ></path>
                   </g>
                 </svg>
-                <span className="text-sm dark:text-gray-400">
-                  +216 23 039 320
-                </span>
+                <span className="text-sm dark:text-gray-400">+216 23 039 320</span>
               </div>
               <div className="flex items-center mt-5">
                 <svg
@@ -266,9 +242,7 @@ function Contact() {
                     <polygon points="142.994,142.995 83.148,142.995 83.148,157.995 157.994,157.995 157.994,43.883 142.994,43.883" />
                   </g>
                 </svg>
-                <span className="text-sm dark:text-gray-400">
-                  We reply within 24 hours
-                </span>
+                <span className="text-sm dark:text-gray-400">We reply within 24 hours</span>
               </div>
             </div>
             <div className="md:col-span-8 p-10">
@@ -279,10 +253,7 @@ function Contact() {
                   onSendEmail={handleSendEmail}
                 />
               ) : showError ? (
-                <ErrorMessage
-                  onHome={handleGoHome}
-                  onSendAnother={handleSendAnother}
-                />
+                <ErrorMessage onHome={handleGoHome} onSendAnother={handleSendAnother} />
               ) : (
                 <form ref={formRef} onSubmit={handleSubmit}>
                   <div className="flex flex-wrap -mx-3 mb-6">
@@ -299,9 +270,7 @@ function Contact() {
                         className={inputClass(errors.fullName)}
                       />
                       {errors.fullName && (
-                        <p className="text-red-600 text-xs mt-1">
-                          {errors.fullName}
-                        </p>
+                        <p className="text-red-600 text-xs mt-1">{errors.fullName}</p>
                       )}
                     </div>
 
@@ -317,11 +286,7 @@ function Contact() {
                         id="grid-phone-number"
                         className={inputClass(errors.phone)}
                       />
-                      {errors.phone && (
-                        <p className="text-red-600 text-xs mt-1">
-                          {errors.phone}
-                        </p>
-                      )}
+                      {errors.phone && <p className="text-red-600 text-xs mt-1">{errors.phone}</p>}
                     </div>
                   </div>
 
@@ -333,16 +298,8 @@ function Contact() {
                       >
                         Email Address
                       </label>
-                      <input
-                        type="email"
-                        id="grid-email"
-                        className={inputClass(errors.email)}
-                      />
-                      {errors.email && (
-                        <p className="text-red-600 text-xs mt-1">
-                          {errors.email}
-                        </p>
-                      )}
+                      <input type="email" id="grid-email" className={inputClass(errors.email)} />
+                      {errors.email && <p className="text-red-600 text-xs mt-1">{errors.email}</p>}
                     </div>
                   </div>
 
@@ -360,9 +317,7 @@ function Contact() {
                         rows="5"
                       ></textarea>
                       {errors.message && (
-                        <p className="text-red-600 text-xs mt-1">
-                          {errors.message}
-                        </p>
+                        <p className="text-red-600 text-xs mt-1">{errors.message}</p>
                       )}
                     </div>
                   </div>
@@ -402,9 +357,7 @@ function Contact() {
           <p className="text-gray-500 dark:text-teal-600">
             © 2020-2025 All Rights Reserved By Stoon Production.
           </p>
-          <p className="font-medium text-gray-700 dark:text-teal-600">
-            Terms of Service
-          </p>
+          <p className="font-medium text-gray-700 dark:text-teal-600">Terms of Service</p>
         </div>
       </footer>
     </>

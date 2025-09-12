@@ -32,9 +32,7 @@ const ServiceNavigation = () => {
     <div className="bg-gray-100 dark:bg-gray-800 py-20">
       {/* Title */}
       <div className="container mx-auto text-center mb-10">
-        <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">
-          Our Services
-        </h2>
+        <h2 className="text-3xl font-bold text-gray-800 dark:text-gray-100">Our Services</h2>
         <p className="text-gray-600 dark:text-gray-300 mt-2">
           Click on a service to navigate to the relevant section
         </p>
@@ -77,9 +75,7 @@ const ServiceNavigation = () => {
                     <h3 className="relative text-md font-semibold text-gray-100 cursor-pointer after:transition-[width] after:ease-in-out after:duration-700 after:absolute after:bg-gradient-to-r after:from-gray-800/30 dark:after:from-gray-100/30 after:via-gray-100/10 after:to-transparent after:origin-left after:h-[2px] after:w-0 group-hover:after:w-full after:bottom-0 after:left-0">
                       {service.title}
                     </h3>
-                    <p className="text-xs text-gray-400 text-balance">
-                      {service.description}
-                    </p>
+                    <p className="text-xs text-gray-400 text-balance">{service.description}</p>
                   </div>
                 </div>
               </div>

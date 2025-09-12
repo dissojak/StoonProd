@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+import mongoose from "mongoose";
 
 // Best practice: Do not hardcode secrets. Set MONGODB_URI in your deployment environment (e.g., Vercel, Netlify, AWS, etc.)
 // For local development, set it in your shell before running the app:
@@ -6,10 +6,9 @@ import mongoose from 'mongoose';
 // For production, set MONGODB_URI in your host's environment variable dashboard.
 
 const MONGODB_URI = process.env.MONGODB_URI;
-// MONGODB_URI="mongodb+srv://dissojak:stoondissojakb2a@stoon.r8tcyqv.mongodb.net/StoonProd?retryWrites=true&w=majority";
 
 if (!MONGODB_URI) {
-  throw new Error('Please define the MONGODB_URI environment variable');
+  throw new Error("Please define the MONGODB_URI environment variable");
 }
 
 let cached = global.mongoose;
@@ -24,12 +23,14 @@ export async function connectToDatabase() {
   }
 
   if (!cached.promise) {
-    cached.promise = mongoose.connect(MONGODB_URI, {
-      dbName: 'StoonProd',
-      bufferCommands: false,
-    }).then((mongoose) => {
-      return mongoose;
-    });
+    cached.promise = mongoose
+      .connect(MONGODB_URI, {
+        dbName: "StoonProd",
+        bufferCommands: false,
+      })
+      .then((mongoose) => {
+        return mongoose;
+      });
   }
   cached.conn = await cached.promise;
   return cached.conn;

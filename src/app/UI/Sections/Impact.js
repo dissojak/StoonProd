@@ -9,8 +9,8 @@ const ImpactSection = () => {
                 Create with <span className="text-teal-500">passion</span>
               </h1>
               <p className="mt-4 text-base sm:text-lg md:text-xl font-medium text-gray-400 dark:text-gray-400 text-gray-700 text-balance">
-                Bold visuals. Clean code. Next-level content. We craft standout
-                websites and media for modern brands.
+                Bold visuals. Clean code. Next-level content. We craft standout websites and media
+                for modern brands.
               </p>
               <div className="mt-6 sm:mt-8 flex flex-wrap gap-4">
                 <a
@@ -35,8 +35,7 @@ const ImpactSection = () => {
                   Video. Web. Visuals.
                 </h2>
                 <p className="mt-1 text-sm sm:text-base font-light text-gray-400 dark:text-gray-400">
-                  Real stories. Real impact.{" "}
-                  <br className="sm:hidden xs:block" /> Powered by Stoon
+                  Real stories. Real impact. <br className="sm:hidden xs:block" /> Powered by Stoon
                   Production.
                 </p>
               </div>

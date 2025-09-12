@@ -3,23 +3,21 @@ import "./globals.css";
 
 import { Poppins } from "next/font/google";
 import { ThemeProvider } from "next-themes";
-import ScrollToTop from "./UI/ScrollToTop";
+import ScrollToTop from "@/app/UI/ScrollToTop";
 
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import Header from "./UI/Header/Header";
-import ClientThemeProvider from "./components/ClientThemeProvider";
-import GoogleAnalytics from "./components/GoogleAnalytics";
+import Header from "@/app/UI/Header/Header";
+import ClientThemeProvider from "@/app/components/ClientThemeProvider";
+import GoogleAnalytics from "@/app/components/GoogleAnalytics";
 import Script from "next/script";
 
 // Using Next.js metadata API for app directory
 export const metadata = {
-  title:
-    "Stoon Production | Best Videographer & Multimedia Production in Tunisia",
+  title: "Stoon Production | Best Videographer & Multimedia Production in Tunisia",
   description:
     "Looking for a videographer in Tunisia? Stoon Production offers professional videography, photography, and web development services for events and businesses. We specialize in creative content solutions and event coverage to bring your vision to life.",
   openGraph: {
-    title:
-      "Best Videographer & Multimedia Production in Tunisia | Stoon Production",
+    title: "Best Videographer & Multimedia Production in Tunisia | Stoon Production",
     description:
       "Looking for a best studio production in Tunisia? We provide professional solutions.",
     url: "https://stoonproduction.com",
@@ -34,8 +32,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Best Videographer & Multimedia Production in Tunisia | Stoon Production",
+    title: "Best Videographer & Multimedia Production in Tunisia | Stoon Production",
     description:
       "Stoon Production is a creative studio offering freelance videography, photography, and multimedia production in Tunisia. Capture your moments with the best Tunisian video team.",
     images: [
@@ -97,11 +94,7 @@ export default function RootLayout({ children }) {
         </Script>
       </head>
       <body className={font.className}>
-        <ClientThemeProvider
-          attribute="class"
-          enableSystem={true}
-          defaultTheme="system"
-        >
+        <ClientThemeProvider attribute="class" enableSystem={true} defaultTheme="system">
           <Header />
           {children}
           <ScrollToTop />
