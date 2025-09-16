@@ -15,8 +15,11 @@ Welcome to the **Stoon Production Website**! This project serves as the online p
 - [About](#about)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
+- [Project Structure](#project-structure)
+- [Environment Variables](#environment-variables)
 - [Installation](#installation)
 - [Usage](#usage)
+- [Scripts](#scripts)
 - [Roadmap](#roadmap)
 - [Contributing](#contributing)
 - [License](#license)
@@ -49,12 +52,44 @@ This repository contains the source code for the website, developed with modern 
 
 The project is built using modern technologies:
 
-- **Next.js**: For server-side rendering and static site generation, optimizing performance and SEO.
+- **Next.js**: For server-side rendering and static site generation, optimizing performance and SEO ( React Server/Client Components).
 - **Tailwind CSS**: For efficient and customizable styling, allowing for rapid UI development.
 - **Vercel**: Deployment platform for fast, reliable hosting.
+- **MongoDB**: NoSQL database for storing user inquiries and other dynamic content.
+- **Media**: Cloudinary (uploads endpoint)
+- **Tooling**: Prettier, EditorConfig
+- **Auth**: NextAuth (Credentials), secured via middleware and JWT
 
-- - **Express.js** (Upcoming): A backend framework to handle server-side operations and API requests.
-- - **MongoDB** (Upcoming): NoSQL database for storing user inquiries and other dynamic content.
+- - **Express.js** (Upcoming): A backend framework to handle heavy server-side operations and API requests.
+
+**Please Note:**
+- Auth is centralized in lib/authOptions.ts.
+- Middleware guards admin routes with token role.
+
+---
+
+## Project Structure
+- src/app: App Router pages, API routes, middleware
+- src/app/UI: Shared UI components (Header, Footer, Sections, etc.)
+- src/app/components: App-scoped components (Home, Services, Figma)
+- src/lib: Database, auth options, utilities
+- src/models: Mongoose models
+- src/scripts: Maintenance scripts (TypeScript)
+- src/types: Project-level type augmentations
+
+---
+
+## Environment Variables
+Copy .env.example to .env.local and fill the values.
+
+Required:
+- NEXTAUTH_URL=http://localhost:3000
+- NEXTAUTH_SECRET=your-strong-secret
+- MONGODB_URI=mongodb+srv://...
+- CLOUDINARY_CLOUD_NAME=...
+- CLOUDINARY_API_KEY=...
+- CLOUDINARY_API_SECRET=...
+- NEXT_GA_MEASUREMENT_ID=G-XXXXXXX (optional)
 
 ---
 
@@ -85,6 +120,18 @@ Follow these steps to set up the project locally:
 
 ---
 
+## Scripts
+- Dev: `npm run dev`
+- Build: `npm run build`
+- Start (prod): `npm start`
+- Typecheck: `npm run typecheck`
+- Format: `npm run format`
+- Maintenance script (build + run): `npm run scripts:run-fix-figma-order`
+
+**Tips:** A small build output is used to validate maintenance scripts during checks without affecting the app.
+
+---
+
 ## Usage
 
 The website includes the following main sections:
@@ -94,7 +141,11 @@ The website includes the following main sections:
 - **Tariffs**: A detailed overview of our services pricing & offers in videography, photography, and web development (Including Web-Design).
 - **Contact**: A functional form for users to send inquiries, which will eventually be stored in a database when backend integration is complete.
 
-- - **Portfolio** (Upcoming): A collection of photos and videos from our previous projects.
+**Admin**:
+- Protected under /admin via middleware and NextAuth credentials.
+
+
+- - **Portfolio** (Upcoming): A collection of photos, videos also designes from our previous projects.
 
 ---
 
@@ -102,9 +153,11 @@ The website includes the following main sections:
 
 Here's what's planned for future updates:
 
-- **Backend Integration**: Add Express.js and MongoDB to handle form submissions and inquiries.
+- **Backend Integration**: Add Express.js to handle heavy requests and inquiries.
 - **Portfolio Expansion**: Increase the number of featured projects with new photos and videos.
 - **Client Testimonials**: Add a section for client feedback and reviews.
+- **Harden auth** : Password hashing, rate limits
+- **typecheck/build**: Add tests and CI checks
 
 ---
 
