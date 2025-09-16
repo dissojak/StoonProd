@@ -1,0 +1,23 @@
+import { NextResponse } from "next/server";
+import { connectToDatabase } from "@/lib/mongodb";
+import FigmaItem from "@/models/FigmaItem";
+
+export async function GET() {
+  await connectToDatabase();
+  const items = await FigmaItem.find().sort({ order: 1, createdAt: -1 });
+  return NextResponse.json(items);
+}
+
+export async function POST(req: Request) {
+  await connectToDatabase();
+  const body = (await req.json()) as { title?: string; link?: string; image?: string };
+  const { title, link, image } = body;
+  if (!title || !link) {
+    return NextResponse.json({ error: "Missing fields" }, { status: 400 });
+  }
+  if (!image) {
+    return NextResponse.json({ error: "Image URL missing" }, { status: 400 });
+  }
+  const newItem = await FigmaItem.create({ title, link, image, order: 9999 });
+  return NextResponse.json(newItem, { status: 201 });
+}

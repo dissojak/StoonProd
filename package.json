@@ -8,7 +8,11 @@
     "lint": "next lint",
     "clean": "rimraf .next",
     "analyze": "cross-env ANALYZE=true next build --no-lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "typecheck": "tsc --noEmit",
+    "scripts:build": "tsc -p tsconfig.scripts.json",
+    "scripts:typecheck": "tsc -p tsconfig.scripts.json --noEmit",
+    "scripts:run-fix-figma-order": "npm run -s scripts:build && node .tmp-scripts/scripts/fixFigmaOrder.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
@@ -21,6 +25,7 @@
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.475.0",
     "mongoose": "^8.17.1",
+    "dotenv": "^16.4.5",
     "next": "15.4.6",
     "next-auth": "^4.24.11",
     "next-themes": "^0.4.6",
@@ -30,11 +35,15 @@
     "use-media": "^1.5.0"
   },
   "devDependencies": {
+    "@types/node": "^24.5.0",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
     "cross-env": "^10.0.0",
     "eslint": "^8",
     "eslint-config-next": "15.4.6",
-    "prettier": "^3.3.3",
     "postcss": "^8",
-    "tailwindcss": "^3.4.1"
+    "prettier": "^3.3.3",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.9.2"
   }
 }

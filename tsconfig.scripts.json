@@ -1,0 +1,14 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "noEmit": false,
+    "outDir": ".tmp-scripts",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es2020",
+    "jsx": "react-jsx",
+    "types": []
+  },
+  "include": ["src/scripts/**/*.ts", "src/lib/**/*.ts", "src/models/**/*.ts"],
+  "exclude": ["node_modules"]
+}
