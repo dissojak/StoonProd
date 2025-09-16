@@ -38,14 +38,12 @@ This repository contains the source code for the website, developed with modern 
 
 ---
 
-
 ## Releases
 
-| Version | Type | Status | Release Date | Notes | Link |
-| ------- | ---- | ------ | ------------ | ----- | ---- |
-| v2.0.0 | TypeScript | Active | 2025-09-16 | Full migration from JS to TS, refactored codebase, admin improvements, type-safe, actively maintained | [View Release](https://github.com/dissojak/StoonProd/releases/tag/v2.0.0) |
-| v1.0.0 | JavaScript | Deprecated | 2024-12-10 | Original JS version, legacy code, no furthe
-
+| Version | Type       | Status     | Release Date | Notes                                                                                                 | Link                                                                      |
+| ------- | ---------- | ---------- | ------------ | ----------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| v2.0.0  | TypeScript | Active     | 2025-09-16   | Full migration from JS to TS, refactored codebase, admin improvements, type-safe, actively maintained | [View Release](https://github.com/dissojak/StoonProd/releases/tag/v2.0.0) |
+| v1.0.0  | JavaScript | Deprecated | 2024-12-10   | Original JS version, legacy code, no furthe                                                           |
 
 ---
 
@@ -75,12 +73,14 @@ The project is built using modern technologies:
 - - **Express.js** (Upcoming): A backend framework to handle heavy server-side operations and API requests.
 
 **Please Note:**
+
 - Auth is centralized in lib/authOptions.ts.
 - Middleware guards admin routes with token role.
 
 ---
 
 ## Project Structure
+
 - src/app: App Router pages, API routes, middleware
 - src/app/UI: Shared UI components (Header, Footer, Sections, etc.)
 - src/app/components: App-scoped components (Home, Services, Figma)
@@ -92,9 +92,11 @@ The project is built using modern technologies:
 ---
 
 ## Environment Variables
+
 Copy .env.example to .env.local and fill the values.
 
 Required:
+
 - NEXTAUTH_URL=http://localhost:3000
 - NEXTAUTH_SECRET=your-strong-secret
 - MONGODB_URI=mongodb+srv://...
@@ -133,6 +135,7 @@ Follow these steps to set up the project locally:
 ---
 
 ## Scripts
+
 - Dev: `npm run dev`
 - Build: `npm run build`
 - Start (prod): `npm start`
@@ -154,8 +157,8 @@ The website includes the following main sections:
 - **Contact**: A functional form for users to send inquiries, which will eventually be stored in a database when backend integration is complete.
 
 **Admin**:
-- Protected under /admin via middleware and NextAuth credentials.
 
+- Protected under /admin via middleware and NextAuth credentials.
 
 - - **Portfolio** (Upcoming): A collection of photos, videos also designes from our previous projects.
 

@@ -4,7 +4,6 @@ import { ThemeProvider } from "next-themes";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import GoogleAnalytics from "./components/GoogleAnalytics";
-import Script from "next/script";
 import type { Metadata } from "next";
 import React from "react";
 import ClientThemeProvider from "./components/ClientThemeProvider";
@@ -75,30 +74,14 @@ const font = Poppins({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <head>
-        {/* Google Analytics */}
-        <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_GA_MEASUREMENT_ID}`}
-          strategy="afterInteractive"
-        />
-        <Script id="ga-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);} 
-            gtag('js', new Date());
-            gtag('config', '${process.env.NEXT_GA_MEASUREMENT_ID}', {
-              page_path: window.location.pathname,
-            });
-          `}
-        </Script>
-      </head>
+      <head></head>
       <body className={font.className}>
         <ClientThemeProvider attribute="class" enableSystem={true} defaultTheme="system">
           <Header />
           {children}
           <ScrollToTop />
-          {/* <GoogleAnalytics /> */}
           <SpeedInsights />
+          <GoogleAnalytics />
         </ClientThemeProvider>
       </body>
     </html>
