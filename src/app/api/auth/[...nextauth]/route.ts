@@ -1,3 +1,6 @@
+// Ensure this route runs on the Node.js runtime (NextAuth v4 is not Edge-compatible)
+export const runtime = "nodejs";
+
 import NextAuth from "next-auth";
 import { authOptions } from "@/lib/authOptions";
 
