@@ -13,6 +13,7 @@ Welcome to the **Stoon Production Website**! This project serves as the online p
 ## Table of Contents
 
 - [About](#about)
+- [Releases](#releases)
 - [Features](#features)
 - [Tech Stack](#tech-stack)
 - [Installation](#installation)
@@ -31,6 +32,15 @@ Welcome to the **Stoon Production Website**! This project serves as the online p
 This repository contains the source code for the website, developed with modern technologies for the front-end features. It's designed to be fast, responsive, and visually appealing, with ongoing updates for new functionality.
 
 **Please Note:** This project is developed exclusively for Stoon Production. It is not intended for public use or adaptation by third parties.
+
+---
+
+## 📦 Releases
+
+| Version | Type | Status | Release Date | Notes | Link |
+| ------- | ---- | ------ | ------------ | ----- | ---- |
+| v2.0.0 | TypeScript | Active | 2025-09-16 | Full migration from JS to TS, refactored codebase, admin improvements, type-safe, actively maintained | [View Release](https://github.com/dissojak/StoonProd/releases/tag/v2.0.0) |
+| v1.0.0 | JavaScript | Deprecated | 2025-07-15 | Original JS version, legacy code, no furthe
 
 ---
 
