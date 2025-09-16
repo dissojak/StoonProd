@@ -38,7 +38,7 @@ This repository contains the source code for the website, developed with modern 
 
 ---
 
-## 📦 Releases
+## Releases
 
 | Version | Type | Status | Release Date | Notes | Link |
 | ------- | ---- | ------ | ------------ | ----- | ---- |
