@@ -53,7 +53,7 @@ const Header = () => {
 
       if (e.key === "Tab" && mobileMenuRef.current) {
         const focusable = mobileMenuRef.current.querySelectorAll<HTMLElement>(
-          'a, button, [tabindex]:not([tabindex="-1"])'
+          'a, button, [tabindex]:not([tabindex="-1"])',
         );
         if (!focusable.length) return;
         const first = focusable[0];
@@ -93,7 +93,10 @@ const Header = () => {
       <div className="lg:py-0 py-2">
         <div className="container mx-auto lg:max-w-screen-xl xs:max-w-screen-md flex items-center justify-between px-4">
           <Logo />
-          <nav className="hidden lg:flex flex-grow items-center gap-8 justify-center" aria-label="Primary">
+          <nav
+            className="hidden lg:flex flex-grow items-center gap-8 justify-center"
+            aria-label="Primary"
+          >
             {headerData.map((item, index) => (
               <HeaderLink key={index} item={item} />
             ))}
@@ -104,7 +107,10 @@ const Header = () => {
               className="xs:text-xs sm:text-lg font-medium hover:text-myRed text-white focus:outline-none focus:ring-2 focus:ring-myRed/50 rounded"
               aria-label="Call us at +216 23-039-320"
             >
-              <Icon icon="solar:phone-bold" className="text-myRed text-3xl inline-block me-2 align-middle" />
+              <Icon
+                icon="solar:phone-bold"
+                className="text-myRed text-3xl inline-block me-2 align-middle"
+              />
               <span className="align-middle">+216 23-039-320</span>
             </Link>
             <button
@@ -150,10 +156,17 @@ const Header = () => {
           role="dialog"
           aria-modal="true"
           aria-label="Mobile navigation"
+          tabIndex={0} // Make it focusable
           className={`lg:hidden fixed top-0 right-0 h-full w-full max-w-xs bg-slate-800/95 text-white backdrop-blur-md shadow-2xl transform transition-transform duration-300 ${
             navbarOpen ? "translate-x-0" : "translate-x-full"
           } z-50`}
           onClick={onMobileNavClick}
+          onKeyDown={(e) => {
+            // e.g. Enter or Space triggers the same action as click
+            if (e.key === "Enter" || e.key === " ") {
+              onMobileNavClick(e as any); // Cast needed for typing
+            }
+          }}
         >
           <div className="flex items-center justify-between px-4 pt-16 pb-4">
             <h2 className="text-lg font-bold text-midnight_text dark:text-midnight_text">
@@ -184,7 +197,10 @@ const Header = () => {
                 href="tel:+21623039320"
                 className="w-full text-center rounded-md border border-white/20 px-4 py-2 font-medium text-white/90 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-white/30"
               >
-                <Icon icon="solar:phone-bold" className="inline align-middle me-2 text-xl text-myRed" />
+                <Icon
+                  icon="solar:phone-bold"
+                  className="inline align-middle me-2 text-xl text-myRed"
+                />
                 <span className="align-middle">+216 23-039-320</span>
               </Link>
             </div>
