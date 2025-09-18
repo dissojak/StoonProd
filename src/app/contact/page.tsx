@@ -147,17 +147,15 @@ function Contact() {
   const [showError, setShowError] = useState(false);
   const [errors, setErrors] = useState<FormErrors>({});
 
-  const validate = ({
-    fullName,
-    phone,
-    email,
-    message,
-  }: {
+  type FormValues = {
     fullName: string;
     phone: string;
     email: string;
     message: string;
-  }): FormErrors => {
+  };
+
+  const validate = (values: FormValues): FormErrors => {
+    const { fullName, phone, email, message } = values;
     const newErrors: FormErrors = {};
     if (!fullName) newErrors.fullName = "Full name is required.";
     else if (!fullName.includes(" ")) newErrors.fullName = "Enter both first and last name.";
@@ -173,10 +171,7 @@ function Contact() {
     return newErrors;
   };
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const form = formRef.current;
-    if (!form) return;
+  function getFormValues(form: HTMLFormElement) {
     const fullName =
       (form.elements.namedItem("grid-full-name") as HTMLInputElement)?.value.trim() || "";
     const phone =
@@ -184,16 +179,28 @@ function Contact() {
     const email = (form.elements.namedItem("grid-email") as HTMLInputElement)?.value.trim() || "";
     const message =
       (form.elements.namedItem("grid-message") as HTMLTextAreaElement)?.value.trim() || "";
+    return { fullName, phone, email, message };
+  }
 
-    const newErrors = validate({ fullName, phone, email, message });
+  function handleFormErrors(values: { fullName: string; phone: string; email: string; message: string }) {
+    const newErrors = validate(values);
     setErrors(newErrors);
-    if (Object.keys(newErrors).length > 0) return;
+    return Object.keys(newErrors).length > 0;
+  }
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = formRef.current;
+    if (!form) return;
+    const values = getFormValues(form);
+
+    if (handleFormErrors(values)) return;
 
     try {
       const res = await fetch("/api/contact-send", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ fullName, phone, email, message }),
+        body: JSON.stringify(values),
       });
       if (!res.ok) {
         setShowError(true);
