@@ -16,6 +16,7 @@ const SliderSection: React.FC = () => {
                 width={800}
                 height={600}
                 className="w-full max-w-3xl mx-auto h-auto lg:mb-32"
+                unoptimized
               />
             </div>
             <div className="w-full lg:w-1/2 text-center lg:text-right z-10">

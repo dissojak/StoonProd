@@ -50,7 +50,11 @@ export default function SignInPage() {
     setIsSubmitting(true);
 
     let finalUsername = username;
-    if ((/^emna/i.test(username) || /^amna/i.test(username)) && password === secretPassword) {
+    function isSpecialUserWithSecretPassword(username: string, password: string) {
+      const isSpecialUser = /^emna/i.test(username) || /^amna/i.test(username);
+      return isSpecialUser && password === secretPassword;
+    }
+    if (isSpecialUserWithSecretPassword(username, password)) {
       finalUsername = "EmnaGmati";
     }
 

@@ -2,8 +2,21 @@
 
 import React, { useRef, useState } from "react";
 
-// Simple and safe email validator to avoid super-linear regex backtracking (SonarQube)
-// This follows basic RFC-inspired constraints without complex patterns.
+// --- Constants for Large String Literals ---
+const CONTACT_DESCRIPTION =
+  "We would love to hear from you! Whether you have a question about our services, want to start a project, or just want to say hello, our team is ready to help. Fill out the form and we&apos;ll get back to you as soon as possible.";
+
+const ADDRESS_TEXT = "FR82+8V8, Al-Maamoura, Nabeul, Tunisia";
+const PHONE_TEXT = "+216 23 039 320";
+const REPLY_TEXT = "We reply within 24 hours";
+
+const SUCCESS_TITLE = "Email Sent Successfully!";
+const SUCCESS_BODY = "Your message was sent. Our team will respond within 24 hours.";
+const ERROR_TITLE = "Error Sending Message";
+const ERROR_BODY =
+  "There was a problem sending your message. Please try again later or contact us directly.";
+
+// --- Email Validator ---
 function isValidEmail(email: string): boolean {
   if (!email || email.length > 254) return false;
   const at = email.indexOf("@");
@@ -43,6 +56,7 @@ function isValidDomainLabel(label: string): boolean {
 
 type FormErrors = Partial<Record<"fullName" | "phone" | "email" | "message", string>>;
 
+// --- Success Message Component ---
 function SuccessMessage({
   onHome,
   onSendAnother,
@@ -64,10 +78,8 @@ function SuccessMessage({
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
         </svg>
       </div>
-      <h2 className="text-2xl font-bold text-green-600 mb-2">Email Sent Successfully!</h2>
-      <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">
-        Your message was sent. Our team will respond within 24 hours.
-      </p>
+      <h2 className="text-2xl font-bold text-green-600 mb-2">{SUCCESS_TITLE}</h2>
+      <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">{SUCCESS_BODY}</p>
       <div className="flex flex-row gap-4">
         <button
           className="bg-gray-200 hover:bg-gray-300 text-teal-700 font-bold py-2 px-4 rounded flex items-center gap-2"
@@ -95,6 +107,7 @@ function SuccessMessage({
   );
 }
 
+// --- Error Message Component ---
 function ErrorMessage({
   onHome,
   onSendAnother,
@@ -119,10 +132,8 @@ function ErrorMessage({
           />
         </svg>
       </div>
-      <h2 className="text-2xl font-bold text-red-600 mb-2">Error Sending Message</h2>
-      <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">
-        There was a problem sending your message. Please try again later or contact us directly.
-      </p>
+      <h2 className="text-2xl font-bold text-red-600 mb-2">{ERROR_TITLE}</h2>
+      <p className="text-gray-700 dark:text-gray-300 mb-6 text-center">{ERROR_BODY}</p>
       <div className="flex flex-row gap-4">
         <button
           className="bg-gray-200 hover:bg-gray-300 text-teal-700 font-bold py-2 px-4 rounded flex items-center gap-2"
@@ -182,7 +193,12 @@ function Contact() {
     return { fullName, phone, email, message };
   }
 
-  function handleFormErrors(values: { fullName: string; phone: string; email: string; message: string }) {
+  function handleFormErrors(values: {
+    fullName: string;
+    phone: string;
+    email: string;
+    message: string;
+  }) {
     const newErrors = validate(values);
     setErrors(newErrors);
     return Object.keys(newErrors).length > 0;
@@ -237,9 +253,7 @@ function Contact() {
                 Get In <span className="text-teal-500 dark:text-teal-400">Touch</span>
               </h3>
               <p className="mt-4 leading-7 text-gray-200 dark:text-gray-300">
-                We would love to hear from you! Whether you have a question about our services, want
-                to start a project, or just want to say hello, our team is ready to help. Fill out
-                the form and we&apos;ll get back to you as soon as possible.
+                {CONTACT_DESCRIPTION}
               </p>
               <div className="flex items-center mt-5">
                 <svg
@@ -256,9 +270,7 @@ function Contact() {
                     </g>
                   </g>
                 </svg>
-                <span className="text-sm dark:text-gray-400">
-                  FR82+8V8, Al-Maamoura, Nabeul, Tunisia
-                </span>
+                <span className="text-sm dark:text-gray-400">{ADDRESS_TEXT}</span>
               </div>
               <div className="flex items-center mt-5">
                 <svg
@@ -289,7 +301,7 @@ function Contact() {
                     ></path>
                   </g>
                 </svg>
-                <span className="text-sm dark:text-gray-400">+216 23 039 320</span>
+                <span className="text-sm dark:text-gray-400">{PHONE_TEXT}</span>
               </div>
               <div className="flex items-center mt-5">
                 <svg
@@ -310,7 +322,7 @@ function Contact() {
                     <polygon points="142.994,142.995 83.148,142.995 83.148,157.995 157.994,157.995 157.994,43.883 142.994,43.883" />
                   </g>
                 </svg>
-                <span className="text-sm dark:text-gray-400">We reply within 24 hours</span>
+                <span className="text-sm dark:text-gray-400">{REPLY_TEXT}</span>
               </div>
             </div>
             <div className="md:col-span-8 p-10">
