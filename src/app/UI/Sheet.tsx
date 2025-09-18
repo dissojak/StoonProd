@@ -6,11 +6,29 @@ type SheetProps = {
   children: React.ReactNode;
 };
 
+/**
+ * Accessible Sheet overlay.
+ * - Handles mouse click and keyboard events (Escape/Enter/Space) for accessibility.
+ * - Adds tabIndex and role="button" for keyboard navigation.
+ */
 export function Sheet({ open, onOpenChange, children }: SheetProps) {
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (["Escape", "Enter", " "].includes(e.key)) {
+      onOpenChange(false);
+    }
+  };
+
   return (
     <div
-      className={`fixed inset-0 z-50 bg-black/50 transition-opacity ${open ? "opacity-100" : "opacity-0 pointer-events-none"}`}
+      className={`fixed inset-0 z-50 bg-black/50 transition-opacity ${
+        open ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`}
       onClick={() => onOpenChange(false)}
+      tabIndex={0}
+      role="button"
+      aria-label="Close sheet overlay"
+      onKeyDown={handleKeyDown}
+      style={{ outline: "none" }}
     >
       {children}
     </div>
