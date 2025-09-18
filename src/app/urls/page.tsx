@@ -41,7 +41,12 @@ export default function UrlsPage() {
       </header>
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <UrlSection title="Public" subtitle="Client-facing pages" links={publicRoutes} baseUrl={baseUrl} />
+        <UrlSection
+          title="Public"
+          subtitle="Client-facing pages"
+          links={publicRoutes}
+          baseUrl={baseUrl}
+        />
         <UrlSection
           title="Admin"
           subtitle="Restricted tools (requires sign-in)"
@@ -49,7 +54,13 @@ export default function UrlsPage() {
           baseUrl={baseUrl}
           accent="teal"
         />
-        <UrlSection title="Auth" subtitle="Authentication" links={authRoutes} baseUrl={baseUrl} accent="amber" />
+        <UrlSection
+          title="Auth"
+          subtitle="Authentication"
+          links={authRoutes}
+          baseUrl={baseUrl}
+          accent="amber"
+        />
       </div>
     </div>
   );
@@ -80,16 +91,24 @@ function UrlSection({
   return (
     <section className="rounded-xl border border-zinc-200 dark:border-zinc-800 p-6 shadow-sm bg-white/70 dark:bg-zinc-900/50 backdrop-blur">
       <div className="mb-5">
-        <span className={`inline-flex items-center px-2 py-1 text-xs font-semibold rounded-md ring-1 ${badgeClass}`}>
+        <span
+          className={`inline-flex items-center px-2 py-1 text-xs font-semibold rounded-md ring-1 ${badgeClass}`}
+        >
           {title}
         </span>
         {subtitle && <p className="mt-2 text-sm text-zinc-500">{subtitle}</p>}
       </div>
       <ul className="space-y-3">
         {links.map((l) => (
-          <li key={l.path} className="group flex items-start justify-between gap-3 rounded-lg border border-zinc-200 dark:border-zinc-800 p-4 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition">
+          <li
+            key={l.path}
+            className="group flex items-start justify-between gap-3 rounded-lg border border-zinc-200 dark:border-zinc-800 p-4 hover:bg-zinc-50 dark:hover:bg-zinc-800/50 transition"
+          >
             <div className="min-w-0">
-              <Link href={l.path} className="flex items-center gap-2 font-medium text-zinc-900 dark:text-zinc-100 hover:text-orange-600">
+              <Link
+                href={l.path}
+                className="flex items-center gap-2 font-medium text-zinc-900 dark:text-zinc-100 hover:text-orange-600"
+              >
                 {l.name}
                 <ExternalLink className="size-4 opacity-0 group-hover:opacity-100 transition" />
               </Link>
@@ -139,4 +158,3 @@ function CopyButton({ text }: { text: string }) {
     </button>
   );
 }
-

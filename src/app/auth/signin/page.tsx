@@ -79,7 +79,9 @@ export default function SignInPage() {
 
           <div className="mb-6 text-center">
             <h1 className="text-2xl sm:text-3xl font-extrabold text-white">Admin Sign In</h1>
-            <p className="mt-1 text-zinc-400 text-sm">Access restricted area. Authorized personnel only.</p>
+            <p className="mt-1 text-zinc-400 text-sm">
+              Access restricted area. Authorized personnel only.
+            </p>
           </div>
 
           {notification && (
@@ -90,7 +92,9 @@ export default function SignInPage() {
                   type="button"
                   onClick={handleRevealSecret}
                   className="ml-2 rounded bg-blue-700 px-2 py-1 text-sm hover:bg-blue-600"
-                  aria-label={showSecret ? "Hide special password" : "Reveal and autofill special password"}
+                  aria-label={
+                    showSecret ? "Hide special password" : "Reveal and autofill special password"
+                  }
                 >
                   {showSecret ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
                 </button>
@@ -178,7 +182,7 @@ export default function SignInPage() {
 
           <div className="mt-4 text-center text-xs text-zinc-500">
             <span>
-              Having trouble? Return to {" "}
+              Having trouble? Return to{" "}
               <Link href="/" className="text-teal-400 hover:text-teal-300 underline">
                 Home
               </Link>
