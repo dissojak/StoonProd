@@ -12,16 +12,13 @@ export const authOptions: NextAuthOptions = {
         password: { label: "Password", type: "password" },
       },
       async authorize(credentials) {
-        console.log("DOING AUTHORIZATION NOW WITH TS !!!");
         if (!credentials?.username || !credentials?.password) return null;
         const { username, password } = credentials as { username: string; password: string };
         await connectToDatabase();
         const user = await (AdminUser as any).findOne({ username });
         if (user && user.password === password) {
-          console.log("AUTHORIZED USER:", user);
           return { id: user._id.toString(), email: user.email ?? undefined, role: "admin" } as any;
         }
-        console.log("AUTHORIZATION FAILED");
         return null;
       },
     }),
