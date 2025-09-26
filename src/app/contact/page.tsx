@@ -244,8 +244,8 @@ function Contact() {
   return (
     <>
       <div className="bg-teal-500 w-full h-24 block" />
-      <section className="bg-white text-black py-20 dark:bg-gray-950 dark:text-white">
-        <div className="max-w-screen-lg p-5 m-auto sm:mx-20">
+<section className="bg-white text-black py-20 dark:bg-gray-950 dark:text-white md:h-[79vh] lg:h-[82.9vh]">
+        <div className="max-w-screen-lg p-5 md:m-auto sm:mx-20">
           <div className="grid grid-cols-1 md:grid-cols-12 border border-gray-600 dark:border-teal-400">
             <div className="bg-gray-900 md:col-span-4 p-10 text-white dark:bg-gray-800 dark:text-gray-100">
               <p className="mt-4 text-sm leading-7 font-regular uppercase">Contact</p>
