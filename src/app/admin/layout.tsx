@@ -2,6 +2,7 @@
 
 import React from "react";
 import { usePathname } from "next/navigation";
+import LogoutButton from "./components/admin/LogoutButton";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -36,14 +37,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
         {/* Logout pinned at bottom */}
         <div className="mt-auto p-4">
-          <form action="/api/auth/signout" method="POST">
-            <button
-              type="submit"
-              className="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-            >
-              Logout
-            </button>
-          </form>
+          <LogoutButton />
         </div>
       </aside>
 
