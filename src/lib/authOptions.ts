@@ -37,6 +37,6 @@ export const authOptions: NextAuthOptions = {
       return session;
     },
   },
-  pages: { signIn: "/auth/signin" },
+  pages: { signIn: "/auth/signin" }, // root of subdomain is login
   secret: process.env.NEXTAUTH_SECRET,
 };
