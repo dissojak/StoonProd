@@ -16,7 +16,10 @@ export const authOptions: NextAuthOptions = {
         const { username, password } = credentials as { username: string; password: string };
         await connectToDatabase();
         const user = await (AdminUser as any).findOne({ username });
-        if (user && user.password === password) {
+        if (!user) return null;
+        const isPasswordMatch = user.password === password;
+        const isAdmin = user.isAdmin;
+        if (isPasswordMatch && isAdmin) {
           return { id: user._id.toString(), email: user.email ?? undefined, role: "admin" } as any;
         }
         return null;
