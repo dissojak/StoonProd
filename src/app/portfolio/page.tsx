@@ -38,7 +38,7 @@ const portfolioItems: PortfolioItem[] = [
 
 const PortfolioPage: React.FC = () => {
   return (
-    <section className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white py-16 px-4 sm:px-8">
+    <section className="min-h-screen bg-gradient-to-b from-black via-zinc-900 to-black text-white py-24 px-4 sm:px-8">
       <div className="max-w-6xl mx-auto">
         <h1 className="text-4xl sm:text-5xl font-extrabold mb-8 text-myYellow text-center drop-shadow-lg tracking-tight">
           Portfolio

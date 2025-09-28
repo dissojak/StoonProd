@@ -77,8 +77,8 @@ export default function AuthPage() {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gradient-to-b from-zinc-900 to-zinc-950 p-4 sm:p-6">
-      <div className="w-full max-w-md">
+    <main className="min-h-screen flex items-center justify-center bg-gradient-to-b from-zinc-900 to-zinc-950 pt-24 sm:p-6">
+      <div className="w-full max-w-md mt-16">
         <div className="mb-4 flex items-center justify-center">
           <button
             type="button"
