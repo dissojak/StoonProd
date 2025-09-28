@@ -1,5 +1,22 @@
 "use client";
 import { useState } from "react";
+import { User, Mail, Lock, Loader2 } from "lucide-react";
+import Message from "./SignUp/Message";
+import FormField from "./SignUp/FormField";
+
+function validateFields(
+  username: string,
+  email: string,
+  password: string,
+  passwordVerify: string
+): string | null {
+  if (!username.trim()) return "Username is required.";
+  if (!email.trim()) return "Email is required.";
+  if (!password) return "Password is required.";
+  if (password.length < 6) return "Password must be at least 6 characters.";
+  if (password !== passwordVerify) return "Passwords do not match.";
+  return null;
+}
 
 export default function SignUpPage() {
   const [username, setUsername] = useState("");
@@ -9,20 +26,21 @@ export default function SignUpPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [showPasswordVerify, setShowPasswordVerify] = useState(false);
 
-  async function handleSubmit(e: React.FormEvent) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setError("");
     setSuccess("");
 
-    if (!username.trim()) return setError("Username is required.");
-    if (!email.trim()) return setError("Email is required.");
-    if (!password) return setError("Password is required.");
-    if (password.length < 6) return setError("Password must be at least 6 characters.");
-    if (password !== passwordVerify) return setError("Passwords do not match.");
+    const validationError = validateFields(username, email, password, passwordVerify);
+    if (validationError) {
+      setError(validationError);
+      return;
+    }
 
     setLoading(true);
-
     const res = await fetch("/api/auth/signup", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -32,7 +50,10 @@ export default function SignUpPage() {
 
     if (res.ok) {
       setSuccess("Account created! Please check your email for an activation link or code.");
-      setUsername(""); setEmail(""); setPassword(""); setPasswordVerify("");
+      setUsername("");
+      setEmail("");
+      setPassword("");
+      setPasswordVerify("");
     } else {
       const data = await res.json().catch(() => ({}));
       setError(data?.error || "Signup failed. Try again.");
@@ -40,53 +61,75 @@ export default function SignUpPage() {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gradient-to-b from-zinc-900 to-zinc-950 p-4">
-      <div className="w-full max-w-md bg-zinc-900/80 rounded-xl p-8 shadow-2xl">
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <h1 className="text-2xl font-bold text-white text-center">Sign Up</h1>
-          <input
-            type="text"
-            className="w-full rounded-md border border-zinc-700 bg-zinc-800/80 px-4 py-2 text-white"
-            placeholder="Username"
-            value={username}
-            onChange={e => setUsername(e.target.value)}
-            required
-          />
-          <input
-            type="email"
-            className="w-full rounded-md border border-zinc-700 bg-zinc-800/80 px-4 py-2 text-white"
-            placeholder="Email"
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            className="w-full rounded-md border border-zinc-700 bg-zinc-800/80 px-4 py-2 text-white"
-            placeholder="Password"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            required
-          />
-          <input
-            type="password"
-            className="w-full rounded-md border border-zinc-700 bg-zinc-800/80 px-4 py-2 text-white"
-            placeholder="Confirm Password"
-            value={passwordVerify}
-            onChange={e => setPasswordVerify(e.target.value)}
-            required
-          />
-          <button
-            type="submit"
-            disabled={loading}
-            className="w-full rounded-md bg-teal-600 py-2 text-white font-semibold hover:bg-teal-700"
-          >
-            {loading ? "Creating Account..." : "Sign Up"}
-          </button>
-          {error && <div className="text-red-400 text-sm text-center">{error}</div>}
-          {success && <div className="text-green-400 text-sm text-center">{success}</div>}
-        </form>
+    <form
+      onSubmit={handleSubmit}
+      className="relative overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/70 backdrop-blur p-6 sm:p-8 shadow-2xl space-y-5"
+    >
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(20,184,166,0.08),transparent_60%)]" />
+
+      <div className="text-center">
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-white">Create Account</h1>
+        <p className="mt-1 text-zinc-400 text-sm">Sign up to get started</p>
       </div>
-    </main>
+
+      {error && <Message type="error">{error}</Message>}
+      {success && <Message type="success">{success}</Message>}
+
+      <div className="space-y-4">
+        <FormField
+          id="username"
+          label="Username"
+          icon={<User className="h-4 w-4" />}
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Choose a username"
+        />
+        <FormField
+          id="email"
+          label="Email"
+          type="email"
+          icon={<Mail className="h-4 w-4" />}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          placeholder="Enter your email"
+        />
+        <FormField
+          id="password"
+          label="Password"
+          icon={<Lock className="h-4 w-4" />}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          showToggle
+          showValue={showPassword}
+          onToggle={() => setShowPassword((v) => !v)}
+          placeholder="Create a password"
+        />
+        <FormField
+          id="confirm-password"
+          label="Confirm Password"
+          icon={<Lock className="h-4 w-4" />}
+          value={passwordVerify}
+          onChange={(e) => setPasswordVerify(e.target.value)}
+          showToggle
+          showValue={showPasswordVerify}
+          onToggle={() => setShowPasswordVerify((v) => !v)}
+          placeholder="Confirm your password"
+        />
+      </div>
+
+      <button
+        type="submit"
+        disabled={loading}
+        className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-md bg-teal-600 px-4 py-2.5 font-semibold text-white hover:bg-teal-700 focus:ring-2 focus:ring-teal-500 focus:ring-offset-2 focus:ring-offset-zinc-900 disabled:opacity-70 disabled:cursor-not-allowed"
+      >
+        {loading ? (
+          <>
+            <Loader2 className="h-4 w-4 animate-spin" /> Creating Account...
+          </>
+        ) : (
+          <>Sign Up</>
+        )}
+      </button>
+    </form>
   );
 }
