@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import { SuccessMessage } from "./components/SuccessMessage";
 import { ErrorMessage } from "./components/ErrorMessage";
 import { ContactSidebar } from "./components/ContactSidebar";
@@ -8,7 +8,7 @@ import { useContactForm } from "./hooks/useContactForm";
 import { ContactForm } from "./components/ContactForm";
 
 
-function Contact() {
+function ContactInner() {
   const { showSuccess, showError, handleGoHome, handleSendAnother, handleSendEmail, formProps } = useContactForm();
 
   return (
@@ -46,4 +46,10 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default function Contact() {
+  return (
+    <Suspense fallback={<div className="p-8">Loading contact form...</div>}>
+      <ContactInner />
+    </Suspense>
+  );
+}
