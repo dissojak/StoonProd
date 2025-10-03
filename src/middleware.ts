@@ -23,7 +23,12 @@ function isAuthPath(pathname: string) {
 
 // Block /auth and /admin on main domain → show Next.js 404
 async function blockMainDomainPaths(mainDomain: boolean, pathname: string, req: NextRequest) {
-  if (mainDomain && (isAdminPath(pathname) || isAuthPath(pathname))) {
+  const isAdmin = isAdminPath(pathname);
+  const isAuth = isAuthPath(pathname);
+  if (mainDomain && isAdmin) {
+    return NextResponse.rewrite(new URL("/404", req.url));
+  }
+  if (mainDomain && isAuth) {
     return NextResponse.rewrite(new URL("/404", req.url));
   }
   return null;
