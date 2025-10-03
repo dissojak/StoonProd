@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const ImpactSection = () => {
   return (
     <div className="bg-gray-100 dark:bg-gray-700 w-full h-full py-8 xl:px-40">
@@ -13,18 +15,19 @@ const ImpactSection = () => {
                 for modern brands.
               </p>
               <div className="mt-6 sm:mt-8 flex flex-wrap gap-4">
-                <a
-                  href="#get-started"
+                <Link
+                  href="/contact"
                   className="rounded-sm p-3 grow text-center bg-teal-500 text-white font-bold uppercase text-sm tracking-widest hover:bg-teal-600 transition"
                 >
                   Get In Touch
-                </a>
-                <a
-                  href="#learn-more"
+                </Link>
+                <Link
+                  // tag-RELINK : here it should be for video uploaded , or a showcase of videos
+                  href="/portfolio"
                   className="rounded-sm p-3 grow border text-center border-teal-500 text-teal-500 font-bold uppercase text-sm tracking-widest hover:bg-teal-500 hover:text-black transition"
                 >
                   See Our Work
-                </a>
+                </Link>
               </div>
             </div>
 
