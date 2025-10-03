@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import useMedia from "use-media";
 
@@ -31,12 +32,12 @@ const VideoContent = () => {
             focus on your business.
           </p>
           <div className="flex justify-center">
-            <a
-              href="#"
+            <Link
+              href={`/contact?sbj=${encodeURIComponent("VideoCreation")}`}
               className="mr-5 inline-block rounded-xl bg-teal-500 hover:text-black dark:bg-white dark:hover:bg-teal-500 dark:hover:text-white px-8 py-4 text-center font-semibold text-white dark:text-black shadow-[rgb(26,132,112)_6px_6px] md:mr-6"
             >
               Contact Us
-            </a>
+            </Link>
             <button
               onClick={() => setShowVideo(true)}
               className="flex items-center justify-center rounded-xl border border-solid border-teal-500 px-6 py-3 font-semibold text-teal-500 shadow-[rgb(26,132,112)_6px_6px]"
