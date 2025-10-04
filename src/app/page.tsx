@@ -7,7 +7,7 @@ import HeroSection from "@/app/components/Home/HeroSection";
 // import WebDevelopmentSection from "@/app/components/Home/WebDevelopmentSection";
 // import ServiceNavigation from "@/app/components/Home/ServiceNavigation";
 import LogoSlider from "./UI/LogoSlider";
-import NewFooter from "./UI/Footers/NewFooter";
+import NewFooter from "@/components/shared/Footers/NewFooter";
 import ImpactSection from "./UI/Sections/Impact";
 import Graphic from "./UI/Sections/VideoContentSection";
 import ContentCreation from "./UI/Sections/ContentCreationSection";
