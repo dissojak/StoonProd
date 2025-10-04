@@ -1,13 +1,13 @@
 "use client";
 
-import { useEffect, useState, useCallback, useMemo } from "react";
+import { useEffect, useState } from "react";
 
 interface User {
   _id: string;
   username: string;
   email: string;
   isAdmin: boolean;
-  status?: string; // may be absent depending on model
+  status?: string;
 }
 
 type FetchState = "idle" | "loading" | "error" | "success";
@@ -30,7 +30,7 @@ export default function AdminUsersPage() {
     }, 4000);
   };
 
-  const fetchUsers = useCallback(async () => {
+  const fetchUsers = async () => {
     setFetchState("loading");
     try {
       const res = await fetch("/api/admin/users");
@@ -41,27 +41,23 @@ export default function AdminUsersPage() {
     } catch {
       setFetchState("error");
     }
-  }, []);
+  };
 
   useEffect(() => {
     fetchUsers();
-  }, [fetchUsers]);
+  }, []);
 
-  const filteredUsers = useMemo(() => {
-    return users
-      .filter((u) => {
-        if (filter === "pending") return !u.isAdmin;
-        if (filter === "approved") return u.isAdmin;
-        return true;
-      })
-      .filter((u) => {
-        if (!search.trim()) return true;
-        const q = search.toLowerCase();
-        return u.username.toLowerCase().includes(q) || u.email.toLowerCase().includes(q);
-      });
-  }, [users, filter, search]);
+  const filteredUsers = users.filter((u) => {
+    if (filter === "pending") return !u.isAdmin;
+    if (filter === "approved") return u.isAdmin;
+    if (search.trim()) {
+      const q = search.toLowerCase();
+      return u.username.toLowerCase().includes(q) || u.email.toLowerCase().includes(q);
+    }
+    return true;
+  });
 
-  async function handleApprove(id: string) {
+  const handleApprove = async (id: string) => {
     setWorkingIds((prev) => new Set(prev).add(id));
     try {
       const res = await fetch("/api/admin/users/approve", {
@@ -71,8 +67,8 @@ export default function AdminUsersPage() {
       });
       const data = await res.json();
       if (res.ok) {
+        setUsers((prev) => prev.filter((u) => u._id !== id)); // remove approved user
         showMessage("User approved and notified.", "success");
-        fetchUsers();
       } else {
         showMessage(data.error || "Error approving user.", "error");
       }
@@ -85,10 +81,9 @@ export default function AdminUsersPage() {
         return next;
       });
     }
-  }
+  };
 
-  async function handleDecline(id: string) {
-    // Optional confirm:
+  const handleDecline = async (id: string) => {
     if (!confirm("Are you sure you want to decline this user?")) return;
 
     setWorkingIds((prev) => new Set(prev).add(id));
@@ -100,8 +95,8 @@ export default function AdminUsersPage() {
       });
       const data = await res.json();
       if (res.ok) {
+        setUsers((prev) => prev.filter((u) => u._id !== id));
         showMessage("User declined and notified.", "success");
-        fetchUsers();
       } else {
         showMessage(data.error || "Error declining user.", "error");
       }
@@ -114,13 +109,14 @@ export default function AdminUsersPage() {
         return next;
       });
     }
-  }
+  };
 
   const isLoading = fetchState === "loading";
 
   return (
     <main className="min-h-screen px-6 py-10 bg-gradient-to-b from-zinc-950 via-zinc-900 to-zinc-950 text-zinc-100">
       <div className="mx-auto max-w-7xl">
+        {/* Header */}
         <header className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-8">
           <div>
             <h1 className="text-3xl font-bold tracking-tight">User Approval</h1>
@@ -155,7 +151,7 @@ export default function AdminUsersPage() {
               <option value="approved">Approved Only</option>
             </select>
             <button
-              onClick={() => fetchUsers()}
+              onClick={fetchUsers}
               disabled={isLoading}
               className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-teal-600 hover:bg-teal-500 disabled:opacity-50 text-sm font-medium transition-colors"
             >
@@ -167,6 +163,7 @@ export default function AdminUsersPage() {
           </div>
         </header>
 
+        {/* Action messages */}
         {actionMsg && (
           <div
             className={`mb-6 rounded-lg border px-4 py-3 text-sm font-medium ${
@@ -200,12 +197,12 @@ export default function AdminUsersPage() {
           </div>
         )}
 
-        {/* Error State */}
+        {/* Error */}
         {fetchState === "error" && (
           <div className="text-center mt-24">
             <p className="text-red-400 font-medium">Failed to load users.</p>
             <button
-              onClick={() => fetchUsers()}
+              onClick={fetchUsers}
               className="mt-4 px-4 py-2 bg-red-600/60 hover:bg-red-600 rounded text-sm font-medium"
             >
               Retry
@@ -213,7 +210,7 @@ export default function AdminUsersPage() {
           </div>
         )}
 
-        {/* Empty State */}
+        {/* Empty */}
         {fetchState === "success" && filteredUsers.length === 0 && (
           <div className="text-center mt-24">
             <p className="text-zinc-500 font-medium">

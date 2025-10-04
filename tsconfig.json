@@ -13,10 +13,11 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-     "baseUrl": "./src",
+    "baseUrl": "./src",
     "paths": {
       "@/*": ["*"]
     },
+    "ignoreDeprecations": "6.0",
     // "baseUrl": ".", "paths": { "@/*": ["./src/*"] },
     "incremental": true,
     "plugins": [
