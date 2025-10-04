@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import Logo from "@/app/UI/Header/Logo/Logo";
+import Logo from "@/components/shared/Logo/Logo";
 import SocialIconLink from "./SocialIconLink";
 import { socialLinks } from "../data/socialLinks";
 

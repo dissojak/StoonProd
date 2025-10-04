@@ -1,6 +1,6 @@
 import React from "react";
 import PortfolioCard from "./PortfolioCard";
-import { PortfolioItem } from "../types";
+import { PortfolioItem } from "../types/types";
 
 interface PortfolioGridProps {
   items: PortfolioItem[];

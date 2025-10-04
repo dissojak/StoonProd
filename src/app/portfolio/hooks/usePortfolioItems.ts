@@ -1,7 +1,7 @@
 "use client"; // Optional: only needed if in future we add stateful filtering/sorting.
 import { useMemo } from "react";
 import { portfolioItems } from "../data/items";
-import { PortfolioItem } from "../types";
+import { PortfolioItem } from "../types/types";
 
 export interface UsePortfolioItemsOptions {
   category?: string;

@@ -1,5 +1,5 @@
 import React from "react";
-import Service from "@/app/components/Services/Services";
+import Service from "@/app/serviceandtariffs/Services/Services";
 import { useServiceSequence } from "../hooks/useServices";
 
 const ServicesSequence: React.FC = () => {

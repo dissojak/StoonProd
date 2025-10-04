@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import TeamMembers from "@/app/UI/TeamMembers";
+import TeamMembers from "@/components/UI/TeamMembers/TeamMembers";
 import HeroSection from "./components/sections/HeroSection";
 import IntroSection from "./components/sections/IntroSection";
 import VisualStoriesSection from "./components/sections/VisualStoriesSection";

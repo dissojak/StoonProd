@@ -1,5 +1,5 @@
 import React from "react";
-import PricingPlan from "@/app/UI/PricingPlan";
+import PricingPlan from "@/app/serviceandtariffs/components/PricingPlan";
 import type { Plan as PricingPlanType } from "@/types/pricing";
 
 type ServiceData = { title: string; plans: PricingPlanType[] };

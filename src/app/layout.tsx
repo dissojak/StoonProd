@@ -7,8 +7,8 @@ import GoogleAnalytics from "./components/GoogleAnalytics";
 import type { Metadata } from "next";
 import React from "react";
 import ClientThemeProvider from "./components/ClientThemeProvider";
-import Header from "./UI/Header/Header";
-import ScrollToTop from "./UI/ScrollToTop";
+import Header from "../components/shared/Header/Header";
+import ScrollToTop from "../components/shared/ScrollToTop";
 
 export const metadata: Metadata = {
   title: "Stoon Production | Best Videographer & Multimedia Production in Tunisia",

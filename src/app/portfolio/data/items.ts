@@ -1,4 +1,4 @@
-import { PortfolioItem } from "../types";
+import { PortfolioItem } from "../types/types";
 
 // Static seed data; later this can be swapped with a CMS or DB fetch.
 export const portfolioItems: PortfolioItem[] = [

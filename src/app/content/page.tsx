@@ -2,9 +2,9 @@
 
 import React from "react";
 
-import InstagramReel from "../UI/InstagramReel";
-import YouTubeVideo from "../UI/YouTubeVideo";
-import Navbar from "../UI/Header/Navbar";
+import InstagramReel from "./components/InstagramReel";
+import YouTubeVideo from "../../components/UI/YouTubeVideo";
+import Navbar from "../../components/shared/Header/Navbar";
 
 const Content: React.FC = () => {
   const instaReel_1 = "CasQwfslT7H";

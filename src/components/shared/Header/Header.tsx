@@ -6,7 +6,7 @@ import HeaderLink from "./Navigation/HeaderLink";
 import MobileHeaderLink from "./Navigation/MobileHeaderLink";
 
 import { headerData } from "./Navigation/MenuData";
-import Logo from "./Logo/Logo";
+import Logo from "../Logo/Logo";
 
 const Header = () => {
   const [navbarOpen, setNavbarOpen] = useState(false);

@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { PortfolioItem } from "../types";
+import { PortfolioItem } from "../types/types";
 
 interface PortfolioCardProps {
   item: PortfolioItem;
