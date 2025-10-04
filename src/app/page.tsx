@@ -1,19 +1,19 @@
 import { Fragment } from "react";
-import SliderSection from "@/app/components/Home/SliderSection";
-import HeroSection from "@/app/components/Home/HeroSection";
+import SliderSection from "@/app/components/Home/components/sections/SliderSection";
+import HeroSection from "@/app/components/Home/components/sections/HeroSection";
 // import VideomakingSection from "@/app/components/Home/VideomakingSection";
 // import PhotographySection from "@/app/components/Home/PhotographySection";
 // import ContentCreationSection from "@/app/components/Home/ContentCreationSection";
 // import WebDevelopmentSection from "@/app/components/Home/WebDevelopmentSection";
 // import ServiceNavigation from "@/app/components/Home/ServiceNavigation";
-import LogoSlider from "./UI/LogoSlider";
+import LogoSlider from "./components/Home/components/sections/LogoSlider";
 import NewFooter from "@/components/shared/Footers/NewFooter";
 import ImpactSection from "./UI/Sections/Impact";
 import Graphic from "./UI/Sections/VideoContentSection";
 import ContentCreation from "./UI/Sections/ContentCreationSection";
 import PhotographyHeader from "./UI/Sections/PhotographyHeader";
 import DevelopmentHeroSection from "./UI/Sections/DevelopmentHeroSection";
-import Services from "@/app/components/Home/Services";
+import Services from "@/app/components/Home/components/sections/Services";
 
 export default function Home() {
   return (
