@@ -30,7 +30,7 @@ const SliderSection: React.FC = () => {
               </p>
               <div className="lg:flex lg:justify-start mt-8 sm:mt-4 sm:mb-12">
                 <Link
-                  href="https://www.instagram.com/adem_ben_amor/"
+                  href="https://www.instagram.com/stoonproduction/"
                   className="inline-flex items-center bg-myYellow text-black rounded-3xl lg:px-6 py-4 xs:px-4 hover:bg-myYellowHover hover:text-white hover:font-medium"
                 >
                   Contact Us

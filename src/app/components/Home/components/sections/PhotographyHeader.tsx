@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const PhotographyHeader = () => {
   return (
@@ -105,9 +106,11 @@ const PhotographyHeader = () => {
             moments with artistic vision and technical mastery.
           </p>
           <div className="flex gap-6 sm:gap-10">
-            <button className="uppercase font-bold text-xs rounded-[40px] py-2 lg:py-4 px-4 lg:px-9 text-[#1E1B2E] bg-gradient-to-r from-teal-200 to-teal-400">
-              Book a Session
-            </button>
+            <Link href={`/contact?sbj=${encodeURIComponent("Photography")}`}>
+              <button className="uppercase font-bold text-xs rounded-[40px] py-2 lg:py-4 px-4 lg:px-9 text-[#1E1B2E] bg-gradient-to-r from-teal-200 to-teal-400">
+                Book a Session
+              </button>
+            </Link>
             <svg
               className="mt-2 w-8 h-6 sm:w-12 sm:h-9"
               viewBox="0 0 46 38"

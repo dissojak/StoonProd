@@ -16,7 +16,7 @@ const ImpactSection = () => {
               </p>
               <div className="mt-6 sm:mt-8 flex flex-wrap gap-4">
                 <Link
-                  href="/contact"
+                  href={`/contact?sbj=${encodeURIComponent("Impact")}`}
                   className="rounded-sm p-3 grow text-center bg-teal-500 text-white font-bold uppercase text-sm tracking-widest hover:bg-teal-600 transition"
                 >
                   Get In Touch
