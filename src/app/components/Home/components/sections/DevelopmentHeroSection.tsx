@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const DevelopmentHeroSection = () => {
   return (
@@ -28,6 +29,7 @@ const DevelopmentHeroSection = () => {
               built to scale.
             </p>
             <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+              <Link href={`/contact?sbj=${encodeURIComponent("Development")}`}>
               <button className="group relative w-full sm:w-auto px-6 py-3 min-w-[160px]">
                 <div className="absolute inset-0 bg-gradient-to-r from-teal-700 to-teal-400 rounded-lg"></div>
                 <div className="absolute inset-0 bg-gradient-to-r from-teal-700 to-teal-400 rounded-lg lg:blur-md blur-0 group-hover:opacity-60 transition-opacity duration-500"></div>
@@ -48,14 +50,14 @@ const DevelopmentHeroSection = () => {
                   </svg>
                 </div>
               </button>
-
-              <a
+              </Link>
+              <Link
                 href="/assets/PDF/General__Agreement.pdf"
                 download
                 className="w-full sm:w-auto px-6 py-3 rounded-lg border border-white/10 bg-white/5 backdrop-blur-lg text-white/70 hover:bg-white/10 hover:text-white transition-all min-w-[160px] text-center"
               >
                 Agreement
-              </a>
+              </Link>
             </div>
           </div>
 
