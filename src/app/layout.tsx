@@ -58,7 +58,7 @@ export const metadata: Metadata = {
       },
       sameAs: [
         // "https://www.facebook.com/stoonproduction",
-        "https://www.instagram.com/adem_ben_amor",
+        "https://www.instagram.com/stoonproduction",
       ],
     }),
     "geo.region": "TN",
