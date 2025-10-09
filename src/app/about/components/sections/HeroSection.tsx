@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 
 const HeroSection: React.FC = () => (
@@ -12,12 +13,11 @@ const HeroSection: React.FC = () => (
           Bringing Your Ideas to Life with <br /> Stunning Visuals and Web Solutions
         </h2>
         <div className="flex justify-center mt-8">
-          <a
+          <Link href={`/contact?sbj=${encodeURIComponent("Media-About")}`}
             className="px-8 py-2 text-lg font-medium text-white transition-colors duration-300 transform bg-teal-500 rounded hover:bg-teal-400"
-            href="#"
           >
             Let&apos;s Create Something Amazing
-          </a>
+          </Link>
         </div>
       </div>
     </section>

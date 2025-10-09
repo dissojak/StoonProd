@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import ExpertiseItem from "./ExpertiseItem";
+import Link from "next/link";
 
 const ExpertiseSection: React.FC = () => (
   <section className="bg-white dark:bg-gray-800 transition-colors duration-1000">
@@ -10,9 +11,9 @@ const ExpertiseSection: React.FC = () => (
           Elevating Your Brand with Video, Web Design, <br className="sm:hidden md:block" />
           and Content Creation
         </h2>
-        <a href="#" className="block mt-6 text-teal-500 underline md:mt-0 dark:text-teal-400">
+        <Link href="#Leadership" className="block mt-6 text-teal-500 underline md:mt-0 dark:text-teal-400">
           Our Expertise
-        </a>
+        </Link>
       </div>
       <div className="grid gap-8 mt-10 md:grid-cols-2 lg:grid-cols-3">
         <ExpertiseItem

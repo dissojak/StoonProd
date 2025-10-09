@@ -1,53 +1,70 @@
 "use client";
-
-import React from "react";
+import React, { memo } from "react";
 import type { Plan } from "@/types/pricing";
+import { PlanPriceBadge } from "./pricing/components/PlanPriceBadge";
+import { PlanFeatureList } from "./pricing/components/PlanFeatureList";
+import { usePlanSelect } from "./pricing/hooks/usePlanSelect";
 
-type Props = {
-  planDetails: Plan;
+type PricingPlanProps = {
+  /** Preferred prop name */
+  plan?: Plan;
+  /** Deprecated – kept for backward compatibility */
+  planDetails?: Plan;
+  setOpenPlan?: (plan: Plan) => void;
+  currency?: string;
+  className?: string;
+  buttonLabel?: string;
+  disabled?: boolean;
 };
 
-const PricingPlan: React.FC<Props> = ({ planDetails }) => {
+const BasePricingPlan: React.FC<PricingPlanProps> = ({
+  plan,
+  planDetails,
+  setOpenPlan,
+  currency = "DT",
+  className,
+  buttonLabel = "Choose plan",
+  disabled = false,
+}) => {
+  const effectivePlan = plan || planDetails;
+  const onSelect = usePlanSelect(setOpenPlan, effectivePlan);
+
+  if (!effectivePlan) {
+    if (process.env.NODE_ENV !== "production") {
+      console.warn(
+        "<PricingPlan /> rendered without a plan. Ensure you pass `plan` prop (old `planDetails` still supported)."
+      );
+    }
+    return null;
+  }
+
   return (
-    <div className="rounded-2xl shadow-lg p-3 bg-teal-600 dark:bg-teal-500 text-gray-600 dark:text-gray-200 max-w-sm max-h-fit">
+    <div
+      className={
+        className ||
+        "rounded-2xl shadow-lg p-3 bg-teal-600 dark:bg-teal-500 text-gray-600 dark:text-gray-200 max-w-sm max-h-fit"
+      }
+    >
       <div className="relative flex flex-col items-left p-5 pt-24 bg-blue-100 dark:bg-gray-800 rounded-xl">
-        <div className="absolute top-0 right-0 flex items-center bg-teal-600 dark:bg-teal-500 rounded-l-full py-4 pl-4 pr-2 text-3xl font-semibold text-white">
-          <span>
-            {planDetails.minPrice} - {planDetails.maxPrice}
-          </span>
-          <small className="text-lg ml-2 text-white mt-2">DT</small>
-        </div>
-        <p className="text-xl font-semibold text-cyan-800 dark:text-cyan-300">
-          {planDetails.title}
-        </p>
-        <p className="text-left mt-3 dark:text-gray-300">{planDetails.description}</p>
-        <ul className="flex flex-col space-y-3 mt-4">
-          {planDetails.features.map((feature) => (
-            <li key={feature.id} className="flex items-center space-x-2">
-              <span className="flex items-center justify-center w-5 h-5 bg-sky-400 dark:bg-sky-500 text-white rounded-full">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14">
-                  <path fill="none" d="M0 0h24v24H0z"></path>
-                  <path
-                    d="M10 15.172l9.192-9.193 1.415 1.414L10 18l-6.364-6.364 1.414-1.414z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-              </span>
-              <span>{feature.text}</span>
-            </li>
-          ))}
-        </ul>
+        <PlanPriceBadge minPrice={effectivePlan.minPrice} maxPrice={effectivePlan.maxPrice} currency={currency} />
+        <p className="text-xl font-semibold text-cyan-800 dark:text-cyan-300">{effectivePlan.title}</p>
+        <p className="text-left mt-3 dark:text-gray-300">{effectivePlan.description}</p>
+        <PlanFeatureList features={effectivePlan.features} />
         <div className="w-full flex justify-end mt-6">
-          <a
-            className="w-full py-3 text-center text-white bg-teal-700 dark:bg-teal-600 rounded-lg font-medium text-lg hover:bg-teal-500 dark:hover:bg-teal-800 focus:outline-none"
-            href="#"
+          <button
+            type="button"
+            onClick={onSelect}
+            disabled={disabled}
+            className="w-full py-3 text-center text-white bg-teal-700 disabled:opacity-60 disabled:cursor-not-allowed dark:bg-teal-600 rounded-lg font-medium text-lg hover:bg-teal-500 dark:hover:bg-teal-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-teal-500"
+            aria-label={`Select plan ${effectivePlan.title}`}
           >
-            Choose plan
-          </a>
+            {buttonLabel}
+          </button>
         </div>
       </div>
     </div>
   );
 };
 
+export const PricingPlan = memo(BasePricingPlan);
 export default PricingPlan;
