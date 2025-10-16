@@ -28,7 +28,7 @@ const Service: React.FC<Props> = ({ serviceData, sectionNumber }) => {
 
       <div className="flex flex-wrap justify-center gap-6">
         {serviceData.plans.map((plan, idx) => (
-          <PricingPlan key={`${plan.title}-${idx}`} planDetails={plan} />
+          <PricingPlan key={`${plan.title}-${idx}`} plan={plan} />
         ))}
       </div>
     </section>

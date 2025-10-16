@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 type TeamMemberProps = {
   imageSrc: string;
@@ -9,8 +10,8 @@ type TeamMemberProps = {
 
 const TeamMember = ({ imageSrc, name, role, description }: TeamMemberProps) => {
   return (
-    <a
-      href="#"
+    <Link
+      href="#Leadership"
       className="group relative block rounded-lg overflow-hidden bg-gray-400 dark:bg-gray-800 transition-colors"
     >
       <div className="relative w-full h-72">
@@ -38,7 +39,7 @@ const TeamMember = ({ imageSrc, name, role, description }: TeamMemberProps) => {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 

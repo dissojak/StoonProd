@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import React from "react";
 
 const AdVideoSection: React.FC = () => (
@@ -14,12 +15,12 @@ const AdVideoSection: React.FC = () => (
             services.
           </p>
         </div>
-        <a
+        <Link href={`/contact?sbj=${encodeURIComponent("VideoAdvertising")}`}
           className="block px-8 py-2 mt-6 text-lg font-medium text-center text-white transition-colors duration-300 transform bg-teal-500 rounded md:mt-0 hover:bg-teal-400 dark:bg-teal-600 dark:hover:bg-teal-500"
-          href="#"
+          
         >
           Get In Touch
-        </a>
+        </Link>
       </div>
     </div>
   </section>
