@@ -41,29 +41,31 @@ export function useContactForm(): UseContactFormReturn {
     return hasContactFormErrors(newErrors);
   }
 
-  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const form = formRef.current;
-    if (!form) return;
-    const values = getContactFormValues(form);
+    void (async () => {
+      const form = formRef.current;
+      if (!form) return;
+      const values = getContactFormValues(form);
 
-    if (handleFormErrors(values)) return;
+      if (handleFormErrors(values)) return;
 
-    try {
-      const res = await fetch("/api/contact-send", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(values),
-      });
-      if (!res.ok) {
+      try {
+        const res = await fetch("/api/contact-send", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(values),
+        });
+        if (!res.ok) {
+          setShowError(true);
+          return;
+        }
+        setShowSuccess(true);
+        form.reset();
+      } catch (err) {
         setShowError(true);
-        return;
       }
-      setShowSuccess(true);
-      form.reset();
-    } catch (err) {
-      setShowError(true);
-    }
+    })();
   }
 
   const handleGoHome = () => (window.location.href = "/");
