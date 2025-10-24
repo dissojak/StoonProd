@@ -9,7 +9,7 @@ interface UserCardProps {
   onDecline: () => void;
 }
 
-export function UserCard({ user, working, onApprove, onDecline }: UserCardProps) {
+export function UserCard({ user, working, onApprove, onDecline }: Readonly<UserCardProps>) {
   const pending = !user.isAdmin;
   return (
     <div className="group relative rounded-xl bg-zinc-900/70 border border-zinc-800 hover:border-zinc-700 transition-colors p-5 flex flex-col">
