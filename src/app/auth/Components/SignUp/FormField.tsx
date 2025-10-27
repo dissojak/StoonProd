@@ -9,7 +9,7 @@ type FieldProps = {
   value: string;
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   showToggle?: boolean;
-  showValue?: boolean;
+  readonly showValue?: boolean;
   onToggle?: () => void;
   placeholder?: string;
 };
@@ -26,6 +26,11 @@ export default function FormField({
   onToggle,
   placeholder,
 }: FieldProps) {
+  const getInputType = () => {
+    if (!showToggle) return type;
+    return showValue ? "text" : "password";
+  };
+
   return (
     <div className="space-y-1">
       <label className="block text-sm font-medium text-zinc-300" htmlFor={id}>
@@ -35,7 +40,7 @@ export default function FormField({
         <span className="absolute inset-y-0 left-3 flex items-center text-zinc-400">{icon}</span>
         <input
           id={id}
-          type={showToggle ? (showValue ? "text" : "password") : type}
+          type={getInputType()}
           className={`w-full rounded-md border border-zinc-700 bg-zinc-800/80 ${
             showToggle ? "pl-10 pr-10" : "pl-10 pr-3"
           } py-2 text-white placeholder-zinc-400 focus:border-teal-500 focus:ring-1 focus:ring-teal-500 focus:outline-none`}

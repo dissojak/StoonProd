@@ -1,6 +1,6 @@
 export { default as SliderSection } from "./SliderSection";
 export { default as HeroSection } from "./HeroSection";
-export { default as LogoSlider } from "./LogoSlider";
+export { default as LogoSlider } from "./LogoSlider/LogoSlider";
 export { default as ImpactSection } from "./Impact";
 export { default as Graphic } from "./VideoContentSection";
 export { default as ContentCreation } from "./ContentCreationSection";
