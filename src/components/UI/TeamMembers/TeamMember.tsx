@@ -1,17 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
 
-type TeamMemberProps = {
-  imageSrc: string;
-  name: string;
-  role: string;
-  description: string;
-};
+import type { TeamMember as TM } from "../../../types/teamMembers";
 
-const TeamMember = ({ imageSrc, name, role, description }: TeamMemberProps) => {
+const TeamMember = ({ imageSrc, name, role, description, documentId }: TM) => {
+  // Create URL-friendly slug from name (e.g., "Adem" -> "adem")
+  const memberSlug = name.toLowerCase().replace(/\s+/g, '-');
+  const portfolioUrl = `/portfolios/${memberSlug}`;
+  
   return (
     <Link
-      href="#Leadership"
+      href={portfolioUrl}
       className="group relative block rounded-lg overflow-hidden bg-gray-400 dark:bg-gray-800 transition-colors"
     >
       <div className="relative w-full h-72">

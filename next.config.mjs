@@ -14,6 +14,12 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "engaging-feast-82f69e6227.media.strapiapp.com",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };
