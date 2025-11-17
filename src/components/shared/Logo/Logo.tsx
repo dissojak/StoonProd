@@ -11,7 +11,6 @@ const Logo = () => {
         src="/assets/images/stoonprod_logo_white_version.png"
         alt="Logo"
         className="relative lg:h-16 xs:h-12"
-        layout="intrinsic"
         width={60}
         height={100}
       />

@@ -6,30 +6,30 @@ import type { TeamMember as TM } from "../../../types/teamMembers";
 
 function resolveImageUrl(image: any): string {
   if (!image?.url) return "/assets/images/default.jpg";
-  
+
   const url =
     image.formats?.large?.url ||
     image.formats?.medium?.url ||
     image.formats?.small?.url ||
     image.url;
-  
+
   return url || "/assets/images/default.jpg";
 }
 
-export default function TeamMembersSimple() {
+export default function TeamMembersPortfoilos() {
   const [teamMembers, setTeamMembers] = useState<TM[]>([]);
   const [loading, setLoading] = useState(true);
 
-  console.log('Component rendered, loading:', loading);
+  console.log("Component rendered, loading:", loading);
 
   useEffect(() => {
-    console.log('useEffect running!');
-    
-    fetch('https://engaging-feast-82f69e6227.strapiapp.com/api/team-members?populate=image')
-      .then(r => r.json())
-      .then(json => {
-        console.log('Got data:', json.data?.length);
-        
+    console.log("useEffect running!");
+
+    fetch("https://engaging-feast-82f69e6227.strapiapp.com/api/team-members?populate=image")
+      .then((r) => r.json())
+      .then((json) => {
+        console.log("Got data:", json.data?.length);
+
         const mapped: TM[] = (json.data || []).map((item: any) => ({
           id: item.id,
           documentId: item.documentId,
@@ -38,26 +38,24 @@ export default function TeamMembersSimple() {
           description: item.description || "",
           imageSrc: resolveImageUrl(item.image),
         }));
-        
-        console.log('Mapped members:', mapped);
+
+        console.log("Mapped members:", mapped);
         setTeamMembers(mapped);
         setLoading(false);
       })
-      .catch(err => {
-        console.error('Error:', err);
+      .catch((err) => {
+        console.error("Error:", err);
         setLoading(false);
       });
   }, []);
 
   return (
-    <section id="team" className="bg-white dark:bg-gray-800">
-      <div className="max-w-5xl px-6 py-16 mx-auto text-center">
-        <h2 className="text-3xl font-semibold text-gray-800 dark:text-gray-100">Our Leadership</h2>
+    <section id="team" className="bg-white dark:bg-gray-800 w-full">
+      <div className="max-w-5xl px-6 py-16 mx-auto text-center w-full">
+        <h2 className="text-3xl font-semibold text-gray-800 dark:text-gray-100 mt-8">Our Team</h2>
         <p className="max-w-lg mx-auto mt-4 text-gray-600 dark:text-gray-300">
-          Meet the talented team behind our success. Each member brings unique skills, creativity,
-          and expertise to the table, contributing to our innovative solutions and exceptional
-          results. From development to design, our diverse team is dedicated to delivering
-          outstanding work that exceeds expectations.
+          Get to know our team through their work. Each member brings a strong portfolio that shows
+          their skill, style, and real results. Explore their projects and see why clients trust us.
         </p>
 
         <div className="grid gap-8 mt-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -72,15 +70,15 @@ export default function TeamMembersSimple() {
                   <div className="relative w-full h-72">
                     {/* Image skeleton */}
                     <div className="w-full h-full bg-gray-400 dark:bg-gray-600"></div>
-                    
+
                     {/* Content skeleton */}
                     <div className="absolute inset-0 flex flex-col justify-end p-4 space-y-3">
                       {/* Role skeleton */}
                       <div className="h-3 w-24 bg-gray-500 dark:bg-gray-500 rounded"></div>
-                      
+
                       {/* Name skeleton */}
                       <div className="h-6 w-32 bg-gray-500 dark:bg-gray-500 rounded"></div>
-                      
+
                       {/* Description skeleton */}
                       <div className="space-y-2">
                         <div className="h-3 w-full bg-gray-500 dark:bg-gray-500 rounded"></div>
