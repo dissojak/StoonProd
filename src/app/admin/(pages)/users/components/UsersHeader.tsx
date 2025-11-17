@@ -11,7 +11,9 @@ interface UsersHeaderProps {
   isLoading: boolean;
 }
 
-export function UsersHeader({ search, setSearch, filter, setFilter, onRefresh, isLoading }: UsersHeaderProps) {
+export function UsersHeader(props: Readonly<UsersHeaderProps>) {
+  const { search, setSearch, filter, setFilter, onRefresh, isLoading } = props;
+
   return (
     <header className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between mb-8">
       <div>

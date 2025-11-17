@@ -30,12 +30,12 @@ export default function ActivationClient({
         if (response.ok) {
           setStatus("success");
           setMessage(
-            data.message ||
+            data.message ??
               "Account activated. Now you need to wait for admin approval."
           );
         } else {
           setStatus("error");
-          setMessage(data.error || "Activation failed.");
+          setMessage(data.error ?? "Activation failed.");
         }
       } catch {
         setStatus("error");
