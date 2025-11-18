@@ -1,6 +1,11 @@
+"use client";
 import React, { useState } from "react";
+import dynamic from "next/dynamic";
 import ProjectItem from "./ProjectItem";
-import PortfolioModal from "./PortfolioModal";
+
+// Dynamically import the modal to avoid loading its code until needed.
+// `ssr: false` ensures it only runs in the browser.
+const PortfolioModal = dynamic(() => import("./PortfolioModal"), { ssr: false });
 import { Portfolio } from "@/types/portfolio";
 
 interface ProjectListProps {
