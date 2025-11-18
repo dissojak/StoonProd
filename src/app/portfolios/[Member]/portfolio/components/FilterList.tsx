@@ -57,8 +57,15 @@ const FilterList: React.FC<FilterListProps> = ({ activeFilter, setActiveFilter }
         ))}
       </ul>
 
-      <div className="filter-select-box">
-        <button className="filter-select" data-select>
+      <div className="filter-select-box" ref={selectRef}>
+        <button
+          className={`filter-select${selectOpen ? " active" : ""}`}
+          data-select
+          onClick={() => setSelectOpen((s) => !s)}
+          aria-expanded={selectOpen}
+          aria-haspopup="listbox"
+          type="button"
+        >
           <div className="select-value" data-selecct-value>
             {activeFilter}
           </div>
@@ -67,15 +74,21 @@ const FilterList: React.FC<FilterListProps> = ({ activeFilter, setActiveFilter }
           </div>
         </button>
 
-        <ul className="select-list">
-          {filterCategories.map((filter) => (
-            <li className="select-item" key={filter}>
-              <button onClick={() => handleFilterClick(filter)} data-select-item>
-                {filter}
-              </button>
-            </li>
-          ))}
-        </ul>
+        {selectOpen && (
+          <ul className="select-list" role="listbox">
+            {filterCategories.map((filter) => (
+              <li className="select-item" key={filter} role="option" aria-selected={activeFilter === filter}>
+                <button
+                  onClick={() => handleFilterClick(filter)}
+                  data-select-item
+                  type="button"
+                >
+                  {filter}
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </>
   );
