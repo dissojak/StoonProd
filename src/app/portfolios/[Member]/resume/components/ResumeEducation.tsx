@@ -1,9 +1,18 @@
-import { bookOutline } from "ionicons/icons";
-import { IonIcon } from "@ionic/react";
-
 import React from "react";
+import { IonIcon } from "@ionic/react";
+import { bookOutline } from "ionicons/icons";
 
-const TimelineItem = ({ title, timeSpan, description }) => (
+type EducationItem = {
+  title: string;
+  timeSpan: string;
+  description?: string;
+};
+
+interface ResumeEducationProps {
+  education: EducationItem[];
+}
+
+const TimelineItem: React.FC<EducationItem> = ({ title, timeSpan, description }) => (
   <li className="timeline-item">
     <h4 className="h4 timeline-item-title">{title}</h4>
     <span>{timeSpan}</span>
@@ -11,7 +20,7 @@ const TimelineItem = ({ title, timeSpan, description }) => (
   </li>
 );
 
-export default function ResumeEducation({ education }) {
+export default function ResumeEducation({ education }: ResumeEducationProps) {
   return (
     <section className="timeline">
       <div className="title-wrapper">
@@ -22,12 +31,7 @@ export default function ResumeEducation({ education }) {
       </div>
       <ol className="timeline-list">
         {education.map((item, index) => (
-          <TimelineItem
-            key={index}
-            title={item.title}
-            timeSpan={item.timeSpan}
-            description={item.description}
-          />
+          <TimelineItem key={index} title={item.title} timeSpan={item.timeSpan} description={item.description} />
         ))}
       </ol>
     </section>

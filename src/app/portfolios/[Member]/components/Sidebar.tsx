@@ -1,5 +1,5 @@
-"use client"; // Mark this as a client component
-
+"use client";
+import React, { useEffect, useState } from "react";
 import { IonIcon } from "@ionic/react";
 import {
   mailOutline,
@@ -10,52 +10,50 @@ import {
   logoGithub,
   logoInstagram,
 } from "ionicons/icons";
-import "../css/globals.css"; // Import from the correct relative path
+import "../css/globals.css";
 import Image from "next/image";
 import { useParams } from "next/navigation";
-import { useEffect, useState } from "react";
-import { fetchTeamMemberBySlug, fetchMemberSocialMedia  } from "@/lib/strapi";
-const Sidebar = () => {
+import { fetchTeamMemberBySlug, fetchMemberSocialMedia } from "@/lib/strapi";
+
+type Member = any; // keep loose typing for now; can be tightened later
+type SocialMedia = any;
+
+export default function Sidebar() {
   const params = useParams();
-  const memberSlug = params.Member; // e.g., "adem"
-  const [member, setMember] = useState(null);
-  const [socialMedia, setSocialMedia] = useState(null);
+  const memberSlug = (params as any)?.Member;
+  const [member, setMember] = useState<Member | null>(null);
+  const [socialMedia, setSocialMedia] = useState<SocialMedia | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadMember = async () => {
       try {
-        console.log('🔍 Loading member data for slug:', memberSlug);
-        
-        // Fetch only this specific member with all their data
+        console.log("🔍 Loading member data for slug:", memberSlug);
         const foundMember = await fetchTeamMemberBySlug(memberSlug);
-        
+
         if (foundMember) {
-          console.log('✅ Found member:', foundMember);
+          console.log("✅ Found member:", foundMember);
           setMember(foundMember);
-          
-          // Fallback: If socialMedia is missing, fetch it separately
+
           if (!foundMember.socialMedia && foundMember.documentId) {
-            console.log('⚠️ Social media missing, fetching separately...');
+            console.log("⚠️ Social media missing, fetching separately...");
             const socialMediaData = await fetchMemberSocialMedia(foundMember.documentId);
             if (socialMediaData) {
               setSocialMedia(socialMediaData);
-              console.log('✅ Social media fetched separately:', socialMediaData);
+              console.log("✅ Social media fetched separately:", socialMediaData);
             }
           }
         } else {
-          console.error('❌ Member not found for slug:', memberSlug);
+          console.error("❌ Member not found for slug:", memberSlug);
         }
       } catch (error) {
-        console.error('❌ Error loading member:', error);
+        console.error("❌ Error loading member:", error);
       } finally {
         setLoading(false);
       }
     };
 
-    if (memberSlug) {
-      loadMember();
-    }
+    if (memberSlug) loadMember();
   }, [memberSlug]);
 
   if (loading) {
@@ -82,11 +80,10 @@ const Sidebar = () => {
     );
   }
 
-  // Format birthday if available
-  const formatBirthday = (dateString) => {
+  const formatBirthday = (dateString?: string) => {
     if (!dateString) return "Not specified";
     const date = new Date(dateString);
-    return date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    return date.toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
   };
 
   return (
@@ -94,8 +91,8 @@ const Sidebar = () => {
       <div className="sidebar-info">
         <figure className="avatar-box">
           <Image
-            src={ member.avatar || member.imageSrc || "/assets/images/Avatar.png"}
-            alt={member.name}
+            src={member?.avatar || member?.imageSrc || "/assets/images/Avatar.png"}
+            alt={member?.name || "avatar"}
             width={100}
             height={100}
             className="avatar-box"
@@ -103,10 +100,10 @@ const Sidebar = () => {
         </figure>
 
         <div className="info-content">
-          <h1 className="name" title={member.name}>
-            {member.name}
+          <h1 className="name" title={member?.name}>
+            {member?.name}
           </h1>
-          <p className="title">{member.role}</p>
+          <p className="title">{member?.role}</p>
         </div>
 
         <button className="info_more-btn">
@@ -119,7 +116,7 @@ const Sidebar = () => {
         <div className="separator"></div>
 
         <ul className="contacts-list">
-          {member.email && (
+          {member?.email && (
             <li className="contact-item">
               <div className="icon-box">
                 <IonIcon icon={mailOutline} />
@@ -133,7 +130,7 @@ const Sidebar = () => {
             </li>
           )}
 
-          {member.phone && (
+          {member?.phone && (
             <li className="contact-item">
               <div className="icon-box">
                 <IonIcon icon={phonePortraitOutline} />
@@ -147,7 +144,7 @@ const Sidebar = () => {
             </li>
           )}
 
-          {member.birthday && (
+          {member?.birthday && (
             <li className="contact-item">
               <div className="icon-box">
                 <IonIcon icon={calendarOutline} />
@@ -159,7 +156,7 @@ const Sidebar = () => {
             </li>
           )}
 
-          {member.location && (
+          {member?.location && (
             <li className="contact-item">
               <div className="icon-box">
                 <IonIcon icon={locationOutline} />
@@ -202,6 +199,4 @@ const Sidebar = () => {
       </div>
     </aside>
   );
-};
-
-export default Sidebar;
+}

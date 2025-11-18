@@ -1,10 +1,19 @@
 import React from "react";
 
-const SkillItem = ({ title, level }) => (
+type Skill = {
+  title: string;
+  level: string | number;
+};
+
+interface ResumeSkillsProps {
+  skills: Skill[];
+}
+
+const SkillItem: React.FC<Skill> = ({ title, level }) => (
   <li className="skills-item">
     <div className="title-wrapper">
       <h5 className="h5">{title}</h5>
-      <data value={level}>{level}%</data>
+      <data value={String(level)}>{level}%</data>
     </div>
     <div className="skill-progress-bg">
       <div className="skill-progress-fill" style={{ width: `${level}%` }}></div>
@@ -12,7 +21,7 @@ const SkillItem = ({ title, level }) => (
   </li>
 );
 
-export default function ResumeSkills({ skills }) {
+export default function ResumeSkills({ skills }: ResumeSkillsProps) {
   return (
     <section className="skill">
       <h3 className="h3 skills-title">My skills</h3>

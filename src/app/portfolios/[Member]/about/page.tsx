@@ -1,5 +1,5 @@
-"use client"; // Ensure this is a client-side component
-import { Fragment, useEffect, useState } from "react";
+"use client";
+import React, { Fragment, useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { fetchTeamMembers } from "@/lib/strapi";
 import Services from "./components/service/Services";
@@ -10,27 +10,28 @@ export default function About() {
   return <Aboutpage />;
 }
 
-const Aboutpage = () => {
+const Aboutpage: React.FC = () => {
   const params = useParams();
-  const memberSlug = params.Member;
-  const [member, setMember] = useState(null);
+  // `useParams` in Next returns a record of route params; keep a tolerant cast
+  const memberSlug = (params as any)?.Member as string | undefined;
+  const [member, setMember] = useState<any | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadMember = async () => {
       try {
-        console.log('🔍 Loading member data for about page:', memberSlug);
+        console.log("🔍 Loading member data for about page:", memberSlug);
         const teamMembers = await fetchTeamMembers();
         const foundMember = teamMembers.find(
-          m => m.name.toLowerCase().replace(/\s+/g, '-') === memberSlug.toLowerCase()
+          (m) => m.name.toLowerCase().replace(/\s+/g, "-") === (memberSlug || "").toLowerCase()
         );
-        
+
         if (foundMember) {
-          console.log('✅ Found member for about page:', foundMember);
+          console.log("✅ Found member for about page:", foundMember);
           setMember(foundMember);
         }
       } catch (error) {
-        console.error('❌ Error loading member:', error);
+        console.error("❌ Error loading member:", error);
       } finally {
         setLoading(false);
       }
@@ -79,7 +80,7 @@ const Aboutpage = () => {
 
       <section className="about-text">
         {member.desc_portfoilo ? (
-          member.desc_portfoilo.split('\n').map((paragraph, index) => (
+          member.desc_portfoilo.split("\n").map((paragraph: string, index: number) => (
             <p key={index}>{paragraph}</p>
           ))
         ) : (
@@ -90,7 +91,6 @@ const Aboutpage = () => {
       <Services services={member.services} />
       <Testimonials testimonials={member.testimonials} />
       <Clients clients={member.clients} />
-      
     </Fragment>
   );
 };

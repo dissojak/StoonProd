@@ -1,16 +1,20 @@
+import React, { ReactNode } from "react";
 import { Poppins } from "next/font/google";
 import "./css/globals.css";
 import Sidebar from "./components/Sidebar";
 import Navbar from "./components/Navbar";
 import Footer from "@/components/shared/Footers/Footer";
 
-// Load Poppins font
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600"],
 });
 
-export default function MemberLayout({ children }) {
+interface MemberLayoutProps {
+  children: ReactNode;
+}
+
+export default function MemberLayout({ children }: MemberLayoutProps) {
   return (
     <>
       <div className={`member-portfolio-layout ${poppins.className}`}>
