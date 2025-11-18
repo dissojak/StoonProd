@@ -4,6 +4,19 @@ import { Portfolio, StrapiPortfolioResponse } from "../types/portfolio";
 
 const STRAPI_BASE = process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
 
+// Session storage key used by PingStrapi to avoid unnecessary repeated pings
+const STRAPI_PING_STORAGE_KEY = "stoon_strapi_last_ping";
+
+function recordStrapiPing() {
+  try {
+    if (typeof window !== "undefined" && window.sessionStorage) {
+      window.sessionStorage.setItem(STRAPI_PING_STORAGE_KEY, String(Date.now()));
+    }
+  } catch (e) {
+    // ignore storage errors
+  }
+}
+
 function resolveImageUrl(media: StrapiMedia | null | undefined): string {
   // Strapi v5: media is flat object with url directly
   if (!media?.url) return "/assets/images/adem.jpg";
