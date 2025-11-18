@@ -1,6 +1,7 @@
+"use client";
 import { IonIcon } from "@ionic/react";
 import { chevronDown } from "ionicons/icons";
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 
 interface FilterListProps {
   activeFilter: string;
@@ -8,9 +9,25 @@ interface FilterListProps {
 }
 
 const FilterList: React.FC<FilterListProps> = ({ activeFilter, setActiveFilter }) => {
+  const [selectOpen, setSelectOpen] = useState(false);
+  const selectRef = useRef<HTMLDivElement | null>(null);
+
   const handleFilterClick = (filter: string) => {
     setActiveFilter(filter);
+    setSelectOpen(false);
   };
+
+  useEffect(() => {
+    function handleOutside(e: MouseEvent) {
+      if (!selectRef.current) return;
+      if (e.target instanceof Node && !selectRef.current.contains(e.target)) {
+        setSelectOpen(false);
+      }
+    }
+
+    document.addEventListener("mousedown", handleOutside);
+    return () => document.removeEventListener("mousedown", handleOutside);
+  }, []);
 
   // Define the available filter categories based on PortfolioType
   const filterCategories = [
