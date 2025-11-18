@@ -15,7 +15,7 @@ export default function MemberLayout({ children }) {
     <>
       <div className={`member-portfolio-layout ${poppins.className}`}>
         {/* Main Content */}
-        <main className="mt-28">
+        <main className="!mt-28">
           <Sidebar />
           <div className="main-content">
             <Navbar />

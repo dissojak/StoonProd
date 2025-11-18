@@ -51,7 +51,7 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({
         >
           {/* Close Button */}
           <button
-            className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center bg-black/50 hover:bg-orange-600/70 rounded-full transition-colors"
+            className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center !bg-black/50 hover:bg-orange-600/70 rounded-full transition-colors"
             onClick={onClose}
           >
             <Image src="/assets/images/close24.png" alt="close" width={80} height={80} />
@@ -85,13 +85,13 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({
               </div>
 
               {/* Info Section - Compact sidebar */}
-              <div className="p-6 overflow-y-auto w-full lg:w-[300px] flex-shrink-0">
-                <div className="mb-3">
+              <div className="!p-6 overflow-y-auto w-full lg:w-[300px] flex-shrink-0">
+                <div className="!mb-3">
                   <span className="text-xs text-orange-400 uppercase tracking-wider">
                     {category}
                   </span>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{title}</h3>
+                <h3 className="text-xl font-semibold text-white !mb-3">{title}</h3>
                 <h4 className="text-sm font-medium text-gray-400 uppercase tracking-wider">
                   Description
                 </h4>
@@ -128,13 +128,13 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({
               </div>
 
               {/* Info Section Below Video */}
-              <div className="p-6">
-                <div className="mb-2">
+              <div className="!p-6">
+                <div className="!mb-2">
                   <span className="text-xs text-orange-400 uppercase tracking-wider">
                     {category}
                   </span>
                 </div>
-                <h3 className="text-3xl font-semibold text-white mb-4">{title}</h3>
+                <h3 className="text-3xl font-semibold text-white !mb-4">{title}</h3>
                 {description && (
                   <div className="space-y-2">
                     <h4 className="text-sm font-medium text-gray-400 uppercase tracking-wider">
