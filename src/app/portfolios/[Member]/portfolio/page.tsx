@@ -60,7 +60,7 @@ const PortfolioPage = () => {
       isMounted = false;
       clearTimeout(funnyTimer);
     };
-  }, [memberSlug]);
+  }, [memberSlug, loading]);
   console.log("Rendering PortfolioPage, loading:", loading, "showFunnyLoader:", showFunnyLoader);
 
   return (
