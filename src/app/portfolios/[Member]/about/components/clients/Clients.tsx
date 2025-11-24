@@ -1,11 +1,17 @@
+import React from "react";
 import Image from "next/image";
 
-// src/components/Clients.js
-export default function Clients({ clients }) {
-  // Don't show section if no clients from Strapi
-  if (!clients || clients.length === 0) {
-    return null;
-  }
+type Client = {
+  logo?: string;
+  name?: string;
+};
+
+interface ClientsProps {
+  clients?: Client[] | null;
+}
+
+export default function Clients({ clients }: ClientsProps) {
+  if (!clients || clients.length === 0) return null;
 
   return (
     <section className="clients">
@@ -15,7 +21,7 @@ export default function Clients({ clients }) {
           <li key={index} className="clients-item">
             <a href="#">
               <Image
-                src={client.logo}
+                src={client.logo || "/assets/images/default.jpg"}
                 alt={client.name || "client logo"}
                 width={500}
                 height={300}

@@ -1,10 +1,8 @@
-"use client"; // Ensure this is a client-side component
-
+"use client";
+import React from "react";
 import ResumeEducation from "./components/ResumeEducation";
 import ResumeExperience from "./components/ResumeExperience";
 import ResumeSkills from "./components/ResumeSkills";
-
-// import "../css/globals.css";
 
 const resumeData = {
   education: [
@@ -58,12 +56,12 @@ const resumeData = {
 export default function Resume() {
   return (
     <>
-        <header>
-          <h2 className="h2 article-title">Resume</h2>
-        </header>
-        <ResumeEducation education={resumeData.education} />
-        <ResumeExperience experience={resumeData.experience} />
-        <ResumeSkills skills={resumeData.skills} />
+      <header>
+        <h2 className="h2 article-title">Resume</h2>
+      </header>
+      <ResumeEducation education={resumeData.education} />
+      <ResumeExperience experience={resumeData.experience} />
+      <ResumeSkills skills={resumeData.skills} />
     </>
   );
 }

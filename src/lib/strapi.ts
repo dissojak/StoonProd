@@ -4,6 +4,19 @@ import { Portfolio, StrapiPortfolioResponse } from "../types/portfolio";
 
 const STRAPI_BASE = process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
 
+// Session storage key used by PingStrapi to avoid unnecessary repeated pings
+const STRAPI_PING_STORAGE_KEY = "stoon_strapi_last_ping";
+
+function recordStrapiPing() {
+  try {
+    if (typeof window !== "undefined" && window.sessionStorage) {
+      window.sessionStorage.setItem(STRAPI_PING_STORAGE_KEY, String(Date.now()));
+    }
+  } catch (e) {
+    // ignore storage errors
+  }
+}
+
 function resolveImageUrl(media: StrapiMedia | null | undefined): string {
   // Strapi v5: media is flat object with url directly
   if (!media?.url) return "/assets/images/adem.jpg";
@@ -119,6 +132,8 @@ export async function fetchTeamMembers(): Promise<TeamMember[]> {
     });
     
     console.log('✅ Final mapped data:', mapped);
+    // mark Strapi as recently used so PingStrapi will skip pinging
+    recordStrapiPing();
     return mapped;
   } catch (error) {
     console.error("💥 Exception in fetchTeamMembers:", error);
@@ -207,6 +222,7 @@ export async function fetchTeamMemberBySlug(slug: string): Promise<TeamMember | 
     };
     
     console.log('✅ Fetched member:', member);
+    recordStrapiPing();
     return member;
   } catch (error) {
     console.error("💥 Exception in fetchTeamMemberBySlug:", error);
@@ -236,7 +252,8 @@ export async function fetchMemberSocialMedia(documentId: string) {
     
     const json: any = await res.json();
     console.log("✅ Fetched social media:", json.data?.socialMedia);
-    
+    // record ping so the session is refreshed
+    recordStrapiPing();
     return json.data?.socialMedia || null;
   } catch (error) {
     console.error("💥 Exception in fetchMemberSocialMedia:", error);
@@ -295,6 +312,7 @@ export async function fetchPortfoliosByMember(memberDocumentId: string): Promise
     }));
     
     console.log('✅ Mapped portfolios:', mapped);
+    recordStrapiPing();
     return mapped;
   } catch (error) {
     console.error("💥 Exception in fetchPortfoliosByMember:", error);
@@ -325,6 +343,8 @@ export async function fetchAllPortfolios(): Promise<Portfolio[]> {
     
     const json: StrapiPortfolioResponse = await res.json();
     console.log(`✅ Fetched ${json.data?.length || 0} total portfolios`);
+    // mark Strapi as recently used
+    recordStrapiPing();
     
     if (!json.data || !Array.isArray(json.data)) {
       return [];

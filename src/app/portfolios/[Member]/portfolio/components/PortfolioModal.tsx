@@ -29,30 +29,32 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({
 
   return (
     <>
-      {/* Overlay */}
+      {/* Overlay with subtle backdrop blur */}
       <div
-        className={`fixed inset-0 bg-black/80 z-50 transition-opacity duration-300 ${
+        className={`fixed inset-0 bg-black/30 backdrop-blur-sm z-40 transition-opacity duration-300 ${
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         onClick={onClose}
       />
 
       {/* Modal Container */}
-      <div
-        className={`fixed inset-0 z-50 flex items-center justify-center p-4 transition-opacity duration-300 ${
+           <div
+        className={`fixed inset-0 z-50 flex items-center justify-center p-4 transition-opacity duration-300 overflow-auto ${
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
+        aria-hidden={!isOpen}
       >
         <div
-          className={`relative bg-[#1e1e1f] rounded-2xl shadow-2xl overflow-hidden transform transition-transform duration-300 ${
+          className={`relative bg-[#1e1e1f] rounded-2xl shadow-2xl transform transition-transform duration-300 ${
             isOpen ? "scale-100" : "scale-95"
-          } ${isReel ? "w-auto max-w-[90vw]" : "w-full max-w-5xl"}`}
+          } ${isReel ? "w-full max-w-[600px] sm:max-w-[90vw]" : "w-full max-w-5xl"} max-h-[95vh] overflow-auto`}
           onClick={(e) => e.stopPropagation()}
         >
-          {/* Close Button */}
+          {/* Close Button (fixed so it's always visible on small screens) */}
           <button
-            className="absolute top-4 right-4 z-10 w-10 h-10 flex items-center justify-center bg-black/50 hover:bg-orange-600/70 rounded-full transition-colors"
+            className="fixed top-4 right-4 z-50 w-10 h-10 flex items-center justify-center !bg-black/50 hover:bg-orange-600/70 rounded-full transition-colors"
             onClick={onClose}
+            aria-label="Close modal"
           >
             <Image src="/assets/images/close24.png" alt="close" width={80} height={80} />
           </button>
@@ -128,13 +130,13 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({
               </div>
 
               {/* Info Section Below Video */}
-              <div className="p-6">
-                <div className="mb-2">
+              <div className="!p-6">
+                <div className="!mb-2">
                   <span className="text-xs text-orange-400 uppercase tracking-wider">
                     {category}
                   </span>
                 </div>
-                <h3 className="text-3xl font-semibold text-white mb-4">{title}</h3>
+                <h3 className="text-3xl font-semibold text-white !mb-4">{title}</h3>
                 {description && (
                   <div className="space-y-2">
                     <h4 className="text-sm font-medium text-gray-400 uppercase tracking-wider">

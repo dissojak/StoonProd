@@ -1,15 +1,21 @@
-// src/components/ServiceItem.js
-
+import React from "react";
 import Image from "next/image";
 
-export default function ServiceItem({ logo , title, description }) {
+interface ServiceItemProps {
+  logo?: string | null;
+  title?: string;
+  description?: string;
+  height?: number;
+}
+
+export default function ServiceItem({ logo, title, description }: ServiceItemProps) {
   return (
     <li className="service-item">
       <div className="service-icon-box">
         {logo && (
           <Image
             src={logo}
-            alt={`${title} Icon`}
+            alt={`${title || "service"} Icon`}
             width={40}
             height={50}
             className="imageSVG"

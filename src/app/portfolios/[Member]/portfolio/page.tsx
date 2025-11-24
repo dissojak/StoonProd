@@ -60,7 +60,7 @@ const PortfolioPage = () => {
       isMounted = false;
       clearTimeout(funnyTimer);
     };
-  }, [memberSlug]);
+  }, [memberSlug, loading]);
   console.log("Rendering PortfolioPage, loading:", loading, "showFunnyLoader:", showFunnyLoader);
 
   return (
@@ -91,7 +91,7 @@ const PortfolioPage = () => {
                     />
                   </div>
                   <h3 className="text-2xl font-semibold text-white mb-3">
-                    Hold tight! I'm grabbing the data myself... 🏃‍♂️💨
+                    Hold tight! I&apos;m grabbing the data myself... 🏃‍♂️💨
                   </h3>
                   <p className="text-gray-400 text-sm">
                     Great content is coming your way. Just fetching it from the server! 📦⚡
