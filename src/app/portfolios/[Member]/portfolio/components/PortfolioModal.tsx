@@ -38,7 +38,7 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({
       />
 
       {/* Modal Container */}
-           <div
+      <div
         className={`fixed inset-0 z-50 flex items-center justify-center p-4 transition-opacity duration-300 overflow-auto ${
           isOpen ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
@@ -47,7 +47,7 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({
         <div
           className={`relative bg-[#1e1e1f] rounded-2xl shadow-2xl transform transition-transform duration-300 ${
             isOpen ? "scale-100" : "scale-95"
-          } ${isReel ? "w-full max-w-[600px] sm:max-w-[90vw]" : "w-full max-w-5xl"} max-h-[95vh] overflow-auto`}
+          } ${isReel ? "w-auto max-w-[90vw]" : "w-full max-w-5xl"}`}
           onClick={(e) => e.stopPropagation()}
         >
           {/* Close Button (fixed so it's always visible on small screens) */}
