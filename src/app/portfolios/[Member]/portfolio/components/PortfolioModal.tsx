@@ -85,13 +85,13 @@ const PortfolioModal: React.FC<PortfolioModalProps> = ({
               </div>
 
               {/* Info Section - Compact sidebar */}
-              <div className="p-6 overflow-y-auto w-full lg:w-[300px] flex-shrink-0">
-                <div className="mb-3">
+              <div className="!p-6 overflow-y-auto w-full lg:w-[300px] flex-shrink-0">
+                <div className="!mb-3">
                   <span className="text-xs text-orange-400 uppercase tracking-wider">
                     {category}
                   </span>
                 </div>
-                <h3 className="text-xl font-semibold text-white mb-3">{title}</h3>
+                <h3 className="text-xl font-semibold text-white !mb-3">{title}</h3>
                 <h4 className="text-sm font-medium text-gray-400 uppercase tracking-wider">
                   Description
                 </h4>
