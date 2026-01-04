@@ -19,14 +19,12 @@ export default function Clients({ clients }: ClientsProps) {
       <ul className="clients-list has-scrollbar">
         {clients.map((client, index) => (
           <li key={index} className="clients-item">
-            <a href="#">
-              <Image
-                src={client.logo || "/assets/images/default.jpg"}
-                alt={client.name || "client logo"}
-                width={500}
-                height={300}
-              />
-            </a>
+            <Image
+              src={client.logo || "/assets/images/default.jpg"}
+              alt={client.name || "client logo"}
+              width={500}
+              height={300}
+            />
           </li>
         ))}
       </ul>

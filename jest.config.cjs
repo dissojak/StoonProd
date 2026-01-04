@@ -14,6 +14,22 @@ const customJestConfig = {
   transformIgnorePatterns: [
     "/node_modules/(?!(mongoose|mongodb|bson)/)",
   ],
+  collectCoverageFrom: [
+    "src/**/*.{js,jsx,ts,tsx}",
+    "!src/**/*.d.ts",
+    "!src/**/*.stories.{js,jsx,ts,tsx}",
+    "!src/**/__tests__/**",
+    "!src/app/layout.tsx",
+    "!src/middleware.ts",
+  ],
+  coverageThreshold: {
+    global: {
+      branches: 50,
+      functions: 50,
+      lines: 60,
+      statements: 60,
+    },
+  },
 };
 
 module.exports = createJestConfig(customJestConfig);
