@@ -47,9 +47,9 @@ describe("fetchTeamMembers", () => {
     const members = await fetchTeamMembers();
 
     expect(members).toHaveLength(1);
-    expect(members[0].name).toBe("Ada");
-    expect(members[0].services[0].logo).toBe("https://strapi.example.com/logo.png");
-    expect(members[0].clients[0].logo).toBe("https://strapi.example.com/client.png");
+    expect(members[0]?.name).toBe("Ada");
+    expect(members[0]?.services[0]?.logo).toBe("https://strapi.example.com/logo.png");
+    expect(members[0]?.clients[0]?.logo).toBe("https://strapi.example.com/client.png");
     expect(mockFetch).toHaveBeenCalledTimes(1);
   });
 
