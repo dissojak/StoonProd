@@ -43,6 +43,7 @@ export const metadata: Metadata = {
     icon: "/icon.ico",
   },
   other: {
+    "google-site-verification": "uPxKg9OIHtVLQy7gZunr9EMKIYOLZ0ppLe9j2bfH2QU",
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
       "@type": "Organization",
